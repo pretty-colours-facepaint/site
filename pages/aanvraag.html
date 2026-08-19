@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Schminken — Pretty Colours Facepaint</title>
-  <meta name="description" content="Voorbeelden van schminkwerk door Pretty Colours Facepaint, voor kinderfeestjes en evenementen rond Hoofddorp.">
-  <link rel="canonical" href="https://prettycolours-facepaint.nl/werk-schminken.html">
+  <title>Aanvraag doen — Pretty Colours Facepaint</title>
+  <meta name="description" content="Vraag vrijblijvend schminken of glittertattoo's aan voor je kinderfeestje, evenement of bedrijf rond Hoofddorp.">
+  <link rel="canonical" href="https://prettycolours-facepaint.nl/pages/aanvraag.html">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Schminken — Pretty Colours Facepaint">
-  <meta property="og:description" content="Voorbeelden van schminkwerk door Pretty Colours Facepaint, voor kinderfeestjes en evenementen rond Hoofddorp.">
-  <meta property="og:url" content="https://prettycolours-facepaint.nl/werk-schminken.html">
-  <link rel="icon" href="assets/logo.jpg">
+  <meta property="og:title" content="Aanvraag doen — Pretty Colours Facepaint">
+  <meta property="og:description" content="Vraag vrijblijvend schminken of glittertattoo's aan voor je kinderfeestje, evenement of bedrijf rond Hoofddorp.">
+  <meta property="og:url" content="https://prettycolours-facepaint.nl/pages/aanvraag.html">
+  <link rel="icon" href="../assets/logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -54,38 +54,68 @@
       border-top: 2px solid transparent;
       border-image: linear-gradient(90deg, #f43f5e, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6, #ec4899) 1;
     }
+    .rainbow-fill-btn {
+      background: linear-gradient(90deg, #f43f5e, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6, #ec4899);
+    }
   </style>
 </head>
-<body class="font-sans text-gray-800">
+<body class="font-sans text-gray-700 bg-white">
 
   <!-- Header -->
   <header id="site-header" class="sticky top-0 bg-white/90 backdrop-blur border-b border-transparent z-50">
     <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-6 flex-wrap gap-3">
-      <a href="index.html" class="flex flex-col items-center gap-1">
-        <img id="logo-img" src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-28 w-28 rounded-full object-cover transition-all duration-500 ease-in-out">
+      <a href="../index.html" class="flex flex-col items-center gap-1">
+        <img id="logo-img" src="../assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-28 w-28 rounded-full object-cover transition-all duration-500 ease-in-out">
         <p id="logo-tagline" class="text-[10px] tracking-widest mt-1 overflow-hidden">SCHMINK &amp; GLITTERTATTOO'S</p>
       </a>
       <nav class="flex items-center gap-6 text-sm">
-        <a href="index.html" class="text-pink-600 hover:underline hover:underline-offset-4">Home</a>
-        <a href="werk.html" class="text-pink-600 hover:underline hover:underline-offset-4">Mijn werk</a>
-        <a href="aanvraag.html" class="rainbow-border-btn text-black hover:bg-gray-50 rounded-full transition cursor-pointer px-7 py-3.5 font-medium"><span data-config="contact.ctaAanvraag"></span></a>
+        <a href="../index.html" class="text-pink-600 hover:underline hover:underline-offset-4">Home</a>
+        <a href="../pages/werk.html" class="text-pink-600 hover:underline hover:underline-offset-4">Mijn werk</a>
+        <a href="../pages/aanvraag.html" class="rainbow-border-btn text-black hover:bg-gray-50 rounded-full transition cursor-pointer px-7 py-3.5 font-medium"><span data-config="contact.ctaAanvraag"></span></a>
       </nav>
     </div>
   </header>
-  <section class="py-16 px-4">
-    <div class="max-w-5xl mx-auto">
-      <a href="index.html#werk" class="text-sm text-pink-600 font-normal">&larr; Terug</a>
-      <h1 class="font-display text-3xl mt-4 mb-10 text-pink-600"><span data-config="werkPaginas.schminken"></span></h1>
-      <div data-numbered-gallery="assets/mijn-werk/schminken/foto" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Foto's laden&hellip;</div>
+  <!-- Contact form -->
+  <section id="contact" class="max-w-lg mx-auto px-4 py-16">
+    <a href="../index.html" class="text-sm text-pink-600 font-normal">&larr; Terug</a>
+    <h1 class="font-display text-3xl text-center mt-6 mb-2 text-pink-600"><span data-config="aanvraag.titel"></span></h1>
+    <p class="text-gray-500 text-center text-sm mb-8"><span data-config="aanvraag.intro"></span></p>
+
+    <form id="contact-form" action="https://api.staticforms.dev/submit" method="POST" class="bg-white border rounded-2xl shadow-sm p-6 space-y-4">
+      <input type="hidden" name="subject" value="pretty-colours-facepaint submission">
+      <!-- Honeypot field for spam protection -->
+      <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off">
+
+      <div>
+        <label for="name" class="block text-sm font-medium mb-1"><span data-config="aanvraag.labelNaam"></span></label>
+        <input type="text" id="name" name="name" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
       </div>
-    </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium mb-1"><span data-config="aanvraag.labelEmail"></span></label>
+        <input type="email" id="email" name="email" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      </div>
+
+      <div>
+        <label for="eventDate" class="block text-sm font-medium mb-1"><span data-config="aanvraag.labelDatum"></span></label>
+        <input type="date" id="eventDate" name="eventDate" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium mb-1"><span data-config="aanvraag.labelBericht"></span></label>
+        <textarea id="message" name="message" rows="5" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+      </div>
+
+      <button type="submit" class="rainbow-fill-btn text-white shadow hover:opacity-90 rounded-full transition cursor-pointer w-full py-4 font-semibold"><span data-config="aanvraag.knop"></span></button>
+      <p id="form-status" class="text-sm text-center"></p>
+    </form>
   </section>
+
   <!-- Footer -->
   <footer class="rainbow-top-border">
     <div class="max-w-5xl mx-auto px-4 py-10 flex flex-col sm:flex-row items-center justify-between gap-10 text-sm text-gray-500">
       <div class="flex items-center gap-3">
-        <img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-12 w-12 rounded-full object-cover">
+        <img src="../assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-12 w-12 rounded-full object-cover">
         <p class="font-display text-base text-pink-500"><span data-config="contact.tagline"></span></p>
       </div>
       <div class="space-y-3 text-center sm:text-left">
@@ -114,8 +144,8 @@
       </div>
     </div>
   </footer>
-  <script src="config.js"></script>
-  <script src="script.js"></script>
+  <script src="../MAKE_CHANGES_HERE/config.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>
 

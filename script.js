@@ -16,14 +16,19 @@ function configErrorHtml(message) {
 }
 
 function getConfigValue(path) {
-  return path.split('.').reduce((value, key) => {
-    return value && typeof value === 'object' ? value[key] : undefined;
-  }, typeof SITE_CONFIG === 'undefined' ? undefined : SITE_CONFIG);
+  return path.split('.').reduce(
+    (value, key) => {
+      return value && typeof value === 'object' ? value[key] : undefined;
+    },
+    typeof SITE_CONFIG === 'undefined' ? undefined : SITE_CONFIG
+  );
 }
 
 if (typeof SITE_CONFIG === 'undefined') {
   document.querySelectorAll('[data-config]').forEach((el) => {
-    el.innerHTML = configErrorHtml('config.js kon niet geladen worden (typefout?). Zie de browserconsole voor details.');
+    el.innerHTML = configErrorHtml(
+      'config.js kon niet geladen worden (typefout?). Zie de browserconsole voor details.'
+    );
   });
 } else {
   document.querySelectorAll('[data-config]').forEach((el) => {
@@ -48,7 +53,8 @@ if (typeof SITE_CONFIG === 'undefined') {
 const HEX_COLOR = /^#[0-9a-f]{3,8}$/i;
 
 document.querySelectorAll('[data-social-badges]').forEach((container) => {
-  const socials = typeof SITE_CONFIG === 'undefined' ? undefined : SITE_CONFIG.socials;
+  const socials =
+    typeof SITE_CONFIG === 'undefined' ? undefined : SITE_CONFIG.socials;
   if (!Array.isArray(socials)) {
     return;
   }
@@ -59,11 +65,14 @@ document.querySelectorAll('[data-social-badges]').forEach((container) => {
       const titel = escapeHtml(social.titel);
       const logo = escapeHtml(social.logo);
       const link = escapeHtml(social.link);
-      const heeftKleur = typeof social.kleur === 'string' && HEX_COLOR.test(social.kleur);
+      const heeftKleur =
+        typeof social.kleur === 'string' && HEX_COLOR.test(social.kleur);
       const klasse = heeftKleur
         ? 'w-9 h-9 rounded-full text-white flex items-center justify-center text-xs hover:opacity-90 transition'
         : 'w-9 h-9 rounded-full bg-gray-800 text-white flex items-center justify-center text-xs hover:opacity-90 transition';
-      const stijl = heeftKleur ? ` style="background-color:${escapeHtml(social.kleur)};"` : '';
+      const stijl = heeftKleur
+        ? ` style="background-color:${escapeHtml(social.kleur)};"`
+        : '';
       return `<a href="${link}" target="_blank" rel="noopener" aria-label="${titel}" title="${titel}" class="${klasse}"${stijl}>${logo}</a>`;
     })
     .join('');
@@ -75,7 +84,7 @@ document.querySelectorAll('[data-social-badges]').forEach((container) => {
 // wordt getoond. Een foto toevoegen is dus alleen het bestand met het
 // eerstvolgende nummer in de map zetten — geen configbestand nodig.
 // ============================================================
-const MAX_GALLERY_PHOTOS = 16;
+const MAX_GALLERY_PHOTOS = 200;
 
 function photoExists(src) {
   return new Promise((resolve) => {
@@ -101,12 +110,16 @@ document.querySelectorAll('[data-numbered-gallery]').forEach((gallery) => {
     }
 
     if (photos.length === 0) {
-      gallery.innerHTML = '<p class="col-span-full text-center text-gray-400 text-sm">Nog geen foto\'s toegevoegd.</p>';
+      gallery.innerHTML =
+        '<p class="col-span-full text-center text-gray-400 text-sm">Nog geen foto\'s toegevoegd.</p>';
       return;
     }
 
     gallery.innerHTML = photos
-      .map((src) => `<img src="${escapeHtml(src)}" alt="" class="aspect-square w-full object-cover rounded-lg shadow-sm">`)
+      .map(
+        (src) =>
+          `<img src="${escapeHtml(src)}" alt="" class="aspect-square w-full object-cover rounded-lg shadow-sm">`
+      )
       .join('');
   });
 });
@@ -116,7 +129,8 @@ document.querySelectorAll('[data-numbered-gallery]').forEach((gallery) => {
 // e.g. once the site goes live, without touching any other code.
 const constructionOverlay = document.getElementById('construction-overlay');
 const constructionDismiss = document.getElementById('construction-dismiss');
-const overlayConfig = typeof SITE_CONFIG === 'undefined' ? undefined : SITE_CONFIG.overlay;
+const overlayConfig =
+  typeof SITE_CONFIG === 'undefined' ? undefined : SITE_CONFIG.overlay;
 
 if (constructionOverlay && overlayConfig && overlayConfig.actief === false) {
   constructionOverlay.classList.add('hidden');
@@ -136,7 +150,7 @@ const logoTagline = document.getElementById('logo-tagline');
 const TAGLINE_HEIGHT = logoTagline ? logoTagline.offsetHeight : 0;
 const TAGLINE_MARGIN = 4; // px, matches mt-1
 const LOGO_MAX = 112; // px, matches h-28
-const LOGO_MIN = 48;  // px, matches h-12
+const LOGO_MIN = 48; // px, matches h-12
 const LOGO_SHRINK_DISTANCE = 200; // px of scroll over which the shrink happens
 
 if (logo) {
@@ -201,7 +215,8 @@ if (form) {
         status.className = 'text-sm text-center text-green-600';
         form.reset();
       } else {
-        status.textContent = data.message || 'Er ging iets mis, probeer het opnieuw.';
+        status.textContent =
+          data.message || 'Er ging iets mis, probeer het opnieuw.';
         status.className = 'text-sm text-center text-red-600';
       }
     } catch (err) {

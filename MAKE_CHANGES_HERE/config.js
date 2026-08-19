@@ -20,20 +20,20 @@ const SITE_CONFIG = {
   // (HART, BLIKSEM, STER), en de tekst onderaan de pagina.
   prijzen: {
     titel: 'Prijzen',
-    footnote: 'Placeholder tekst: neem contact op voor een offerte op maat.',
+    footnote: 'Neem contact op voor een offerte op maat.',
     hart: {
       titel: 'Schminken',
-      prijs: '€ 1,-',
+      prijs: '€ 4,-',
       tekst: 'Placeholder tekst over de schminkprijzen.',
     },
     bliksem: {
       titel: "Glittertattoo's",
-      prijs: '€ 2,-',
+      prijs: '€ 5,-',
       tekst: 'Placeholder tekst over de glittertattoo-prijzen.',
     },
     ster: {
       titel: 'Feestjes & evenementen',
-      prijs: '€ 3,-',
+      prijs: '€ 6,-',
       tekst: 'Placeholder tekst over de prijzen voor feestjes etc.',
     },
   },
@@ -102,11 +102,6 @@ const SITE_CONFIG = {
     knop: 'Ik snap het, ga verder',
   },
 
-  // De simpele voettekst onderaan de glittertattoo- en feesten-pagina.
-  footerSimple: {
-    tekst: '© 2026 Pretty Colours Facepaint.',
-  },
-
   // Het aanvraagformulier.
   aanvraag: {
     titel: 'Aanvraag doen?',
@@ -116,7 +111,7 @@ const SITE_CONFIG = {
     labelEmail: 'E-mail',
     labelDatum: 'Datum evenement',
     labelBericht: 'Bericht',
-    knop: 'Verstuur aanvraag',
+    knop: 'Verstuur Aanvraag',
   },
 
   // De rondjes met social-media-links in de footer. Elk badge heeft een

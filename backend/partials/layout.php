@@ -70,11 +70,11 @@ function twitter_title_description(string $ogTitle, string $ogDescription, strin
 HTML;
 }
 
-function favicon_and_tailwind(): void
+function favicon_and_tailwind(string $base = ''): void
 {
     echo <<<HTML
 
-  <link rel="icon" href="assets/logo.jpg">
+  <link rel="icon" href="{$base}assets/logo.jpg">
 HTML;
 }
 
@@ -277,25 +277,25 @@ HTML;
  *
  * @param bool $onHome  Underlines the "Home" link when it's the current page.
  */
-function site_header(bool $onHome = false, bool $onWerk = false): void
+function site_header(bool $onHome = false, bool $onWerk = false, string $base = ''): void
 {
     $homeClass = 'text-pink-600' . ($onHome ? ' font-bold underline underline-offset-4' : ' hover:underline hover:underline-offset-4');
     $werkClass = 'text-pink-600' . ($onWerk ? ' font-bold underline underline-offset-4' : ' hover:underline hover:underline-offset-4');
     ob_start();
-    rainbow_button(content_config('contact.ctaAanvraag'), 'outline', href: 'aanvraag.html', extraClass: 'px-7 py-3.5 font-medium');
+    rainbow_button(content_config('contact.ctaAanvraag'), 'outline', href: "{$base}pages/aanvraag.html", extraClass: 'px-7 py-3.5 font-medium');
     $ctaButton = ob_get_clean();
     echo <<<HTML
 
   <!-- Header -->
   <header id="site-header" class="sticky top-0 bg-white/90 backdrop-blur border-b border-transparent z-50">
     <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-6 flex-wrap gap-3">
-      <a href="index.html" class="flex flex-col items-center gap-1">
-        <img id="logo-img" src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-28 w-28 rounded-full object-cover transition-all duration-500 ease-in-out">
+      <a href="{$base}index.html" class="flex flex-col items-center gap-1">
+        <img id="logo-img" src="{$base}assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-28 w-28 rounded-full object-cover transition-all duration-500 ease-in-out">
         <p id="logo-tagline" class="text-[10px] tracking-widest mt-1 overflow-hidden">SCHMINK &amp; GLITTERTATTOO'S</p>
       </a>
       <nav class="flex items-center gap-6 text-sm">
-        <a href="index.html" class="{$homeClass}">Home</a>
-        <a href="werk.html" class="{$werkClass}">Mijn werk</a>
+        <a href="{$base}index.html" class="{$homeClass}">Home</a>
+        <a href="{$base}pages/werk.html" class="{$werkClass}">Mijn werk</a>
         {$ctaButton}
       </nav>
     </div>
@@ -304,7 +304,7 @@ HTML;
 }
 
 /** Rich footer: logo, contact details, social badges. Used by most pages. */
-function footer_full(string $taglineClass = 'font-display text-base text-pink-500'): void
+function footer_full(string $taglineClass = 'font-display text-base text-pink-500', string $base = ''): void
 {
     $mailIconPink = mail_icon_svg('size-4 text-pink-500');
     $tagline = content_config('contact.tagline');
@@ -317,7 +317,7 @@ function footer_full(string $taglineClass = 'font-display text-base text-pink-50
   <footer class="rainbow-top-border">
     <div class="max-w-5xl mx-auto px-4 py-10 flex flex-col sm:flex-row items-center justify-between gap-10 text-sm text-gray-500">
       <div class="flex items-center gap-3">
-        <img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-12 w-12 rounded-full object-cover">
+        <img src="{$base}assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-12 w-12 rounded-full object-cover">
         <p class="{$taglineClass}">{$tagline}</p>
       </div>
       <div class="space-y-3 text-center sm:text-left">
@@ -347,26 +347,12 @@ function footer_full(string $taglineClass = 'font-display text-base text-pink-50
 HTML;
 }
 
-/** Plain dark footer, used on the still-placeholder werk-* album pages. */
-function footer_simple(): void
-{
-    $tekst = content_config('footerSimple.tekst');
-    echo <<<HTML
-
-  <footer class="bg-gray-900 text-gray-300 text-center py-8 px-4 text-sm">
-    <div class="max-w-5xl mx-auto">
-      <p>{$tekst}</p>
-    </div>
-  </footer>
-HTML;
-}
-
-function script_js(): void
+function script_js(string $base = ''): void
 {
     echo <<<HTML
 
-  <script src="config.js"></script>
-  <script src="script.js"></script>
+  <script src="{$base}MAKE_CHANGES_HERE/config.js"></script>
+  <script src="{$base}script.js"></script>
 HTML;
 }
 
@@ -377,7 +363,7 @@ HTML;
  * Adding a photo is just dropping the next-numbered file in that folder —
  * no config file, no code, no PHP rebuild.
  */
-function werk_gallery_body(string $heading, string $folderPath, bool $fontDisplay = false): void
+function werk_gallery_body(string $heading, string $folderPath, bool $fontDisplay = false, string $base = ''): void
 {
     $headingClass = $fontDisplay ? 'font-display text-3xl mt-4 mb-10 text-pink-600' : 'text-3xl font-bold mt-4 mb-10';
     $path = htmlspecialchars($folderPath, ENT_QUOTES);
@@ -385,7 +371,7 @@ function werk_gallery_body(string $heading, string $folderPath, bool $fontDispla
 
   <section class="py-16 px-4">
     <div class="max-w-5xl mx-auto">
-      <a href="index.html#werk" class="text-sm text-pink-600 font-normal">&larr; Terug</a>
+      <a href="{$base}index.html#werk" class="text-sm text-pink-600 font-normal">&larr; Terug</a>
       <h1 class="{$headingClass}">{$heading}</h1>
       <div data-numbered-gallery="{$path}" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Foto's laden&hellip;</div>

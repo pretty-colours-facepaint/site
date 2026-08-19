@@ -1,7 +1,8 @@
 <?php
 $title = "Aanvraag doen — Pretty Colours Facepaint";
 $description = "Vraag vrijblijvend schminken of glittertattoo's aan voor je kinderfeestje, evenement of bedrijf rond Hoofddorp.";
-$canonical = "https://prettycolours-facepaint.nl/aanvraag.html";
+$canonical = "https://prettycolours-facepaint.nl/pages/aanvraag.html";
+$base = '../';
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -9,7 +10,7 @@ $canonical = "https://prettycolours-facepaint.nl/aanvraag.html";
 <?php
 head_open($title, $description, $canonical);
 og_title_description_url($title, $description, $canonical);
-favicon_and_tailwind();
+favicon_and_tailwind($base);
 google_font_pacifico();
 tailwind_cdn();
 custom_style(fontDisplay: true, rainbowFill: true);
@@ -17,11 +18,11 @@ custom_style(fontDisplay: true, rainbowFill: true);
 
 </head>
 <body class="font-sans text-gray-700 bg-white">
-<?php site_header(); ?>
+<?php site_header(base: $base); ?>
 
   <!-- Contact form -->
   <section id="contact" class="max-w-lg mx-auto px-4 py-16">
-    <a href="index.html" class="text-sm text-pink-600 font-normal">&larr; Terug</a>
+    <a href="<?= $base ?>index.html" class="text-sm text-pink-600 font-normal">&larr; Terug</a>
     <h1 class="font-display text-3xl text-center mt-6 mb-2 text-pink-600"><?= content_config('aanvraag.titel') ?></h1>
     <p class="text-gray-500 text-center text-sm mb-8"><?= content_config('aanvraag.intro') ?></p>
 
@@ -53,8 +54,8 @@ custom_style(fontDisplay: true, rainbowFill: true);
       <?php rainbow_button(content_config('aanvraag.knop'), 'solid', type: 'submit', extraClass: 'w-full py-4 font-semibold'); echo "\n      "; ?><p id="form-status" class="text-sm text-center"></p>
     </form>
   </section>
-<?php footer_full(); ?>
-<?php script_js(); ?>
+<?php footer_full(base: $base); ?>
+<?php script_js($base); ?>
 
 </body>
 </html>

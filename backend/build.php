@@ -1,6 +1,8 @@
 <?php
 /**
- * Renders backend/pages/*.php to the static .html files at the repo root.
+ * Renders backend/pages/*.php to static .html files: index.php goes to the
+ * repo root, everything else goes to /pages/ — so the root only ever holds
+ * index.html plus the folders people are meant to touch.
  * Run after editing anything under backend/: php backend/build.php
  */
 
@@ -11,13 +13,17 @@ $pagesDir = __DIR__ . '/pages';
 
 $pages = [
     'index.php' => 'index.html',
-    'prijzen.php' => 'prijzen.html',
-    'aanvraag.php' => 'aanvraag.html',
-    'werk.php' => 'werk.html',
-    'werk-schminken.php' => 'werk-schminken.html',
-    'werk-glittertattoos.php' => 'werk-glittertattoos.html',
-    'werk-feesten-events.php' => 'werk-feesten-events.html',
+    'prijzen.php' => 'pages/prijzen.html',
+    'aanvraag.php' => 'pages/aanvraag.html',
+    'werk.php' => 'pages/werk.html',
+    'werk-schminken.php' => 'pages/werk-schminken.html',
+    'werk-glittertattoos.php' => 'pages/werk-glittertattoos.html',
+    'werk-feesten-events.php' => 'pages/werk-feesten-events.html',
 ];
+
+if (!is_dir($root . '/pages')) {
+    mkdir($root . '/pages');
+}
 
 foreach ($pages as $source => $output) {
     ob_start();
