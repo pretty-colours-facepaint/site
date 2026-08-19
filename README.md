@@ -30,7 +30,9 @@ Each album page (`pages/werk-schminken.html`, `pages/werk-glittertattoos.html`, 
 - `MAAK_HIER_AANPASSINGEN/portfolio/ster/`
 - `MAAK_HIER_AANPASSINGEN/portfolio/ballon/`
 
-To add a photo: drop a `.jpg`, `.jpeg`, or `.png` file named with the next free number (`2.jpg`, `3.jpg`, ...) into the right folder — numbers don't need to be consecutive. To remove one: delete it. The browser checks for the numbered files itself on page load, so this needs **no PHP rebuild at all** — the change is live as soon as it's pushed.
+To add a photo: drop a `.jpg`, `.jpeg`, or `.png` file named with the next free number (`2.jpg`, `3.jpg`, ...) into the right folder. To remove one: delete it. The browser checks for the numbered files itself on page load, so this needs **no PHP rebuild at all** — the change is live as soon as it's pushed.
+
+The browser checks numbers one at a time (trying `.jpg`, `.jpeg`, then `.png` for each) and **stops after 2 numbers in a row are missing** — so a single gap in the numbering is fine, but not two consecutive ones. This is deliberate: an earlier version fired off up to 200 × 3 image requests per gallery in parallel on every page load, which was enough to trip rate limits on some hosting. Stopping early after 2 misses keeps the request count proportional to how many photos actually exist.
 
 The 4 cover photos shown on the homepage and prices page are set by path in `site-text-content.js` (`covers.hartIcon`, `covers.bliksemIcon`, `covers.sterIcon`, `covers.portret`) — 3 of them just point at a photo already sitting in one of the `portfolio/` folders above, and `portret` points at `MAAK_HIER_AANPASSINGEN/portret.png`. Change the path in `site-text-content.js` to swap which photo is used as a cover.
 

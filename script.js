@@ -110,12 +110,18 @@ document.querySelectorAll('[data-social-badges]').forEach((container) => {
 
 // ============================================================
 // GENUMMERDE FOTOGALERIJEN — voor elke [data-numbered-gallery="pad/naar/map/"]
-// wordt geprobeerd pad/naar/map/1 t/m map/16 te laden, als .jpg, .jpeg of
-// .png (wat er staat); wat bestaat, wordt getoond. Een foto toevoegen is
-// dus alleen het bestand met het eerstvolgende nummer in de map zetten —
-// geen configbestand nodig.
+// wordt, één nummer per keer, geprobeerd pad/naar/map/1, map/2, enz. te
+// laden, als .jpg, .jpeg of .png (wat er staat); wat bestaat, wordt
+// getoond. Een foto toevoegen is dus alleen het bestand met het
+// eerstvolgende nummer in de map zetten — geen configbestand nodig.
+//
+// Na 2 nummers op rij die niet bestaan (in geen enkele extensie) stopt het
+// zoeken — dus 1 losse gat in de nummering mag, maar niet meer. Dit
+// voorkomt dat er per galerij honderden foto's tegelijk geprobeerd worden
+// (wat bij sommige hosting rate limits raakte).
 // ============================================================
 const MAX_GALLERY_PHOTOS = 200;
+const MAX_CONSECUTIVE_MISSES = 2;
 const GALLERY_EXTENSIONS = ['jpg', 'jpeg', 'png'];
 
 function photoExists(src) {
@@ -127,42 +133,53 @@ function photoExists(src) {
   });
 }
 
-function findNumberedPhoto(prefix, number) {
-  return GALLERY_EXTENSIONS.reduce(
-    (promise, ext) =>
-      promise.then((found) => found || photoExists(`${prefix}${number}.${ext}`)),
-    Promise.resolve(null)
-  );
+async function findNumberedPhoto(prefix, number) {
+  for (const ext of GALLERY_EXTENSIONS) {
+    const found = await photoExists(`${prefix}${number}.${ext}`);
+    if (found) {
+      return found;
+    }
+  }
+  return null;
 }
 
-document.querySelectorAll('[data-numbered-gallery]').forEach((gallery) => {
+async function loadNumberedGallery(gallery) {
   const prefix = gallery.dataset.numberedGallery;
   const maxPreview = parseInt(gallery.dataset.numberedGalleryMax, 10) || null;
-  const checks = [];
+  const photos = [];
+  let consecutiveMisses = 0;
+
   for (let number = 1; number <= MAX_GALLERY_PHOTOS; number += 1) {
-    checks.push(findNumberedPhoto(prefix, number));
+    const found = await findNumberedPhoto(prefix, number);
+    if (found) {
+      consecutiveMisses = 0;
+      photos.push(found);
+      if (maxPreview && photos.length >= maxPreview) {
+        break;
+      }
+    } else {
+      consecutiveMisses += 1;
+      if (consecutiveMisses >= MAX_CONSECUTIVE_MISSES) {
+        break;
+      }
+    }
   }
 
-  Promise.all(checks).then((results) => {
-    let photos = results.filter((src) => src !== null);
-    if (maxPreview) {
-      photos = photos.slice(0, maxPreview);
-    }
+  if (photos.length === 0) {
+    gallery.innerHTML =
+      '<p class="col-span-full text-center text-gray-400 text-sm">Nog geen foto\'s toegevoegd.</p>';
+    return;
+  }
 
-    if (photos.length === 0) {
-      gallery.innerHTML =
-        '<p class="col-span-full text-center text-gray-400 text-sm">Nog geen foto\'s toegevoegd.</p>';
-      return;
-    }
+  gallery.innerHTML = photos
+    .map(
+      (src) =>
+        `<img src="${escapeHtml(src)}" alt="" class="aspect-square w-full object-cover rounded-lg shadow-sm">`
+    )
+    .join('');
+}
 
-    gallery.innerHTML = photos
-      .map(
-        (src) =>
-          `<img src="${escapeHtml(src)}" alt="" class="aspect-square w-full object-cover rounded-lg shadow-sm">`
-      )
-      .join('');
-  });
-});
+document.querySelectorAll('[data-numbered-gallery]').forEach(loadNumberedGallery);
 
 // Under construction overlay, dismissed and remembered via localStorage.
 // Fully switched off via SITE_CONFIG.overlay.actief: false in site-text-content.js —
