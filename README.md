@@ -22,3 +22,13 @@ npx serve .
 ## Deploying
 
 This is a static site — deploy the folder as-is to GitHub Pages, Netlify, Vercel, etc.
+
+## Editing pages
+
+The `.html` files are generated from templates in `backend/` (PHP, used only to build — nothing server-side runs in production). Edit the shared markup in `backend/partials/layout.php` or a page in `backend/pages/`, then rebuild:
+
+```
+make build
+```
+
+This overwrites the `.html` files at the repo root. Commit both the `backend/` changes and the regenerated `.html` files.

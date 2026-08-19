@@ -4,22 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Schminken — Pretty Colours Facepaint</title>
+  <meta name="description" content="Voorbeelden van schminkwerk door Pretty Colours Facepaint, voor kinderfeestjes en evenementen rond Hoofddorp.">
+  <link rel="canonical" href="https://prettycolours-facepaint.nl/werk-schminken.html">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Schminken — Pretty Colours Facepaint">
+  <meta property="og:description" content="Voorbeelden van schminkwerk door Pretty Colours Facepaint, voor kinderfeestjes en evenementen rond Hoofddorp.">
+  <meta property="og:url" content="https://prettycolours-facepaint.nl/werk-schminken.html">
   <link rel="icon" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .font-display {
+      font-family: 'Pacifico', cursive;
+    }
+  </style>
 </head>
 <body class="font-sans text-gray-800">
 
-  <header class="sticky top-0 bg-white/90 backdrop-blur shadow-sm z-10">
-    <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-2">
-      <a href="index.html"><img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-16 w-16 rounded-full object-cover"></a>
-      <nav class="hidden sm:flex gap-6 text-sm font-medium">
+  <header class="sticky top-0 bg-white/90 backdrop-blur border-b z-50">
+    <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-6 flex-wrap gap-3">
+      <a href="index.html" class="flex flex-col items-center gap-1">
+        <img id="logo-img" src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-28 w-28 rounded-full object-cover transition-all duration-500 ease-in-out">
+        <p id="logo-tagline" class="text-[10px] tracking-widest text-gray-400 mt-1 overflow-hidden">SCHMINK &amp; GLITTERTATTOO'S</p>
+      </a>
+      <nav class="flex items-center gap-6 text-sm">
         <a href="index.html#werk" class="hover:text-pink-600">Bekijk mijn werk</a>
         <a href="index.html#over" class="hover:text-pink-600">Over mij</a>
-        <a href="index.html#contact" class="hover:text-pink-600">Contact</a>
+        <a href="aanvraag.html" class="border border-pink-300 text-pink-600 rounded-full px-5 py-2.5 font-medium hover:bg-pink-50">AANVRAAG DOEN</a>
       </nav>
     </div>
   </header>
-
   <section class="py-16 px-4">
     <div class="max-w-5xl mx-auto">
       <a href="index.html#werk" class="text-sm text-pink-600 font-medium">&larr; Terug naar Bekijk mijn werk</a>
@@ -34,12 +52,26 @@
       </div>
     </div>
   </section>
-
-  <footer class="bg-gray-900 text-gray-300 text-center py-8 px-4 text-sm">
-    <div class="max-w-5xl mx-auto">
-      <p>&copy; 2026 Pretty Colours Facepaint. Placeholder footertekst.</p>
+  <!-- Footer -->
+  <footer class="border-t">
+    <div class="max-w-5xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-12 w-12 rounded-full object-cover">
+        <p class="font-display text-base text-pink-500">Kleur maakt alles leuker!</p>
+      </div>
+      <div class="space-y-1 text-center sm:text-left">
+        <p>📞 06 – 12345678</p>
+        <p>✉ info@voorbeeld.nl</p>
+        <p>📍 30 km rond Hoofddorp</p>
+      </div>
+      <div class="flex gap-3">
+        <span class="w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center text-xs">IG</span>
+        <span class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">FB</span>
+        <a href="aanvraag.html" class="w-9 h-9 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs">✉</a>
+      </div>
     </div>
   </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
