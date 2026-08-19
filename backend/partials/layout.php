@@ -173,7 +173,7 @@ function construction_overlay(): void
       <p class="text-3xl mb-3">🚧</p>
       <h2 class="font-display text-2xl text-pink-600 mb-2">Website in aanbouw</h2>
       <p class="text-sm text-gray-500 mb-6">Deze website is nog in ontwikkeling. Sommige teksten en foto's zijn nog placeholders.</p>
-      <button id="construction-dismiss" class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-6 py-3 text-sm font-medium shadow hover:opacity-90 transition">Ik snap het, ga verder</button>
+      <button id="construction-dismiss" class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-8 py-4 text-sm font-medium shadow hover:opacity-90 transition">Ik snap het, ga verder</button>
     </div>
   </div>
   <script>
@@ -207,7 +207,7 @@ function site_header(bool $onHome = false): void
       </a>
       <nav class="flex items-center gap-6 text-sm">
         <a href="index.html" class="{$homeClass}">Home</a>
-        <a href="aanvraag.html" class="rainbow-border-btn text-black rounded-full px-5 py-2.5 font-medium hover:bg-gray-50 transition">AANVRAAG DOEN</a>
+        <a href="aanvraag.html" class="rainbow-border-btn text-black rounded-full px-7 py-3.5 font-medium hover:bg-gray-50 transition">AANVRAAG DOEN</a>
       </nav>
     </div>
   </header>

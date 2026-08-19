@@ -68,8 +68,8 @@ local_business_json_ld();
 
     <!-- Two CTA buttons -->
     <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-      <a href="werk-schminken.html" class="border-2 border-pink-500 text-pink-600 rounded-full px-6 py-3 text-sm text-center font-medium hover:bg-pink-50 transition">🖼 BEKIJK MIJN WERK</a>
-      <a href="prijzen.html" class="border-2 border-purple-500 text-purple-600 rounded-full px-6 py-3 text-sm text-center font-medium hover:bg-purple-50 transition">🏷 BEKIJK DE PRIJZEN</a>
+      <a href="werk-schminken.html" class="border-2 border-pink-500 text-pink-600 rounded-full px-8 py-4 text-sm text-center font-medium hover:bg-pink-50 transition">🖼 BEKIJK MIJN WERK</a>
+      <a href="prijzen.html" class="border-2 border-purple-500 text-purple-600 rounded-full px-8 py-4 text-sm text-center font-medium hover:bg-purple-50 transition">🏷 BEKIJK DE PRIJZEN</a>
     </div>
   </section>
 
@@ -80,7 +80,7 @@ local_business_json_ld();
       <div class="text-center sm:text-left">
         <h2 class="font-display text-3xl mb-3 text-pink-600">Hoi, ik ben Sanne!</h2>
         <p class="text-sm text-gray-500 mb-6 max-w-md">Mijn naam is Sanne Lek en ik schmink op kinderfeestjes, evenementen en voor bedrijven of winkels in een straal van 30 km rond Hoofddorp.</p>
-        <a href="aanvraag.html" class="inline-block rainbow-fill-btn text-white rounded-full px-6 py-3 text-sm font-medium shadow hover:opacity-90 transition">AANVRAAG DOEN ✉</a>
+        <a href="aanvraag.html" class="inline-block rainbow-fill-btn text-white rounded-full px-8 py-4 text-sm font-medium shadow hover:opacity-90 transition">AANVRAAG DOEN ✉</a>
       </div>
     </div>
   </section>

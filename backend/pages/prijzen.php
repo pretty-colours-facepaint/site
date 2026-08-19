@@ -46,7 +46,7 @@ custom_style(fontDisplay: false);
 
     <p class="text-center text-gray-500 text-sm mt-10">Placeholder tekst: neem contact op voor een offerte op maat.</p>
     <div class="text-center mt-4">
-      <a href="aanvraag.html" class="inline-block bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-6 py-3 text-sm font-medium shadow hover:opacity-90 transition">AANVRAAG DOEN ✉</a>
+      <a href="aanvraag.html" class="inline-block bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-8 py-4 text-sm font-medium shadow hover:opacity-90 transition">AANVRAAG DOEN ✉</a>
     </div>
   </section>
 <?php footer_full('text-xs'); ?>
