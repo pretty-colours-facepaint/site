@@ -1,6 +1,22 @@
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 
+// Shrink the header logo as the page scrolls, down to a minimum size.
+const logo = document.getElementById('logo-img');
+const LOGO_MAX = 112; // px, matches h-28
+const LOGO_MIN = 48;  // px, matches h-12
+const LOGO_SHRINK_DISTANCE = 200; // px of scroll over which the shrink happens
+
+function updateLogoSize() {
+  const progress = Math.min(window.scrollY / LOGO_SHRINK_DISTANCE, 1);
+  const size = LOGO_MAX - progress * (LOGO_MAX - LOGO_MIN);
+  logo.style.height = `${size}px`;
+  logo.style.width = `${size}px`;
+}
+
+window.addEventListener('scroll', updateLogoSize, { passive: true });
+updateLogoSize();
+
 // Static Forms API key, split up so it isn't a single grep-able string in the page source.
 const keyParts = ['c2ZfYmIz', 'OTQ0OWI0', 'YWY5NDY3', 'ZGE3YjQ1', 'ZjQ4'];
 const apiKey = atob(keyParts.join(''));
