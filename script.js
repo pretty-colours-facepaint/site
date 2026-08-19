@@ -1,9 +1,11 @@
 // ============================================================
-// SITE_CONFIG — alle teksten staan in site-text-content.js, niet hier. Deze code
-// zet ze op de pagina: elk [data-config="pad.naar.tekst"] krijgt de
-// bijbehorende tekst uit site-text-content.js. Ontbreekt site-text-content.js of een waarde
-// erin, dan verschijnt een duidelijke rode foutmelding op die plek in
-// plaats van niets.
+// SITE_CONFIG — alle teksten (en de cover-fotobestandsnamen) staan in
+// site-text-content.js, niet hier. Deze code zet ze op de pagina: elk
+// [data-config="pad.naar.tekst"] krijgt de bijbehorende tekst, en elk
+// [data-config-image="pad.naar.foto"] krijgt als src de bijbehorende
+// bestandsnaam (achter data-config-image-prefix geplakt). Ontbreekt
+// site-text-content.js of een waarde erin, dan verschijnt een duidelijke
+// rode foutmelding op die plek in plaats van niets.
 // ============================================================
 function escapeHtml(text) {
   const div = document.createElement('div');
@@ -14,6 +16,15 @@ function escapeHtml(text) {
 function configErrorHtml(message) {
   return `<span style="color:#dc2626;font-weight:bold;">${escapeHtml(message)}</span>`;
 }
+
+// ERROR_CONTENT (assets/error-content.js) fills the content-load error
+// overlay's text — kept out of site-text-content.js on purpose, since it
+// has to show up even when site-text-content.js is the thing that's broken.
+document.querySelectorAll('[data-error-config]').forEach((el) => {
+  const key = el.dataset.errorConfig;
+  const value = typeof ERROR_CONTENT === 'undefined' ? undefined : ERROR_CONTENT[key];
+  el.textContent = typeof value === 'string' ? value : '';
+});
 
 function getConfigValue(path) {
   return path.split('.').reduce(
@@ -48,6 +59,17 @@ if (typeof SITE_CONFIG === 'undefined') {
     }
     el.innerHTML = escapeHtml(value).replace(/&lt;br\s*\/?&gt;/gi, '<br>');
   });
+
+  document.querySelectorAll('[data-config-image]').forEach((el) => {
+    const path = el.dataset.configImage;
+    const prefix = el.dataset.configImagePrefix || '';
+    const value = getConfigValue(path);
+    if (typeof value !== 'string') {
+      el.alt = `Ontbrekende foto in site-text-content.js: ${path}`;
+      return;
+    }
+    el.src = prefix + value;
+  });
 }
 
 // ============================================================
@@ -55,10 +77,10 @@ if (typeof SITE_CONFIG === 'undefined') {
 // van { titel, logo, link, kleur }). Ontbreekt de lijst, is hij leeg, of
 // mist een badge titel/logo/link, dan wordt die badge simpelweg niet
 // getoond — dit is geen foutmelding-waardige situatie, badges zijn optie.
-// kleur is ook optioneel (een hex-code zoals "#E1306C"); zonder geldige
-// kleur wordt het rondje standaard grijs.
+// kleur is ook optioneel (een rgb-kleur zoals "rgb(225, 48, 108)"); zonder
+// geldige kleur wordt het rondje standaard grijs.
 // ============================================================
-const HEX_COLOR = /^#[0-9a-f]{3,8}$/i;
+const RGB_COLOR = /^rgb\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*\)$/i;
 
 document.querySelectorAll('[data-social-badges]').forEach((container) => {
   const socials =
@@ -74,7 +96,7 @@ document.querySelectorAll('[data-social-badges]').forEach((container) => {
       const logo = escapeHtml(social.logo);
       const link = escapeHtml(social.link);
       const heeftKleur =
-        typeof social.kleur === 'string' && HEX_COLOR.test(social.kleur);
+        typeof social.kleur === 'string' && RGB_COLOR.test(social.kleur);
       const klasse = heeftKleur
         ? 'w-9 h-9 rounded-full text-white flex items-center justify-center text-xs hover:opacity-90 transition'
         : 'w-9 h-9 rounded-full bg-gray-800 text-white flex items-center justify-center text-xs hover:opacity-90 transition';
@@ -87,12 +109,14 @@ document.querySelectorAll('[data-social-badges]').forEach((container) => {
 });
 
 // ============================================================
-// GENUMMERDE FOTOGALERIJEN — voor elke [data-numbered-gallery="pad/naar/foto"]
-// wordt geprobeerd pad/naar/foto1.jpg t/m foto16.jpg te laden; wat bestaat,
-// wordt getoond. Een foto toevoegen is dus alleen het bestand met het
-// eerstvolgende nummer in de map zetten — geen configbestand nodig.
+// GENUMMERDE FOTOGALERIJEN — voor elke [data-numbered-gallery="pad/naar/map/"]
+// wordt geprobeerd pad/naar/map/1 t/m map/16 te laden, als .jpg, .jpeg of
+// .png (wat er staat); wat bestaat, wordt getoond. Een foto toevoegen is
+// dus alleen het bestand met het eerstvolgende nummer in de map zetten —
+// geen configbestand nodig.
 // ============================================================
 const MAX_GALLERY_PHOTOS = 200;
+const GALLERY_EXTENSIONS = ['jpg', 'jpeg', 'png'];
 
 function photoExists(src) {
   return new Promise((resolve) => {
@@ -103,12 +127,20 @@ function photoExists(src) {
   });
 }
 
+function findNumberedPhoto(prefix, number) {
+  return GALLERY_EXTENSIONS.reduce(
+    (promise, ext) =>
+      promise.then((found) => found || photoExists(`${prefix}${number}.${ext}`)),
+    Promise.resolve(null)
+  );
+}
+
 document.querySelectorAll('[data-numbered-gallery]').forEach((gallery) => {
   const prefix = gallery.dataset.numberedGallery;
   const maxPreview = parseInt(gallery.dataset.numberedGalleryMax, 10) || null;
   const checks = [];
   for (let number = 1; number <= MAX_GALLERY_PHOTOS; number += 1) {
-    checks.push(photoExists(`${prefix}${number}.jpg`));
+    checks.push(findNumberedPhoto(prefix, number));
   }
 
   Promise.all(checks).then((results) => {

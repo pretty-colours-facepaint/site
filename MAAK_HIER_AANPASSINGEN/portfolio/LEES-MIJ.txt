@@ -1,4 +1,6 @@
 FOTO'S TOEVOEGEN — GEEN CODE NODIG
 ====================================
 
-Zet een foto in de submap van de bijbehorende pagina (schminken/, glittertattoos/ of feesten-events/) en noem hem foto1.jpg, foto2.jpg, enzovoort — tot maximaal foto16.jpg. Verwijderen kan door de foto uit de map te halen; de nummers hoeven niet aaneengesloten te zijn. De website leest deze map rechtstreeks, dus geen "build" nodig — gewoon opslaan en online zetten.
+Zet een foto in de submap van de bijbehorende pagina (kwast/ voor schminken, ster/ voor glittertattoo's, ballon/ voor feestjes & evenementen) en noem hem 1, 2, enzovoort — tot maximaal 199. De bestandsnaam mag eindigen op .jpg, .jpeg of .png. Verwijderen kan door de foto uit de map te halen; de nummers hoeven niet aaneengesloten te zijn.
+
+In elke submap staat ook een cover.jpg — dat is de foto die op de voorpagina en de prijzenpagina wordt getoond (zie "covers" in site-text-content.js). Die telt niet mee als gallerijfoto, dus laat de naam "cover" met rust en gebruik alleen nummers voor de gallerij zelf.

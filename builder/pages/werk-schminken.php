@@ -1,7 +1,7 @@
 <?php
-$title = "Glittertattoo's — Pretty Colours Facepaint";
-$description = "Voorbeelden van glittertattoo's door Pretty Colours Facepaint, voor kinderfeestjes en evenementen rond Hoofddorp.";
-$canonical = "https://prettycolours-facepaint.nl/pages/werk-glittertattoos.html";
+$title = "Schminken — Pretty Colours Facepaint";
+$description = "Voorbeelden van schminkwerk door Pretty Colours Facepaint, voor kinderfeestjes en evenementen rond Hoofddorp.";
+$canonical = "https://prettycolours-facepaint.nl/pages/werk-schminken.html";
 $base = '../';
 ?>
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ custom_style(fontDisplay: true);
 </head>
 <body class="font-sans text-gray-800">
 <?php site_header(base: $base); ?>
-<?php werk_gallery_body(content_config('werkPaginas.glittertattoos'), $base . 'MAAK_HIER_AANPASSINGEN/portfolio/glittertattoos/foto', fontDisplay: true, base: $base); ?>
+<?php werk_gallery_body(content_config('werkPaginas.schminken'), $base . 'MAAK_HIER_AANPASSINGEN/portfolio/kwast/', fontDisplay: true, base: $base); ?>
 <?php footer_full(base: $base); ?>
 <?php script_js($base); ?>
 

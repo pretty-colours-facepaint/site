@@ -1,9 +1,9 @@
 <?php
 /**
- * Renders backend/pages/*.php to static .html files: index.php goes to the
+ * Renders builder/pages/*.php to static .html files: index.php goes to the
  * repo root, everything else goes to /pages/ — so the root only ever holds
  * index.html plus the folders people are meant to touch.
- * Run after editing anything under backend/: php backend/build.php
+ * Run after editing anything under builder/: php builder/build.php
  */
 
 require __DIR__ . '/partials/layout.php';

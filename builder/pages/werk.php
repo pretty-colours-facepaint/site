@@ -29,21 +29,21 @@ custom_style(fontDisplay: true);
 werk_overzicht_kaart(
     content_config('werkOverzicht.schminken.titel'),
     content_config('werkOverzicht.schminken.tekst'),
-    $base . 'MAAK_HIER_AANPASSINGEN/portfolio/schminken/foto',
+    $base . 'MAAK_HIER_AANPASSINGEN/portfolio/kwast/',
     $base . 'pages/werk-schminken.html',
     'text-pink-600'
 );
 werk_overzicht_kaart(
     content_config('werkOverzicht.glittertattoos.titel'),
     content_config('werkOverzicht.glittertattoos.tekst'),
-    $base . 'MAAK_HIER_AANPASSINGEN/portfolio/glittertattoos/foto',
+    $base . 'MAAK_HIER_AANPASSINGEN/portfolio/ster/',
     $base . 'pages/werk-glittertattoos.html',
     'text-purple-600'
 );
 werk_overzicht_kaart(
     content_config('werkOverzicht.feestenEvents.titel'),
     content_config('werkOverzicht.feestenEvents.tekst'),
-    $base . 'MAAK_HIER_AANPASSINGEN/portfolio/feesten-events/foto',
+    $base . 'MAAK_HIER_AANPASSINGEN/portfolio/ballon/',
     $base . 'pages/werk-feesten-events.html',
     'text-green-600'
 );

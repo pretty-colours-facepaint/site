@@ -1,19 +1,35 @@
 <?php
 /**
  * Shared head/header/footer markup for every page.
- * Pages under backend/pages/ call these instead of repeating the HTML.
+ * Pages under builder/pages/ call these instead of repeating the HTML.
  */
 
 /**
  * Renders a placeholder that the browser fills in at runtime from
  * site-text-content.js (see script.js) — the text at SITE_CONFIG.<path>, dotted
- * (e.g. content_config('prijzen.hart.prijs')). Editing site-text-content.js needs
- * no PHP rebuild: the browser reads it directly on every page load.
+ * (e.g. content_config('prijzen.schminken.prijs')). Editing site-text-content.js
+ * needs no PHP rebuild: the browser reads it directly on every page load.
  */
 function content_config(string $path): string
 {
     $escaped = htmlspecialchars($path, ENT_QUOTES);
     return "<span data-config=\"{$escaped}\"></span>";
+}
+
+/**
+ * Renders the data attributes for an <img> whose src the browser fills in
+ * at runtime from site-text-content.js — the path at SITE_CONFIG.<path>
+ * (dotted), resolved against MAAK_HIER_AANPASSINGEN/. Same runtime pattern
+ * as content_config(), but for an image source instead of text, so the
+ * cover photo's path is editable without a PHP rebuild.
+ *
+ * Usage: <img <?= content_config_image('covers.hartIcon', $base) ?> alt="...">
+ */
+function content_config_image(string $path, string $base = ''): string
+{
+    $escapedPath = htmlspecialchars($path, ENT_QUOTES);
+    $escapedPrefix = htmlspecialchars($base . 'MAAK_HIER_AANPASSINGEN/', ENT_QUOTES);
+    return "data-config-image=\"{$escapedPath}\" data-config-image-prefix=\"{$escapedPrefix}\"";
 }
 
 function head_open(string $title, string $description, string $canonical, ?string $ogTitle = null, ?string $ogDescription = null): void
@@ -246,11 +262,12 @@ HTML;
 
 /**
  * Full-page, non-dismissable error overlay shown only when the page content
- * failed to load (SITE_CONFIG missing — see script.js). Text is hardcoded
- * here rather than sourced from site-text-content.js, since that's exactly
- * what failed to load. Hidden by default; script.js unhides it. There is no
- * close button and no click-away handler on purpose — a visitor can't get
- * rid of it, only a dev fixing the underlying problem and reloading does.
+ * failed to load (SITE_CONFIG missing — see script.js). Text comes from
+ * assets/error-content.js (ERROR_CONTENT), not site-text-content.js, since
+ * that's exactly what failed to load. Hidden by default; script.js unhides
+ * it. There is no close button and no click-away handler on purpose — a
+ * visitor can't get rid of it, only a dev fixing the underlying problem and
+ * reloading does.
  */
 function content_error_overlay(): void
 {
@@ -260,8 +277,8 @@ function content_error_overlay(): void
   <div id="content-error-overlay" class="hidden fixed inset-0 z-[110] bg-white/95 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-white border rounded-2xl shadow-lg max-w-sm w-full p-6 text-center">
       <p class="text-3xl mb-3">🎨</p>
-      <h2 class="font-display text-2xl text-pink-600 mb-2">Er is wat verf in het systeem terechtgekomen</h2>
-      <p class="text-sm text-gray-500">We zijn druk bezig om alles weer schoon te maken. Kom later nog eens terug.</p>
+      <h2 class="font-display text-2xl text-pink-600 mb-2" data-error-config="titel"></h2>
+      <p class="text-sm text-gray-500" data-error-config="tekst"></p>
     </div>
   </div>
 HTML;
@@ -304,7 +321,7 @@ function site_header(bool $onHome = false, string $base = ''): void
 {
     $homeClass = 'text-pink-600' . ($onHome ? ' font-bold underline underline-offset-4' : ' hover:underline hover:underline-offset-4');
     ob_start();
-    rainbow_button(content_config('contact.ctaAanvraag'), 'outline', href: "{$base}pages/aanvraag.html", extraClass: 'px-7 py-3.5 font-medium');
+    rainbow_button(content_config('contact.callToAction'), 'outline', href: "{$base}pages/aanvraag.html", extraClass: 'px-7 py-3.5 font-medium');
     $ctaButton = ob_get_clean();
     content_error_overlay();
     echo <<<HTML
@@ -373,6 +390,7 @@ function script_js(string $base = ''): void
 {
     echo <<<HTML
 
+  <script src="{$base}assets/error-content.js"></script>
   <script src="{$base}MAAK_HIER_AANPASSINGEN/site-text-content.js"></script>
   <script src="{$base}script.js"></script>
 HTML;
