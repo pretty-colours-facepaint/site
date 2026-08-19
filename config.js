@@ -74,7 +74,8 @@ const SITE_CONFIG = {
   // een link naar de volledige album-pagina van die categorie).
   werkOverzicht: {
     titel: 'Mijn werk',
-    intro: "Een greep uit eerder werk: schminken, glittertattoo's en feestjes & evenementen.",
+    intro:
+      "Een greep uit eerder werk: schminken, glittertattoo's en feestjes & evenementen.",
     schminken: {
       titel: 'Schminken',
       tekst: 'Creatieve en kleurrijke schmink voor jong en oud.',
@@ -85,7 +86,8 @@ const SITE_CONFIG = {
     },
     feestenEvents: {
       titel: 'Feestjes & Evenementen',
-      tekst: 'Voor kinderfeestjes, schoolfeesten, markten en andere gelegenheden.',
+      tekst:
+        'Voor kinderfeestjes, schoolfeesten, markten en andere gelegenheden.',
     },
   },
 
@@ -102,7 +104,7 @@ const SITE_CONFIG = {
 
   // De simpele voettekst onderaan de glittertattoo- en feesten-pagina.
   footerSimple: {
-    tekst: '© 2026 Pretty Colours Facepaint. Placeholder footertekst.',
+    tekst: '© 2026 Pretty Colours Facepaint.',
   },
 
   // Het aanvraagformulier.
@@ -123,7 +125,17 @@ const SITE_CONFIG = {
   // kleur wordt het rondje grijs. Een badge weglaten of de hele lijst leeg
   // maken ([]) zorgt dat hij simpelweg niet getoond wordt.
   socials: [
-    { titel: 'Instagram', logo: 'IG', link: 'https://instagram.com/', kleur: '#E1306C' },
-    { titel: 'Facebook', logo: 'FB', link: 'https://facebook.com/', kleur: '#1877F2' },
+    {
+      titel: 'Instagram',
+      logo: 'IG',
+      link: 'https://instagram.com/',
+      kleur: '#E1306C',
+    },
+    {
+      titel: 'Facebook',
+      logo: 'FB',
+      link: 'https://facebook.com/',
+      kleur: '#1877F2',
+    },
   ],
 };
