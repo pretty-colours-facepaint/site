@@ -188,9 +188,14 @@ function construction_overlay(): void
 HTML;
 }
 
-/** Header used on every page: same logo, same nav, same CTA everywhere. */
-function site_header(): void
+/**
+ * Header used on every page: same logo, same nav, same CTA everywhere.
+ *
+ * @param bool $onHome  Underlines the "Home" link when it's the current page.
+ */
+function site_header(bool $onHome = false): void
 {
+    $homeClass = 'text-pink-600' . ($onHome ? ' font-bold underline underline-offset-4' : ' hover:underline hover:underline-offset-4');
     echo <<<HTML
 
   <!-- Header -->
@@ -201,7 +206,7 @@ function site_header(): void
         <p id="logo-tagline" class="text-[10px] tracking-widest text-gray-400 mt-1 overflow-hidden">SCHMINK &amp; GLITTERTATTOO'S</p>
       </a>
       <nav class="flex items-center gap-6 text-sm">
-        <a href="index.html" class="hover:text-pink-600">Home</a>
+        <a href="index.html" class="{$homeClass}">Home</a>
         <a href="aanvraag.html" class="rainbow-border-btn text-black rounded-full px-5 py-2.5 font-medium hover:bg-gray-50 transition">AANVRAAG DOEN</a>
       </nav>
     </div>

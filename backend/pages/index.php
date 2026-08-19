@@ -26,7 +26,7 @@ local_business_json_ld();
 <?php construction_overlay(); ?>
 
   <!-- Header -->
-<?php site_header(); ?>
+<?php site_header(onHome: true); ?>
 
   <!-- Three services: icon + heading + text -->
   <section id="werk" class="max-w-5xl mx-auto px-4 pt-16 pb-14">
