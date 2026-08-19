@@ -12,7 +12,7 @@ og_title_description_url($title, $description, $canonical);
 favicon_and_tailwind();
 google_font_pacifico();
 tailwind_cdn();
-custom_style(fontDisplay: true);
+custom_style(fontDisplay: true, rainbowFill: true);
 ?>
 
 </head>
@@ -50,7 +50,7 @@ custom_style(fontDisplay: true);
         <textarea id="message" name="message" rows="5" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
       </div>
 
-      <button type="submit" class="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white font-semibold py-4 rounded-full hover:opacity-90 transition">Verstuur aanvraag</button>
+      <?php rainbow_button('Verstuur aanvraag', 'solid', type: 'submit', extraClass: 'w-full py-4 font-semibold'); ?>
       <p id="form-status" class="text-sm text-center"></p>
     </form>
   </section>

@@ -132,6 +132,39 @@ HTML;
     echo "\n  </style>";
 }
 
+/** Envelope icon markup, reused by the mail CTA and the footer's mail badge. */
+function mail_icon_svg(string $extraClass = ''): string
+{
+    $class = trim("shrink-0 {$extraClass}");
+    return <<<HTML
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="{$class}">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+          </svg>
+HTML;
+}
+
+/**
+ * The site's rainbow CTA button, in two variants: 'solid' fills the button with the
+ * rainbow gradient (white text), 'outline' keeps a white button with a thin rainbow
+ * gradient border (black text). Renders as an <a> (pass $href) or a <button> (pass $type).
+ *
+ * Requires custom_style(..., rainbowFill: true) on the page when $variant is 'solid' —
+ * the outline gradient rule is always emitted, the fill rule is opt-in.
+ */
+function rainbow_button(string $label, string $variant = 'solid', ?string $href = null, ?string $type = null, string $extraClass = ''): void
+{
+    $class = $variant === 'outline'
+        ? 'rainbow-border-btn text-black hover:bg-gray-50'
+        : 'rainbow-fill-btn text-white shadow hover:opacity-90';
+    $class = trim("{$class} rounded-full transition {$extraClass}");
+
+    if ($type !== null) {
+        echo "<button type=\"{$type}\" class=\"{$class}\">{$label}</button>";
+    } else {
+        echo "<a href=\"{$href}\" class=\"{$class}\">{$label}</a>";
+    }
+}
+
 /**
  * CSS mask (style="...") that clips an element into the shape of an SVG icon.
  * Pass the icon's inner <path ...> markup (from a 0 0 24 24 viewBox icon).
@@ -210,6 +243,9 @@ HTML;
 function site_header(bool $onHome = false): void
 {
     $homeClass = 'text-pink-600' . ($onHome ? ' font-bold underline underline-offset-4' : ' hover:underline hover:underline-offset-4');
+    ob_start();
+    rainbow_button('AANVRAAG DOEN', 'outline', href: 'aanvraag.html', extraClass: 'px-7 py-3.5 font-medium');
+    $ctaButton = ob_get_clean();
     echo <<<HTML
 
   <!-- Header -->
@@ -221,7 +257,7 @@ function site_header(bool $onHome = false): void
       </a>
       <nav class="flex items-center gap-6 text-sm">
         <a href="index.html" class="{$homeClass}">Home</a>
-        <a href="aanvraag.html" class="rainbow-border-btn text-black rounded-full px-7 py-3.5 font-medium hover:bg-gray-50 transition">AANVRAAG DOEN</a>
+        {$ctaButton}
       </nav>
     </div>
   </header>
@@ -231,6 +267,7 @@ HTML;
 /** Rich footer: logo, contact details, social badges. Used by most pages. */
 function footer_full(string $taglineClass = 'font-display text-base text-pink-500'): void
 {
+    $mailIcon = mail_icon_svg('size-4');
     echo <<<HTML
 
   <!-- Footer -->
@@ -248,9 +285,7 @@ function footer_full(string $taglineClass = 'font-display text-base text-pink-50
           06 – 12345678
         </p>
         <p class="flex items-center justify-center sm:justify-start gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 shrink-0">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-          </svg>
+          {$mailIcon}
           info@voorbeeld.nl
         </p>
         <p class="flex items-center justify-center sm:justify-start gap-1.5">
@@ -264,7 +299,7 @@ function footer_full(string $taglineClass = 'font-display text-base text-pink-50
       <div class="flex gap-3">
         <span class="w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center text-xs">IG</span>
         <span class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">FB</span>
-        <a href="aanvraag.html" class="w-9 h-9 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs">✉</a>
+        <a href="aanvraag.html" class="w-9 h-9 rounded-full bg-purple-500 text-white flex items-center justify-center">{$mailIcon}</a>
       </div>
     </div>
   </footer>

@@ -91,7 +91,7 @@ local_business_json_ld();
       <div class="text-center sm:text-left">
         <h2 class="font-display text-3xl mb-3 text-pink-600">Hoi, ik ben Sanne!</h2>
         <p class="text-sm text-gray-500 mb-6 max-w-md">Mijn naam is Sanne Lek en ik schmink op kinderfeestjes, evenementen en voor bedrijven of winkels in een straal van 30 km rond Hoofddorp.</p>
-        <a href="aanvraag.html" class="inline-block rainbow-fill-btn text-white rounded-full px-8 py-4 text-sm font-medium shadow hover:opacity-90 transition">AANVRAAG DOEN ✉</a>
+        <?php rainbow_button('AANVRAAG DOEN ' . mail_icon_svg('size-4 inline align-text-bottom'), 'solid', href: 'aanvraag.html', extraClass: 'inline-block px-8 py-4 text-sm font-medium'); ?>
       </div>
     </div>
   </section>

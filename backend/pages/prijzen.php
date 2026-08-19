@@ -12,7 +12,7 @@ head_open($title, $description, $canonical, $title, $ogDescription);
 og_title_description_url($title, $ogDescription, $canonical);
 favicon_and_tailwind();
 tailwind_cdn();
-custom_style(fontDisplay: false);
+custom_style(fontDisplay: false, rainbowFill: true);
 ?>
 
 </head>
@@ -25,19 +25,19 @@ custom_style(fontDisplay: false);
 
     <div class="grid sm:grid-cols-3 gap-6">
       <div class="border rounded-xl p-6 shadow-sm text-center">
-        <img src="assets/example-schminken.jpg" alt="Voorbeeld schminken" class="w-16 h-16 object-cover mx-auto mb-3" style="<?= mask_style('<path fill-rule="evenodd" clip-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" />') ?>">
+        <img src="assets/example-schminken.jpg" alt="Voorbeeld schminken" class="w-28 h-28 object-cover mx-auto mb-4" style="<?= mask_style('<path fill-rule="evenodd" clip-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" />') ?>">
         <h3 class="font-semibold text-lg mb-2 text-pink-600">Schminken</h3>
         <p class="text-2xl font-bold mb-2">€ 0,-</p>
         <p class="text-gray-500 text-sm">Placeholder tekst over de schminkprijzen.</p>
       </div>
       <div class="border rounded-xl p-6 shadow-sm text-center">
-        <img src="assets/example-glittertattoo.jpg" alt="Voorbeeld glittertattoo" class="w-16 h-16 object-cover mx-auto mb-3" style="<?= mask_style('<path d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z" />') ?>">
+        <img src="assets/example-glittertattoo.jpg" alt="Voorbeeld glittertattoo" class="w-28 h-28 object-cover mx-auto mb-4" style="<?= mask_style('<path d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z" />') ?>">
         <h3 class="font-semibold text-lg mb-2 text-purple-600">Glittertattoo's</h3>
         <p class="text-2xl font-bold mb-2">€ 0,-</p>
         <p class="text-gray-500 text-sm">Placeholder tekst over de glittertattoo-prijzen.</p>
       </div>
       <div class="border rounded-xl p-6 shadow-sm text-center">
-        <img src="assets/example-feest.jpg" alt="Voorbeeld feest" class="w-16 h-16 object-cover mx-auto mb-3" style="<?= mask_style('<path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />') ?>">
+        <img src="assets/example-feest.jpg" alt="Voorbeeld feest" class="w-28 h-28 object-cover mx-auto mb-4" style="<?= mask_style('<path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />') ?>">
         <h3 class="font-semibold text-lg mb-2 text-green-600">Feestjes &amp; evenementen</h3>
         <p class="text-2xl font-bold mb-2">€ 0,-</p>
         <p class="text-gray-500 text-sm">Placeholder tekst over de prijzen voor feestjes en evenementen.</p>
@@ -46,7 +46,7 @@ custom_style(fontDisplay: false);
 
     <p class="text-center text-gray-500 text-sm mt-10">Placeholder tekst: neem contact op voor een offerte op maat.</p>
     <div class="text-center mt-4">
-      <a href="aanvraag.html" class="inline-block bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-8 py-4 text-sm font-medium shadow hover:opacity-90 transition">AANVRAAG DOEN ✉</a>
+      <?php rainbow_button('AANVRAAG DOEN ' . mail_icon_svg('size-4 inline align-text-bottom'), 'solid', href: 'aanvraag.html', extraClass: 'inline-block px-8 py-4 text-sm font-medium'); ?>
     </div>
   </section>
 <?php footer_full('text-xs'); ?>

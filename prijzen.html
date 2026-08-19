@@ -31,6 +31,9 @@
       mask-composite: exclude;
       pointer-events: none;
     }
+    .rainbow-fill-btn {
+      background: linear-gradient(90deg, #f43f5e, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6, #ec4899);
+    }
   </style>
 </head>
 <body class="font-sans text-gray-700 bg-white">
@@ -44,7 +47,7 @@
       </a>
       <nav class="flex items-center gap-6 text-sm">
         <a href="index.html" class="text-pink-600 hover:underline hover:underline-offset-4">Home</a>
-        <a href="aanvraag.html" class="rainbow-border-btn text-black rounded-full px-7 py-3.5 font-medium hover:bg-gray-50 transition">AANVRAAG DOEN</a>
+        <a href="aanvraag.html" class="rainbow-border-btn text-black hover:bg-gray-50 rounded-full transition px-7 py-3.5 font-medium">AANVRAAG DOEN</a>
       </nav>
     </div>
   </header>
@@ -54,19 +57,19 @@
 
     <div class="grid sm:grid-cols-3 gap-6">
       <div class="border rounded-xl p-6 shadow-sm text-center">
-        <img src="assets/example-schminken.jpg" alt="Voorbeeld schminken" class="w-16 h-16 object-cover mx-auto mb-3" style="mask-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC43ODggMy4yMWMuNDQ4LTEuMDc3IDEuOTc2LTEuMDc3IDIuNDI0IDBsMi4wODIgNS4wMDYgNS40MDQuNDM0YzEuMTY0LjA5MyAxLjYzNiAxLjU0NS43NDkgMi4zMDVsLTQuMTE3IDMuNTI3IDEuMjU3IDUuMjczYy4yNzEgMS4xMzYtLjk2NCAyLjAzMy0xLjk2IDEuNDI1TDEyIDE4LjM1NCA3LjM3MyAyMS4xOGMtLjk5Ni42MDgtMi4yMzEtLjI5LTEuOTYtMS40MjVsMS4yNTctNS4yNzMtNC4xMTctMy41MjdjLS44ODctLjc2LS40MTUtMi4yMTIuNzQ5LTIuMzA1bDUuNDA0LS40MzQgMi4wODItNS4wMDVaIiAvPjwvc3ZnPg==');-webkit-mask-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC43ODggMy4yMWMuNDQ4LTEuMDc3IDEuOTc2LTEuMDc3IDIuNDI0IDBsMi4wODIgNS4wMDYgNS40MDQuNDM0YzEuMTY0LjA5MyAxLjYzNiAxLjU0NS43NDkgMi4zMDVsLTQuMTE3IDMuNTI3IDEuMjU3IDUuMjczYy4yNzEgMS4xMzYtLjk2NCAyLjAzMy0xLjk2IDEuNDI1TDEyIDE4LjM1NCA3LjM3MyAyMS4xOGMtLjk5Ni42MDgtMi4yMzEtLjI5LTEuOTYtMS40MjVsMS4yNTctNS4yNzMtNC4xMTctMy41MjdjLS44ODctLjc2LS40MTUtMi4yMTIuNzQ5LTIuMzA1bDUuNDA0LS40MzQgMi4wODItNS4wMDVaIiAvPjwvc3ZnPg==');mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center;mask-size:contain;-webkit-mask-size:contain;">
+        <img src="assets/example-schminken.jpg" alt="Voorbeeld schminken" class="w-28 h-28 object-cover mx-auto mb-4" style="mask-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC43ODggMy4yMWMuNDQ4LTEuMDc3IDEuOTc2LTEuMDc3IDIuNDI0IDBsMi4wODIgNS4wMDYgNS40MDQuNDM0YzEuMTY0LjA5MyAxLjYzNiAxLjU0NS43NDkgMi4zMDVsLTQuMTE3IDMuNTI3IDEuMjU3IDUuMjczYy4yNzEgMS4xMzYtLjk2NCAyLjAzMy0xLjk2IDEuNDI1TDEyIDE4LjM1NCA3LjM3MyAyMS4xOGMtLjk5Ni42MDgtMi4yMzEtLjI5LTEuOTYtMS40MjVsMS4yNTctNS4yNzMtNC4xMTctMy41MjdjLS44ODctLjc2LS40MTUtMi4yMTIuNzQ5LTIuMzA1bDUuNDA0LS40MzQgMi4wODItNS4wMDVaIiAvPjwvc3ZnPg==');-webkit-mask-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC43ODggMy4yMWMuNDQ4LTEuMDc3IDEuOTc2LTEuMDc3IDIuNDI0IDBsMi4wODIgNS4wMDYgNS40MDQuNDM0YzEuMTY0LjA5MyAxLjYzNiAxLjU0NS43NDkgMi4zMDVsLTQuMTE3IDMuNTI3IDEuMjU3IDUuMjczYy4yNzEgMS4xMzYtLjk2NCAyLjAzMy0xLjk2IDEuNDI1TDEyIDE4LjM1NCA3LjM3MyAyMS4xOGMtLjk5Ni42MDgtMi4yMzEtLjI5LTEuOTYtMS40MjVsMS4yNTctNS4yNzMtNC4xMTctMy41MjdjLS44ODctLjc2LS40MTUtMi4yMTIuNzQ5LTIuMzA1bDUuNDA0LS40MzQgMi4wODItNS4wMDVaIiAvPjwvc3ZnPg==');mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center;mask-size:contain;-webkit-mask-size:contain;">
         <h3 class="font-semibold text-lg mb-2 text-pink-600">Schminken</h3>
         <p class="text-2xl font-bold mb-2">€ 0,-</p>
         <p class="text-gray-500 text-sm">Placeholder tekst over de schminkprijzen.</p>
       </div>
       <div class="border rounded-xl p-6 shadow-sm text-center">
-        <img src="assets/example-glittertattoo.jpg" alt="Voorbeeld glittertattoo" class="w-16 h-16 object-cover mx-auto mb-3" style="mask-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZD0iTTE0LjYxNSAxLjU5NWEuNzUuNzUgMCAwIDEgLjM1OS44NTJMMTIuOTgyIDkuNzVoNy4yNjhhLjc1Ljc1IDAgMCAxIC41NDggMS4yNjJsLTEwLjUgMTEuMjVhLjc1Ljc1IDAgMCAxLTEuMjcyLS43MWwxLjk5Mi03LjMwMkgzLjc1YS43NS43NSAwIDAgMS0uNTQ4LTEuMjYybDEwLjUtMTEuMjVhLjc1Ljc1IDAgMCAxIC45MTMtLjE0M1oiIC8+PC9zdmc+');-webkit-mask-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZD0iTTE0LjYxNSAxLjU5NWEuNzUuNzUgMCAwIDEgLjM1OS44NTJMMTIuOTgyIDkuNzVoNy4yNjhhLjc1Ljc1IDAgMCAxIC41NDggMS4yNjJsLTEwLjUgMTEuMjVhLjc1Ljc1IDAgMCAxLTEuMjcyLS43MWwxLjk5Mi03LjMwMkgzLjc1YS43NS43NSAwIDAgMS0uNTQ4LTEuMjYybDEwLjUtMTEuMjVhLjc1Ljc1IDAgMCAxIC45MTMtLjE0M1oiIC8+PC9zdmc+');mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center;mask-size:contain;-webkit-mask-size:contain;">
+        <img src="assets/example-glittertattoo.jpg" alt="Voorbeeld glittertattoo" class="w-28 h-28 object-cover mx-auto mb-4" style="mask-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZD0iTTE0LjYxNSAxLjU5NWEuNzUuNzUgMCAwIDEgLjM1OS44NTJMMTIuOTgyIDkuNzVoNy4yNjhhLjc1Ljc1IDAgMCAxIC41NDggMS4yNjJsLTEwLjUgMTEuMjVhLjc1Ljc1IDAgMCAxLTEuMjcyLS43MWwxLjk5Mi03LjMwMkgzLjc1YS43NS43NSAwIDAgMS0uNTQ4LTEuMjYybDEwLjUtMTEuMjVhLjc1Ljc1IDAgMCAxIC45MTMtLjE0M1oiIC8+PC9zdmc+');-webkit-mask-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZD0iTTE0LjYxNSAxLjU5NWEuNzUuNzUgMCAwIDEgLjM1OS44NTJMMTIuOTgyIDkuNzVoNy4yNjhhLjc1Ljc1IDAgMCAxIC41NDggMS4yNjJsLTEwLjUgMTEuMjVhLjc1Ljc1IDAgMCAxLTEuMjcyLS43MWwxLjk5Mi03LjMwMkgzLjc1YS43NS43NSAwIDAgMS0uNTQ4LTEuMjYybDEwLjUtMTEuMjVhLjc1Ljc1IDAgMCAxIC45MTMtLjE0M1oiIC8+PC9zdmc+');mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center;mask-size:contain;-webkit-mask-size:contain;">
         <h3 class="font-semibold text-lg mb-2 text-purple-600">Glittertattoo's</h3>
         <p class="text-2xl font-bold mb-2">€ 0,-</p>
         <p class="text-gray-500 text-sm">Placeholder tekst over de glittertattoo-prijzen.</p>
       </div>
       <div class="border rounded-xl p-6 shadow-sm text-center">
-        <img src="assets/example-feest.jpg" alt="Voorbeeld feest" class="w-16 h-16 object-cover mx-auto mb-3" style="mask-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZD0ibTExLjY0NSAyMC45MS0uMDA3LS4wMDMtLjAyMi0uMDEyYTE1LjI0NyAxNS4yNDcgMCAwIDEtLjM4My0uMjE4IDI1LjE4IDI1LjE4IDAgMCAxLTQuMjQ0LTMuMTdDNC42ODggMTUuMzYgMi4yNSAxMi4xNzQgMi4yNSA4LjI1IDIuMjUgNS4zMjIgNC43MTQgMyA3LjY4OCAzQTUuNSA1LjUgMCAwIDEgMTIgNS4wNTIgNS41IDUuNSAwIDAgMSAxNi4zMTMgM2MyLjk3MyAwIDUuNDM3IDIuMzIyIDUuNDM3IDUuMjUgMCAzLjkyNS0yLjQzOCA3LjExMS00LjczOSA5LjI1NmEyNS4xNzUgMjUuMTc1IDAgMCAxLTQuMjQ0IDMuMTcgMTUuMjQ3IDE1LjI0NyAwIDAgMS0uMzgzLjIxOWwtLjAyMi4wMTItLjAwNy4wMDQtLjAwMy4wMDFhLjc1Mi43NTIgMCAwIDEtLjcwNCAwbC0uMDAzLS4wMDFaIiAvPjwvc3ZnPg==');-webkit-mask-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZD0ibTExLjY0NSAyMC45MS0uMDA3LS4wMDMtLjAyMi0uMDEyYTE1LjI0NyAxNS4yNDcgMCAwIDEtLjM4My0uMjE4IDI1LjE4IDI1LjE4IDAgMCAxLTQuMjQ0LTMuMTdDNC42ODggMTUuMzYgMi4yNSAxMi4xNzQgMi4yNSA4LjI1IDIuMjUgNS4zMjIgNC43MTQgMyA3LjY4OCAzQTUuNSA1LjUgMCAwIDEgMTIgNS4wNTIgNS41IDUuNSAwIDAgMSAxNi4zMTMgM2MyLjk3MyAwIDUuNDM3IDIuMzIyIDUuNDM3IDUuMjUgMCAzLjkyNS0yLjQzOCA3LjExMS00LjczOSA5LjI1NmEyNS4xNzUgMjUuMTc1IDAgMCAxLTQuMjQ0IDMuMTcgMTUuMjQ3IDE1LjI0NyAwIDAgMS0uMzgzLjIxOWwtLjAyMi4wMTItLjAwNy4wMDQtLjAwMy4wMDFhLjc1Mi43NTIgMCAwIDEtLjcwNCAwbC0uMDAzLS4wMDFaIiAvPjwvc3ZnPg==');mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center;mask-size:contain;-webkit-mask-size:contain;">
+        <img src="assets/example-feest.jpg" alt="Voorbeeld feest" class="w-28 h-28 object-cover mx-auto mb-4" style="mask-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZD0ibTExLjY0NSAyMC45MS0uMDA3LS4wMDMtLjAyMi0uMDEyYTE1LjI0NyAxNS4yNDcgMCAwIDEtLjM4My0uMjE4IDI1LjE4IDI1LjE4IDAgMCAxLTQuMjQ0LTMuMTdDNC42ODggMTUuMzYgMi4yNSAxMi4xNzQgMi4yNSA4LjI1IDIuMjUgNS4zMjIgNC43MTQgMyA3LjY4OCAzQTUuNSA1LjUgMCAwIDEgMTIgNS4wNTIgNS41IDUuNSAwIDAgMSAxNi4zMTMgM2MyLjk3MyAwIDUuNDM3IDIuMzIyIDUuNDM3IDUuMjUgMCAzLjkyNS0yLjQzOCA3LjExMS00LjczOSA5LjI1NmEyNS4xNzUgMjUuMTc1IDAgMCAxLTQuMjQ0IDMuMTcgMTUuMjQ3IDE1LjI0NyAwIDAgMS0uMzgzLjIxOWwtLjAyMi4wMTItLjAwNy4wMDQtLjAwMy4wMDFhLjc1Mi43NTIgMCAwIDEtLjcwNCAwbC0uMDAzLS4wMDFaIiAvPjwvc3ZnPg==');-webkit-mask-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZD0ibTExLjY0NSAyMC45MS0uMDA3LS4wMDMtLjAyMi0uMDEyYTE1LjI0NyAxNS4yNDcgMCAwIDEtLjM4My0uMjE4IDI1LjE4IDI1LjE4IDAgMCAxLTQuMjQ0LTMuMTdDNC42ODggMTUuMzYgMi4yNSAxMi4xNzQgMi4yNSA4LjI1IDIuMjUgNS4zMjIgNC43MTQgMyA3LjY4OCAzQTUuNSA1LjUgMCAwIDEgMTIgNS4wNTIgNS41IDUuNSAwIDAgMSAxNi4zMTMgM2MyLjk3MyAwIDUuNDM3IDIuMzIyIDUuNDM3IDUuMjUgMCAzLjkyNS0yLjQzOCA3LjExMS00LjczOSA5LjI1NmEyNS4xNzUgMjUuMTc1IDAgMCAxLTQuMjQ0IDMuMTcgMTUuMjQ3IDE1LjI0NyAwIDAgMS0uMzgzLjIxOWwtLjAyMi4wMTItLjAwNy4wMDQtLjAwMy4wMDFhLjc1Mi43NTIgMCAwIDEtLjcwNCAwbC0uMDAzLS4wMDFaIiAvPjwvc3ZnPg==');mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center;mask-size:contain;-webkit-mask-size:contain;">
         <h3 class="font-semibold text-lg mb-2 text-green-600">Feestjes &amp; evenementen</h3>
         <p class="text-2xl font-bold mb-2">€ 0,-</p>
         <p class="text-gray-500 text-sm">Placeholder tekst over de prijzen voor feestjes en evenementen.</p>
@@ -75,8 +78,9 @@
 
     <p class="text-center text-gray-500 text-sm mt-10">Placeholder tekst: neem contact op voor een offerte op maat.</p>
     <div class="text-center mt-4">
-      <a href="aanvraag.html" class="inline-block bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-8 py-4 text-sm font-medium shadow hover:opacity-90 transition">AANVRAAG DOEN ✉</a>
-    </div>
+      <a href="aanvraag.html" class="rainbow-fill-btn text-white shadow hover:opacity-90 rounded-full transition inline-block px-8 py-4 text-sm font-medium">AANVRAAG DOEN <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="shrink-0 size-4 inline align-text-bottom">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+          </svg></a>    </div>
   </section>
 
   <!-- Footer -->
@@ -94,7 +98,7 @@
           06 – 12345678
         </p>
         <p class="flex items-center justify-center sm:justify-start gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="shrink-0 size-4">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
           </svg>
           info@voorbeeld.nl
@@ -110,7 +114,9 @@
       <div class="flex gap-3">
         <span class="w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center text-xs">IG</span>
         <span class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">FB</span>
-        <a href="aanvraag.html" class="w-9 h-9 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs">✉</a>
+        <a href="aanvraag.html" class="w-9 h-9 rounded-full bg-purple-500 text-white flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="shrink-0 size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+          </svg></a>
       </div>
     </div>
   </footer>
