@@ -4,9 +4,7 @@ Simple static one-page site for a face painting events business, styled with [Ta
 
 ## Setup
 
-1. Sign up at https://staticforms.dev and create a form to get an API key.
-2. In `index.html`, replace `YOUR_STATICFORMS_API_KEY` (in the hidden `apiKey` input) with your real key.
-3. Replace placeholder text, gallery photos, and footer year with real content.
+The contact form is already wired up with a live Static Forms API key. Just replace placeholder text, gallery photos, and footer year with real content.
 
 ## Running locally
 
