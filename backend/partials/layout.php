@@ -76,11 +76,29 @@ function google_font_pacifico(): void
 HTML;
 }
 
+/**
+ * Loads the Tailwind CDN, then pins every shade of the purple/pink/green
+ * palettes to the brand's exact hex values, so e.g. bg-purple-500 and
+ * bg-purple-700 render identically — no other purple, pink, or green.
+ */
 function tailwind_cdn(): void
 {
     echo <<<HTML
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            purple: { 50: '#7642a6', 100: '#7642a6', 200: '#7642a6', 300: '#7642a6', 400: '#7642a6', 500: '#7642a6', 600: '#7642a6', 700: '#7642a6', 800: '#7642a6', 900: '#7642a6', 950: '#7642a6', DEFAULT: '#7642a6' },
+            pink: { 50: '#ec2b8a', 100: '#ec2b8a', 200: '#ec2b8a', 300: '#ec2b8a', 400: '#ec2b8a', 500: '#ec2b8a', 600: '#ec2b8a', 700: '#ec2b8a', 800: '#ec2b8a', 900: '#ec2b8a', 950: '#ec2b8a', DEFAULT: '#ec2b8a' },
+            green: { 50: '#84b525', 100: '#84b525', 200: '#84b525', 300: '#84b525', 400: '#84b525', 500: '#84b525', 600: '#84b525', 700: '#84b525', 800: '#84b525', 900: '#84b525', 950: '#84b525', DEFAULT: '#84b525' },
+          }
+        }
+      }
+    };
+  </script>
 HTML;
 }
 
@@ -119,6 +137,10 @@ HTML;
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       pointer-events: none;
+    }
+    .rainbow-top-border {
+      border-top: 2px solid transparent;
+      border-image: linear-gradient(90deg, #f43f5e, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6, #ec4899) 1;
     }
 HTML;
     if ($rainbowFill) {
@@ -268,35 +290,36 @@ HTML;
 function footer_full(string $taglineClass = 'font-display text-base text-pink-500'): void
 {
     $mailIcon = mail_icon_svg('size-4');
+    $mailIconPink = mail_icon_svg('size-4 text-pink-500');
     echo <<<HTML
 
   <!-- Footer -->
-  <footer class="border-t">
-    <div class="max-w-5xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+  <footer class="rainbow-top-border">
+    <div class="max-w-5xl mx-auto px-4 py-10 flex flex-col sm:flex-row items-center justify-between gap-10 text-sm text-gray-500">
       <div class="flex items-center gap-3">
         <img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-12 w-12 rounded-full object-cover">
         <p class="{$taglineClass}">Kleur maakt alles leuker!</p>
       </div>
-      <div class="space-y-1 text-center sm:text-left">
-        <p class="flex items-center justify-center sm:justify-start gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 shrink-0">
+      <div class="space-y-3 text-center sm:text-left">
+        <p class="flex items-center justify-center sm:justify-start gap-2.5">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 shrink-0 text-pink-500">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
           </svg>
           06 – 12345678
         </p>
-        <p class="flex items-center justify-center sm:justify-start gap-1.5">
-          {$mailIcon}
+        <p class="flex items-center justify-center sm:justify-start gap-2.5">
+          {$mailIconPink}
           info@voorbeeld.nl
         </p>
-        <p class="flex items-center justify-center sm:justify-start gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 shrink-0">
+        <p class="flex items-center justify-center sm:justify-start gap-2.5">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 shrink-0 text-pink-500">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
           </svg>
           30 km rond Hoofddorp
         </p>
       </div>
-      <div class="flex gap-3">
+      <div class="flex gap-4">
         <span class="w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center text-xs">IG</span>
         <span class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">FB</span>
         <a href="aanvraag.html" aria-label="Stuur een aanvraag" class="w-9 h-9 rounded-full bg-purple-500 text-white flex items-center justify-center cursor-pointer hover:bg-purple-600 transition">{$mailIcon}</a>
@@ -337,7 +360,7 @@ function werk_gallery_body(string $heading, bool $fontDisplay = false): void
 
   <section class="py-16 px-4">
     <div class="max-w-5xl mx-auto">
-      <a href="index.html#werk" class="text-sm text-pink-600 font-medium">&larr; Terug</a>
+      <a href="index.html#werk" class="text-sm text-pink-600 font-normal">&larr; Terug</a>
       <h1 class="{$headingClass}">{$heading}</h1>
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">{$grid}
       </div>

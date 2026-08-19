@@ -31,20 +31,23 @@ local_business_json_ld();
   <!-- Three services: icon + heading + text -->
   <section id="werk" class="max-w-5xl mx-auto px-4 pt-16 pb-14">
     <div class="grid sm:grid-cols-3 gap-6 text-center">
-      <div>
+      <div >
         <img src="assets/icon-schminken.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
         <h3 class="font-display text-3xl mb-1 text-pink-600">Schminken</h3>
-        <p class="pt-6 text-sm text-gray-500">Creatieve en kleurrijke schmink voor jong en oud.</p>
+        <p class="pt-6 text-sm text-gray-500">Creatieve en kleurrijke</p>
+        <p class="text-sm text-gray-500"> schmink voor jong en oud.</p>
       </div>
       <div>
         <img src="assets/icon-glittertattoo.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
         <h3 class="font-display text-3xl mb-1 text-purple-600">Glittertattoo's</h3>
-        <p class="pt-6 text-sm text-gray-500">Mooie, tijdelijke glittertattoo's in allerlei designs.</p>
+        <p class="pt-6 text-sm text-gray-500">Mooie, tijdelijke glittertattoo's</p>
+        <p class="text-sm text-gray-500">in allerlei designs.</p>
       </div>
       <div>
         <img src="assets/icon-feest.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
         <h3 class="font-display text-3xl mb-1 text-green-600">Feestjes &amp; Evenementen</h3>
-        <p class="pt-6 text-sm text-gray-500">Voor kinderfeestjes, schoolfeesten, markten en andere gelegenheden.</p>
+        <p class="pt-6 text-sm text-gray-500">Voor kinderfeestjes, schoolfeesten,</p>
+        <p class="text-sm text-gray-500">markten en andere gelegenheden.</p>
       </div>
     </div>
 
@@ -68,13 +71,13 @@ local_business_json_ld();
 
     <!-- Two CTA buttons -->
     <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-      <a href="werk-schminken.html" class="inline-flex items-center justify-center gap-2 border-2 border-pink-500 text-pink-600 rounded-full px-8 py-4 text-sm text-center font-medium hover:bg-pink-50 transition">
+      <a href="werk-schminken.html" class="inline-flex items-center justify-center gap-2 border-2 border-pink-500 text-pink-600 rounded-full px-8 py-4 text-sm text-center font-medium hover:bg-pink-500/10 transition">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
         </svg>
         BEKIJK MIJN WERK
       </a>
-      <a href="prijzen.html" class="inline-flex items-center justify-center gap-2 border-2 border-purple-500 text-purple-600 rounded-full px-8 py-4 text-sm text-center font-medium hover:bg-purple-50 transition">
+      <a href="prijzen.html" class="inline-flex items-center justify-center gap-2 border-2 border-purple-500 text-purple-600 rounded-full px-8 py-4 text-sm text-center font-medium hover:bg-purple-500/10 transition">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z" />

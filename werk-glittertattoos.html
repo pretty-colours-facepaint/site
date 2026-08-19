@@ -17,6 +17,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            purple: { 50: '#7642a6', 100: '#7642a6', 200: '#7642a6', 300: '#7642a6', 400: '#7642a6', 500: '#7642a6', 600: '#7642a6', 700: '#7642a6', 800: '#7642a6', 900: '#7642a6', 950: '#7642a6', DEFAULT: '#7642a6' },
+            pink: { 50: '#ec2b8a', 100: '#ec2b8a', 200: '#ec2b8a', 300: '#ec2b8a', 400: '#ec2b8a', 500: '#ec2b8a', 600: '#ec2b8a', 700: '#ec2b8a', 800: '#ec2b8a', 900: '#ec2b8a', 950: '#ec2b8a', DEFAULT: '#ec2b8a' },
+            green: { 50: '#84b525', 100: '#84b525', 200: '#84b525', 300: '#84b525', 400: '#84b525', 500: '#84b525', 600: '#84b525', 700: '#84b525', 800: '#84b525', 900: '#84b525', 950: '#84b525', DEFAULT: '#84b525' },
+          }
+        }
+      }
+    };
+  </script>
   <style>
     .font-display {
       font-family: 'Pacifico', cursive;
@@ -37,6 +50,10 @@
       mask-composite: exclude;
       pointer-events: none;
     }
+    .rainbow-top-border {
+      border-top: 2px solid transparent;
+      border-image: linear-gradient(90deg, #f43f5e, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6, #ec4899) 1;
+    }
   </style>
 </head>
 <body class="font-sans text-gray-800">
@@ -56,7 +73,7 @@
   </header>
   <section class="py-16 px-4">
     <div class="max-w-5xl mx-auto">
-      <a href="index.html#werk" class="text-sm text-pink-600 font-medium">&larr; Terug</a>
+      <a href="index.html#werk" class="text-sm text-pink-600 font-normal">&larr; Terug</a>
       <h1 class="font-display text-3xl mt-4 mb-10 text-pink-600">Glittertattoo's</h1>
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Foto placeholder</div>
