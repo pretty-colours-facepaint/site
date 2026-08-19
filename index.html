@@ -44,6 +44,9 @@
       mask-composite: exclude;
       pointer-events: none;
     }
+    .rainbow-fill-btn {
+      background: linear-gradient(90deg, #f43f5e, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6, #ec4899);
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -95,12 +98,13 @@
   <!-- Header -->
   <header class="sticky top-0 bg-white/90 backdrop-blur border-b z-50">
     <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-6 flex-wrap gap-3">
-      <a href="#" class="flex flex-col items-center">
+      <a href="index.html" class="flex flex-col items-center gap-1">
         <img id="logo-img" src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-28 w-28 rounded-full object-cover transition-all duration-500 ease-in-out">
         <p id="logo-tagline" class="text-[10px] tracking-widest text-gray-400 mt-1 overflow-hidden">SCHMINK &amp; GLITTERTATTOO'S</p>
       </a>
       <nav class="flex items-center gap-6 text-sm">
-        <a href="#" class="text-pink-600 underline underline-offset-4">Home</a>
+        <a href="index.html#werk" class="hover:text-pink-600">Bekijk mijn werk</a>
+        <a href="index.html#over" class="hover:text-pink-600">Over mij</a>
         <a href="aanvraag.html" class="rainbow-border-btn text-black rounded-full px-5 py-2.5 font-medium hover:bg-gray-50 transition">AANVRAAG DOEN</a>
       </nav>
     </div>
@@ -157,7 +161,7 @@
       <div class="text-center sm:text-left">
         <h2 class="font-display text-3xl mb-3 text-pink-600">Hoi, ik ben Sanne!</h2>
         <p class="text-sm text-gray-500 mb-6 max-w-md">Mijn naam is Sanne Lek en ik schmink op kinderfeestjes, evenementen en voor bedrijven of winkels in een straal van 30 km rond Hoofddorp.</p>
-        <a href="aanvraag.html" class="inline-block bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-6 py-3 text-sm font-medium shadow hover:opacity-90 transition">AANVRAAG DOEN ✉</a>
+        <a href="aanvraag.html" class="inline-block rainbow-fill-btn text-white rounded-full px-6 py-3 text-sm font-medium shadow hover:opacity-90 transition">AANVRAAG DOEN ✉</a>
       </div>
     </div>
   </section>

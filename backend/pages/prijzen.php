@@ -12,12 +12,12 @@ head_open($title, $description, $canonical, $title, $ogDescription);
 og_title_description_url($title, $ogDescription, $canonical);
 favicon_and_tailwind();
 tailwind_cdn();
-custom_style(fontDisplay: false, rainbowBtn: true);
+custom_style(fontDisplay: false);
 ?>
 
 </head>
 <body class="font-sans text-gray-700 bg-white">
-<?php header_sub('rainbow-border-btn text-black rounded-full px-5 py-2.5 font-medium hover:bg-gray-50 transition'); ?>
+<?php site_header(); ?>
 
   <section class="max-w-3xl mx-auto px-4 py-16">
     <a href="index.html#werk" class="text-sm text-pink-600 font-medium">&larr; Terug naar home</a>

@@ -12,12 +12,12 @@ og_title_description_url($title, $description, $canonical);
 favicon_and_tailwind();
 google_font_pacifico();
 tailwind_cdn();
-custom_style(fontDisplay: true, rainbowBtn: true);
+custom_style(fontDisplay: true);
 ?>
 
 </head>
 <body class="font-sans text-gray-700 bg-white">
-<?php header_sub(); ?>
+<?php site_header(); ?>
 
   <!-- Contact form -->
   <section id="contact" class="max-w-lg mx-auto px-4 py-16">

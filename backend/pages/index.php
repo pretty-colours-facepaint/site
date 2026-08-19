@@ -17,7 +17,7 @@ twitter_title_description($title, $ogDescription, $ogImage);
 favicon_and_tailwind();
 google_font_pacifico();
 tailwind_cdn();
-custom_style(fontDisplay: true, rainbowBtn: true);
+custom_style(fontDisplay: true, rainbowFill: true);
 local_business_json_ld();
 ?>
 
@@ -26,7 +26,7 @@ local_business_json_ld();
 <?php construction_overlay(); ?>
 
   <!-- Header -->
-<?php header_home(); ?>
+<?php site_header(); ?>
 
   <!-- Three services: icon + heading + text -->
   <section id="werk" class="max-w-5xl mx-auto px-4 pt-16 pb-14">
@@ -80,7 +80,7 @@ local_business_json_ld();
       <div class="text-center sm:text-left">
         <h2 class="font-display text-3xl mb-3 text-pink-600">Hoi, ik ben Sanne!</h2>
         <p class="text-sm text-gray-500 mb-6 max-w-md">Mijn naam is Sanne Lek en ik schmink op kinderfeestjes, evenementen en voor bedrijven of winkels in een straal van 30 km rond Hoofddorp.</p>
-        <a href="aanvraag.html" class="inline-block bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-6 py-3 text-sm font-medium shadow hover:opacity-90 transition">AANVRAAG DOEN ✉</a>
+        <a href="aanvraag.html" class="inline-block rainbow-fill-btn text-white rounded-full px-6 py-3 text-sm font-medium shadow hover:opacity-90 transition">AANVRAAG DOEN ✉</a>
       </div>
     </div>
   </section>

@@ -12,12 +12,12 @@ og_title_description_url($title, $description, $canonical);
 favicon_and_tailwind();
 google_font_pacifico();
 tailwind_cdn();
-custom_style(fontDisplay: true, rainbowBtn: false);
+custom_style(fontDisplay: true);
 ?>
 
 </head>
 <body class="font-sans text-gray-800">
-<?php header_sub(); ?>
+<?php site_header(); ?>
 <?php werk_gallery_body('Terug naar Bekijk mijn werk', 'Schminken'); ?>
 <?php footer_full(); ?>
 <?php script_js(); ?>

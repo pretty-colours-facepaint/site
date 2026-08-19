@@ -84,13 +84,15 @@ function tailwind_cdn(): void
 HTML;
 }
 
-/** @param bool $fontDisplay include the .font-display rule */
-/** @param bool $rainbowBtn include the .rainbow-border-btn rule */
-function custom_style(bool $fontDisplay, bool $rainbowBtn): void
+/**
+ * The header's CTA is a rainbow-bordered button on every page, so this rule is
+ * always emitted. fontDisplay and rainbowFill are per-page opt-ins.
+ *
+ * @param bool $fontDisplay include the .font-display rule
+ * @param bool $rainbowFill include the .rainbow-fill-btn rule (solid rainbow gradient fill)
+ */
+function custom_style(bool $fontDisplay, bool $rainbowFill = false): void
 {
-    if (!$fontDisplay && !$rainbowBtn) {
-        return;
-    }
     echo "\n  <style>";
     if ($fontDisplay) {
         echo <<<HTML
@@ -100,8 +102,7 @@ function custom_style(bool $fontDisplay, bool $rainbowBtn): void
     }
 HTML;
     }
-    if ($rainbowBtn) {
-        echo <<<HTML
+    echo <<<HTML
 
     .rainbow-border-btn {
       position: relative;
@@ -118,6 +119,13 @@ HTML;
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       pointer-events: none;
+    }
+HTML;
+    if ($rainbowFill) {
+        echo <<<HTML
+
+    .rainbow-fill-btn {
+      background: linear-gradient(90deg, #f43f5e, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6, #ec4899);
     }
 HTML;
     }
@@ -180,38 +188,12 @@ function construction_overlay(): void
 HTML;
 }
 
-/** Header for the homepage: big shrinking logo, single "Home" link. */
-function header_home(): void
+/** Header used on every page: same logo, same nav, same CTA everywhere. */
+function site_header(): void
 {
     echo <<<HTML
 
   <!-- Header -->
-  <header class="sticky top-0 bg-white/90 backdrop-blur border-b z-50">
-    <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-6 flex-wrap gap-3">
-      <a href="#" class="flex flex-col items-center">
-        <img id="logo-img" src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-28 w-28 rounded-full object-cover transition-all duration-500 ease-in-out">
-        <p id="logo-tagline" class="text-[10px] tracking-widest text-gray-400 mt-1 overflow-hidden">SCHMINK &amp; GLITTERTATTOO'S</p>
-      </a>
-      <nav class="flex items-center gap-6 text-sm">
-        <a href="#" class="text-pink-600 underline underline-offset-4">Home</a>
-        <a href="aanvraag.html" class="rainbow-border-btn text-black rounded-full px-5 py-2.5 font-medium hover:bg-gray-50 transition">AANVRAAG DOEN</a>
-      </nav>
-    </div>
-  </header>
-HTML;
-}
-
-/**
- * Header for every other page: logo links home, "Bekijk mijn werk" / "Over mij"
- * anchors back to the homepage sections, plus the AANVRAAG DOEN CTA.
- *
- * @param string $ctaClass  Tailwind classes for the CTA link (styling has drifted
- *                          between pages historically — rainbow border vs plain border).
- */
-function header_sub(string $ctaClass = 'border border-pink-300 text-pink-600 rounded-full px-5 py-2.5 font-medium hover:bg-pink-50'): void
-{
-    echo <<<HTML
-
   <header class="sticky top-0 bg-white/90 backdrop-blur border-b z-50">
     <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-6 flex-wrap gap-3">
       <a href="index.html" class="flex flex-col items-center gap-1">
@@ -221,7 +203,7 @@ function header_sub(string $ctaClass = 'border border-pink-300 text-pink-600 rou
       <nav class="flex items-center gap-6 text-sm">
         <a href="index.html#werk" class="hover:text-pink-600">Bekijk mijn werk</a>
         <a href="index.html#over" class="hover:text-pink-600">Over mij</a>
-        <a href="aanvraag.html" class="{$ctaClass}">AANVRAAG DOEN</a>
+        <a href="aanvraag.html" class="rainbow-border-btn text-black rounded-full px-5 py-2.5 font-medium hover:bg-gray-50 transition">AANVRAAG DOEN</a>
       </nav>
     </div>
   </header>

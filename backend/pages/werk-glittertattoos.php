@@ -11,11 +11,12 @@ head_open($title, $description, $canonical);
 og_title_description_url($title, $description, $canonical);
 favicon_and_tailwind();
 tailwind_cdn();
+custom_style(fontDisplay: false);
 ?>
 
 </head>
 <body class="font-sans text-gray-800">
-<?php header_sub(); ?>
+<?php site_header(); ?>
 <?php werk_gallery_body('Terug naar Bekijk mijn werk', "Glittertattoo's"); ?>
 <?php footer_simple(); ?>
 <?php script_js(); ?>
