@@ -132,6 +132,20 @@ HTML;
     echo "\n  </style>";
 }
 
+/**
+ * CSS mask (style="...") that clips an element into the shape of an SVG icon.
+ * Pass the icon's inner <path ...> markup (from a 0 0 24 24 viewBox icon).
+ */
+function mask_style(string $pathMarkup): string
+{
+    $svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>{$pathMarkup}</svg>";
+    $uri = 'data:image/svg+xml;base64,' . base64_encode($svg);
+    return "mask-image:url('{$uri}');-webkit-mask-image:url('{$uri}');"
+        . 'mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;'
+        . 'mask-position:center;-webkit-mask-position:center;'
+        . 'mask-size:contain;-webkit-mask-size:contain;';
+}
+
 function local_business_json_ld(): void
 {
     echo <<<HTML
