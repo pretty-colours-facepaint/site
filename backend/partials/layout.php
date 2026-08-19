@@ -133,11 +133,11 @@ HTML;
 }
 
 /** Envelope icon markup, reused by the mail CTA and the footer's mail badge. */
-function mail_icon_svg(string $extraClass = ''): string
+function mail_icon_svg(string $extraClass = '', float $strokeWidth = 1.5): string
 {
     $class = trim("shrink-0 {$extraClass}");
     return <<<HTML
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="{$class}">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="{$strokeWidth}" stroke="currentColor" class="{$class}">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
           </svg>
 HTML;
@@ -156,7 +156,7 @@ function rainbow_button(string $label, string $variant = 'solid', ?string $href 
     $class = $variant === 'outline'
         ? 'rainbow-border-btn text-black hover:bg-gray-50'
         : 'rainbow-fill-btn text-white shadow hover:opacity-90';
-    $class = trim("{$class} rounded-full transition {$extraClass}");
+    $class = trim("{$class} rounded-full transition cursor-pointer {$extraClass}");
 
     if ($type !== null) {
         echo "<button type=\"{$type}\" class=\"{$class}\">{$label}</button>";
@@ -220,7 +220,7 @@ function construction_overlay(): void
       <p class="text-3xl mb-3">🚧</p>
       <h2 class="font-display text-2xl text-pink-600 mb-2">Website in aanbouw</h2>
       <p class="text-sm text-gray-500 mb-6">Deze website is nog in ontwikkeling. Sommige teksten en foto's zijn nog placeholders.</p>
-      <button id="construction-dismiss" class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-8 py-4 text-sm font-medium shadow hover:opacity-90 transition">Ik snap het, ga verder</button>
+      <button id="construction-dismiss" class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-8 py-4 text-sm font-medium shadow hover:opacity-90 transition cursor-pointer">Ik snap het, ga verder</button>
     </div>
   </div>
   <script>
@@ -249,7 +249,7 @@ function site_header(bool $onHome = false): void
     echo <<<HTML
 
   <!-- Header -->
-  <header class="sticky top-0 bg-white/90 backdrop-blur border-b z-50">
+  <header id="site-header" class="sticky top-0 bg-white/90 backdrop-blur border-b border-transparent z-50">
     <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-6 flex-wrap gap-3">
       <a href="index.html" class="flex flex-col items-center gap-1">
         <img id="logo-img" src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-28 w-28 rounded-full object-cover transition-all duration-500 ease-in-out">
@@ -299,7 +299,7 @@ function footer_full(string $taglineClass = 'font-display text-base text-pink-50
       <div class="flex gap-3">
         <span class="w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center text-xs">IG</span>
         <span class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">FB</span>
-        <a href="aanvraag.html" class="w-9 h-9 rounded-full bg-purple-500 text-white flex items-center justify-center">{$mailIcon}</a>
+        <a href="aanvraag.html" aria-label="Stuur een aanvraag" class="w-9 h-9 rounded-full bg-purple-500 text-white flex items-center justify-center cursor-pointer hover:bg-purple-600 transition">{$mailIcon}</a>
       </div>
     </div>
   </footer>
@@ -328,16 +328,17 @@ HTML;
 }
 
 /** Six-photo placeholder grid shared by the werk-* album pages. */
-function werk_gallery_body(string $backLabel, string $heading): void
+function werk_gallery_body(string $heading, bool $fontDisplay = false): void
 {
     $placeholder = '<div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Foto placeholder</div>';
     $grid = str_repeat("\n        {$placeholder}", 6);
+    $headingClass = $fontDisplay ? 'font-display text-3xl mt-4 mb-10 text-pink-600' : 'text-3xl font-bold mt-4 mb-10';
     echo <<<HTML
 
   <section class="py-16 px-4">
     <div class="max-w-5xl mx-auto">
-      <a href="index.html#werk" class="text-sm text-pink-600 font-medium">&larr; {$backLabel}</a>
-      <h1 class="text-3xl font-bold mt-4 mb-10">{$heading}</h1>
+      <a href="index.html#werk" class="text-sm text-pink-600 font-medium">&larr; Terug</a>
+      <h1 class="{$headingClass}">{$heading}</h1>
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">{$grid}
       </div>
     </div>

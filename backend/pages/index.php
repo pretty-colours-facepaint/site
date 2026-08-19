@@ -33,18 +33,18 @@ local_business_json_ld();
     <div class="grid sm:grid-cols-3 gap-6 text-center">
       <div>
         <img src="assets/icon-schminken.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-display text-xl mb-1 text-pink-600">Schminken</h3>
-        <p class="text-xs text-gray-500">Creatieve en kleurrijke schmink voor jong en oud.</p>
+        <h3 class="font-display text-3xl mb-1 text-pink-600">Schminken</h3>
+        <p class="pt-6 text-sm text-gray-500">Creatieve en kleurrijke schmink voor jong en oud.</p>
       </div>
       <div>
         <img src="assets/icon-glittertattoo.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-display text-xl mb-1 text-purple-600">Glittertattoo's</h3>
-        <p class="text-xs text-gray-500">Mooie, tijdelijke glittertattoo's in allerlei designs.</p>
+        <h3 class="font-display text-3xl mb-1 text-purple-600">Glittertattoo's</h3>
+        <p class="pt-6 text-sm text-gray-500">Mooie, tijdelijke glittertattoo's in allerlei designs.</p>
       </div>
       <div>
         <img src="assets/icon-feest.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-display text-xl mb-1 text-green-600">Feestjes &amp; Evenementen</h3>
-        <p class="text-xs text-gray-500">Voor kinderfeestjes, schoolfeesten, markten en andere gelegenheden.</p>
+        <h3 class="font-display text-3xl mb-1 text-green-600">Feestjes &amp; Evenementen</h3>
+        <p class="pt-6 text-sm text-gray-500">Voor kinderfeestjes, schoolfeesten, markten en andere gelegenheden.</p>
       </div>
     </div>
 
@@ -86,12 +86,12 @@ local_business_json_ld();
 
   <!-- About / bio card -->
   <section id="over" class="max-w-5xl mx-auto px-4 pb-20">
-    <div class="border border-orange-100 rounded-2xl p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-8 bg-orange-50">
-      <img src="assets/portrait.png" alt="Portret" class="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shrink-0 shadow-sm">
+    <div class="border border-orange-100 rounded-2xl p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-8 bg-orange-50" style="background-color: #fdf9f5;">
+      <img src="assets/portrait.png" alt="Portret" class="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shrink-0 ">
       <div class="text-center sm:text-left">
         <h2 class="font-display text-3xl mb-3 text-pink-600">Hoi, ik ben Sanne!</h2>
         <p class="text-sm text-gray-500 mb-6 max-w-md">Mijn naam is Sanne Lek en ik schmink op kinderfeestjes, evenementen en voor bedrijven of winkels in een straal van 30 km rond Hoofddorp.</p>
-        <?php rainbow_button('AANVRAAG DOEN ' . mail_icon_svg('size-4 inline align-text-bottom'), 'solid', href: 'aanvraag.html', extraClass: 'inline-block px-8 py-4 text-sm font-medium'); ?>
+        <?php rainbow_button('AANVRAAG DOEN ' . mail_icon_svg('size-4 inline align-text-bottom ml-2', strokeWidth: 2.5), 'solid', href: 'aanvraag.html', extraClass: 'inline-block px-8 py-4 text-sm font-medium'); ?>
       </div>
     </div>
   </section>

@@ -18,7 +18,7 @@ custom_style(fontDisplay: true);
 </head>
 <body class="font-sans text-gray-800">
 <?php site_header(); ?>
-<?php werk_gallery_body('Terug naar Bekijk mijn werk', 'Schminken'); ?>
+<?php werk_gallery_body('Schminken', fontDisplay: true); ?>
 <?php footer_full(); ?>
 <?php script_js(); ?>
 

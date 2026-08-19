@@ -39,6 +39,19 @@ if (logo) {
   updateLogoSize();
 }
 
+// Show the header's bottom border only once the page has scrolled past the top.
+const siteHeader = document.getElementById('site-header');
+
+if (siteHeader) {
+  function updateHeaderBorder() {
+    siteHeader.classList.toggle('border-gray-200', window.scrollY > 0);
+    siteHeader.classList.toggle('border-transparent', window.scrollY === 0);
+  }
+
+  window.addEventListener('scroll', updateHeaderBorder, { passive: true });
+  updateHeaderBorder();
+}
+
 // Contact form submission.
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
