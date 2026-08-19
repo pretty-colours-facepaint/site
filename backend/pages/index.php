@@ -3,7 +3,7 @@ $title = "Pretty Colours Facepaint — Schminken &amp; Glittertattoo's in Hoofdd
 $description = "Sanne Lek schminkt en maakt glittertattoo's voor kinderfeestjes, evenementen en bedrijven in een straal van 30 km rond Hoofddorp. Vraag vrijblijvend een offerte aan.";
 $canonical = "https://prettycolours-facepaint.nl/";
 $ogDescription = "Schminken en glittertattoo's voor kinderfeestjes, evenementen en bedrijven, in een straal van 30 km rond Hoofddorp.";
-$ogImage = "https://prettycolours-facepaint.nl/MAKE_CHANGES_HERE/foto-voorpagina/foto1.jpg";
+$ogImage = "https://prettycolours-facepaint.nl/MAAK_HIER_AANPASSINGEN/covers/foto1.jpg";
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -55,13 +55,13 @@ local_business_json_ld();
 
       <div class="relative z-10 grid sm:grid-cols-3 gap-6 mt-8">
         <a href="pages/werk-schminken.html">
-          <img src="MAKE_CHANGES_HERE/foto-voorpagina/foto1.jpg" alt="Voorbeeld schminken" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+          <img src="MAAK_HIER_AANPASSINGEN/covers/foto1.jpg" alt="Voorbeeld schminken" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
         <a href="pages/werk-glittertattoos.html">
-          <img src="MAKE_CHANGES_HERE/foto-voorpagina/foto2.jpg" alt="Voorbeeld glittertattoo" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+          <img src="MAAK_HIER_AANPASSINGEN/covers/foto2.jpg" alt="Voorbeeld glittertattoo" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
         <a href="pages/werk-feesten-events.html">
-          <img src="MAKE_CHANGES_HERE/foto-voorpagina/foto3.jpg" alt="Voorbeeld feest" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+          <img src="MAAK_HIER_AANPASSINGEN/covers/foto3.jpg" alt="Voorbeeld feest" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
       </div>
     </div>
@@ -87,7 +87,7 @@ local_business_json_ld();
   <!-- About / bio card -->
   <section id="over" class="max-w-5xl mx-auto px-4 pb-20">
     <div class="border border-orange-100 rounded-2xl p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-8 bg-orange-50" style="background-color: #fdf9f5;">
-      <img src="assets/portrait.png" alt="Portret" class="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shrink-0 ">
+      <img src="MAAK_HIER_AANPASSINGEN/covers/portret.png" alt="Portret" class="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shrink-0 ">
       <div class="text-center sm:text-left">
         <h2 class="font-display text-3xl mb-3 text-pink-600"><?= content_config('homepage.over.titel') ?></h2>
         <p class="text-sm text-gray-500 mb-6 max-w-md"><?= content_config('homepage.over.tekst') ?></p>

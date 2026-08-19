@@ -19,7 +19,7 @@ custom_style(fontDisplay: true);
 </head>
 <body class="font-sans text-gray-800">
 <?php site_header(base: $base); ?>
-<?php werk_gallery_body(content_config('werkPaginas.schminken'), $base . 'MAKE_CHANGES_HERE/mijn-werk/schminken/foto', fontDisplay: true, base: $base); ?>
+<?php werk_gallery_body(content_config('werkPaginas.schminken'), $base . 'MAAK_HIER_AANPASSINGEN/portfolio/schminken/foto', fontDisplay: true, base: $base); ?>
 <?php footer_full(base: $base); ?>
 <?php script_js($base); ?>
 

@@ -1,7 +1,7 @@
 // ============================================================
 // ALLE TEKSTEN VAN DE WEBSITE — GEEN CODE NODIG
 // (Foto's beheer je niet hier, maar door ze in de juiste map te zetten —
-// zie assets/mijn-werk/LEES-MIJ.txt en assets/foto-voorpagina/LEES-MIJ.txt.)
+// zie portfolio/LEES-MIJ.txt en covers/LEES-MIJ.txt in deze map.)
 // Verander hieronder alleen wat er RECHTS van een dubbele punt (:) staat,
 // tussen de aanhalingstekens " ". Zet <br> in een tekst als je een regel
 // wilt afbreken. Sla dit bestand op en zet het online — geen "build"

@@ -5,23 +5,27 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://prettycolours-facepaint.nl/prijzen.html</loc>
+    <loc>https://prettycolours-facepaint.nl/pages/prijzen.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prettycolours-facepaint.nl/aanvraag.html</loc>
+    <loc>https://prettycolours-facepaint.nl/pages/aanvraag.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prettycolours-facepaint.nl/werk-schminken.html</loc>
+    <loc>https://prettycolours-facepaint.nl/pages/werk.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prettycolours-facepaint.nl/pages/werk-schminken.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prettycolours-facepaint.nl/werk-glittertattoos.html</loc>
+    <loc>https://prettycolours-facepaint.nl/pages/werk-glittertattoos.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prettycolours-facepaint.nl/werk-feesten-events.html</loc>
+    <loc>https://prettycolours-facepaint.nl/pages/werk-feesten-events.html</loc>
     <priority>0.6</priority>
   </url>
 </urlset>

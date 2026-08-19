@@ -1,7 +1,7 @@
 // ============================================================
-// SITE_CONFIG — alle teksten staan in config.js, niet hier. Deze code
+// SITE_CONFIG — alle teksten staan in site-text-content.js, niet hier. Deze code
 // zet ze op de pagina: elk [data-config="pad.naar.tekst"] krijgt de
-// bijbehorende tekst uit config.js. Ontbreekt config.js of een waarde
+// bijbehorende tekst uit site-text-content.js. Ontbreekt site-text-content.js of een waarde
 // erin, dan verschijnt een duidelijke rode foutmelding op die plek in
 // plaats van niets.
 // ============================================================
@@ -27,15 +27,23 @@ function getConfigValue(path) {
 if (typeof SITE_CONFIG === 'undefined') {
   document.querySelectorAll('[data-config]').forEach((el) => {
     el.innerHTML = configErrorHtml(
-      'config.js kon niet geladen worden (typefout?). Zie de browserconsole voor details.'
+      'site-text-content.js kon niet geladen worden (typefout?). Zie de browserconsole voor details.'
     );
   });
+  // Block the page for visitors with a friendly, non-dismissable notice —
+  // there's no close button and no click-away handler on purpose, only
+  // fixing site-text-content.js and reloading gets rid of it.
+  const contentErrorOverlay = document.getElementById('content-error-overlay');
+  if (contentErrorOverlay) {
+    contentErrorOverlay.classList.remove('hidden');
+    document.documentElement.classList.add('overflow-hidden');
+  }
 } else {
   document.querySelectorAll('[data-config]').forEach((el) => {
     const path = el.dataset.config;
     const value = getConfigValue(path);
     if (typeof value !== 'string') {
-      el.innerHTML = configErrorHtml(`Ontbrekende tekst in config.js: ${path}`);
+      el.innerHTML = configErrorHtml(`Ontbrekende tekst in site-text-content.js: ${path}`);
       return;
     }
     el.innerHTML = escapeHtml(value).replace(/&lt;br\s*\/?&gt;/gi, '<br>');
@@ -125,7 +133,7 @@ document.querySelectorAll('[data-numbered-gallery]').forEach((gallery) => {
 });
 
 // Under construction overlay, dismissed and remembered via localStorage.
-// Fully switched off via SITE_CONFIG.overlay.actief: false in config.js —
+// Fully switched off via SITE_CONFIG.overlay.actief: false in site-text-content.js —
 // e.g. once the site goes live, without touching any other code.
 const constructionOverlay = document.getElementById('construction-overlay');
 const constructionDismiss = document.getElementById('construction-dismiss');

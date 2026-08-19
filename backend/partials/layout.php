@@ -6,8 +6,8 @@
 
 /**
  * Renders a placeholder that the browser fills in at runtime from
- * config.js (see script.js) — the text at SITE_CONFIG.<path>, dotted
- * (e.g. content_config('prijzen.hart.prijs')). Editing config.js needs
+ * site-text-content.js (see script.js) — the text at SITE_CONFIG.<path>, dotted
+ * (e.g. content_config('prijzen.hart.prijs')). Editing site-text-content.js needs
  * no PHP rebuild: the browser reads it directly on every page load.
  */
 function content_config(string $path): string
@@ -244,6 +244,29 @@ function local_business_json_ld(): void
 HTML;
 }
 
+/**
+ * Full-page, non-dismissable error overlay shown only when the page content
+ * failed to load (SITE_CONFIG missing — see script.js). Text is hardcoded
+ * here rather than sourced from site-text-content.js, since that's exactly
+ * what failed to load. Hidden by default; script.js unhides it. There is no
+ * close button and no click-away handler on purpose — a visitor can't get
+ * rid of it, only a dev fixing the underlying problem and reloading does.
+ */
+function content_error_overlay(): void
+{
+    echo <<<HTML
+
+  <!-- Content-load error notice (shown only if site-text-content.js fails to load) -->
+  <div id="content-error-overlay" class="hidden fixed inset-0 z-[110] bg-white/95 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white border rounded-2xl shadow-lg max-w-sm w-full p-6 text-center">
+      <p class="text-3xl mb-3">🎨</p>
+      <h2 class="font-display text-2xl text-pink-600 mb-2">Er is wat verf in het systeem terechtgekomen</h2>
+      <p class="text-sm text-gray-500">We zijn druk bezig om alles weer schoon te maken. Kom later nog eens terug.</p>
+    </div>
+  </div>
+HTML;
+}
+
 function construction_overlay(): void
 {
     $titel = content_config('overlay.titel');
@@ -277,13 +300,13 @@ HTML;
  *
  * @param bool $onHome  Underlines the "Home" link when it's the current page.
  */
-function site_header(bool $onHome = false, bool $onWerk = false, string $base = ''): void
+function site_header(bool $onHome = false, string $base = ''): void
 {
     $homeClass = 'text-pink-600' . ($onHome ? ' font-bold underline underline-offset-4' : ' hover:underline hover:underline-offset-4');
-    $werkClass = 'text-pink-600' . ($onWerk ? ' font-bold underline underline-offset-4' : ' hover:underline hover:underline-offset-4');
     ob_start();
     rainbow_button(content_config('contact.ctaAanvraag'), 'outline', href: "{$base}pages/aanvraag.html", extraClass: 'px-7 py-3.5 font-medium');
     $ctaButton = ob_get_clean();
+    content_error_overlay();
     echo <<<HTML
 
   <!-- Header -->
@@ -295,7 +318,6 @@ function site_header(bool $onHome = false, bool $onWerk = false, string $base = 
       </a>
       <nav class="flex items-center gap-6 text-sm">
         <a href="{$base}index.html" class="{$homeClass}">Home</a>
-        <a href="{$base}pages/werk.html" class="{$werkClass}">Mijn werk</a>
         {$ctaButton}
       </nav>
     </div>
@@ -351,7 +373,7 @@ function script_js(string $base = ''): void
 {
     echo <<<HTML
 
-  <script src="{$base}MAKE_CHANGES_HERE/config.js"></script>
+  <script src="{$base}MAAK_HIER_AANPASSINGEN/site-text-content.js"></script>
   <script src="{$base}script.js"></script>
 HTML;
 }
