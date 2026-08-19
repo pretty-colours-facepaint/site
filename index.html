@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pretty Colours Face Paint</title>
+  <title>Pretty Colours Facepaint</title>
   <link rel="icon" href="assets/logo.jpg">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -11,11 +11,10 @@
 
   <header class="sticky top-0 bg-white/90 backdrop-blur shadow-sm z-10">
     <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-2">
-      <a href="#"><img src="assets/logo.jpg" alt="Pretty Colours Face Paint" class="h-16 w-16 rounded-full object-cover"></a>
+      <a href="#"><img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-16 w-16 rounded-full object-cover"></a>
       <nav class="hidden sm:flex gap-6 text-sm font-medium">
-        <a href="#services" class="hover:text-pink-600">Services</a>
-        <a href="#gallery" class="hover:text-pink-600">Gallery</a>
-        <a href="#about" class="hover:text-pink-600">About</a>
+        <a href="#werk" class="hover:text-pink-600">Bekijk mijn werk</a>
+        <a href="#over" class="hover:text-pink-600">Over mij</a>
         <a href="#contact" class="hover:text-pink-600">Contact</a>
       </nav>
     </div>
@@ -23,58 +22,48 @@
 
   <section class="bg-gradient-to-br from-pink-500 via-purple-500 to-yellow-400 text-white text-center py-24 px-4">
     <div class="max-w-3xl mx-auto">
-      <img src="assets/logo.jpg" alt="Pretty Colours Face Paint" class="h-36 w-36 sm:h-44 sm:w-44 rounded-full object-cover mx-auto mb-6 shadow-lg">
-      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Bright faces. Big smiles.</h1>
-      <p class="text-lg sm:text-xl mb-8 opacity-90">Professional face painting for birthday parties, festivals, fetes and corporate events.</p>
-      <a href="#contact" class="inline-block bg-white text-pink-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-pink-50 transition">Book Now</a>
+      <img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-36 w-36 sm:h-44 sm:w-44 rounded-full object-cover mx-auto mb-6 shadow-lg">
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Vrolijke gezichtjes, grote glimlachen</h1>
+      <p class="text-lg sm:text-xl mb-8 opacity-90">Schminken en glittertattoo's voor verjaardagen, feesten en evenementen.</p>
+      <a href="#werk" class="inline-block bg-white text-pink-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-pink-50 transition">Bekijk mijn werk</a>
     </div>
   </section>
 
-  <section id="services" class="py-16 px-4">
+  <section id="werk" class="py-16 px-4">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-10">Services</h2>
+      <h2 class="text-3xl font-bold text-center mb-4">Bekijk mijn werk</h2>
+      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">Een paar voorbeelden van eerder werk, verdeeld in albums.</p>
       <div class="grid sm:grid-cols-3 gap-6">
-        <div class="bg-white border rounded-xl p-6 shadow-sm">
-          <h3 class="font-semibold text-lg mb-2 text-pink-600">Birthday Parties</h3>
-          <p class="text-gray-600 text-sm">Placeholder text describing the birthday party face painting package, pricing and duration.</p>
-        </div>
-        <div class="bg-white border rounded-xl p-6 shadow-sm">
-          <h3 class="font-semibold text-lg mb-2 text-pink-600">Festivals &amp; Fetes</h3>
-          <p class="text-gray-600 text-sm">Placeholder text describing festival and fete bookings, walk-up rates and group discounts.</p>
-        </div>
-        <div class="bg-white border rounded-xl p-6 shadow-sm">
-          <h3 class="font-semibold text-lg mb-2 text-pink-600">Corporate Events</h3>
-          <p class="text-gray-600 text-sm">Placeholder text describing corporate event packages and branded face painting options.</p>
-        </div>
+        <a href="werk-schminken.html" class="block bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition text-center">
+          <h3 class="font-semibold text-lg mb-2 text-pink-600">Schminken</h3>
+          <p class="text-gray-600 text-sm mb-4">Placeholder tekst over schminken.</p>
+          <span class="inline-block text-pink-600 font-medium text-sm">Bekijk album &rarr;</span>
+        </a>
+        <a href="werk-glittertattoos.html" class="block bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition text-center">
+          <h3 class="font-semibold text-lg mb-2 text-pink-600">Glittertattoo's</h3>
+          <p class="text-gray-600 text-sm mb-4">Placeholder tekst over glittertattoo's.</p>
+          <span class="inline-block text-pink-600 font-medium text-sm">Bekijk album &rarr;</span>
+        </a>
+        <a href="werk-feesten-events.html" class="block bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition text-center">
+          <h3 class="font-semibold text-lg mb-2 text-pink-600">Elke feest of event</h3>
+          <p class="text-gray-600 text-sm mb-4">Placeholder tekst over feesten en evenementen.</p>
+          <span class="inline-block text-pink-600 font-medium text-sm">Bekijk album &rarr;</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section id="gallery" class="py-16 px-4 bg-gray-50">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-10">Gallery</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Photo placeholder</div>
-        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Photo placeholder</div>
-        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Photo placeholder</div>
-        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Photo placeholder</div>
-        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Photo placeholder</div>
-        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Photo placeholder</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="py-16 px-4">
+  <section id="over" class="py-16 px-4 bg-gray-50">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">About</h2>
-      <p class="text-gray-600">Placeholder about text. Introduce the artist(s), years of experience, and what makes the business special. Replace this with your real bio and photo.</p>
+      <h2 class="text-3xl font-bold mb-6">Over mij</h2>
+      <p class="text-gray-600">Placeholder tekst over mij. Vertel hier iets over jezelf, je ervaring en wat Pretty Colours Facepaint bijzonder maakt. Vervang dit door je eigen verhaal en foto.</p>
     </div>
   </section>
 
-  <section id="contact" class="py-16 px-4 bg-gray-50">
+  <section id="contact" class="py-16 px-4">
     <div class="max-w-lg mx-auto">
       <h2 class="text-3xl font-bold text-center mb-4">Contact</h2>
-      <p class="text-gray-600 text-center mb-8">Fill in the form below and we'll get back to you about your event.</p>
+      <p class="text-gray-600 text-center mb-8">Vul het formulier in en ik neem contact met je op over je feest of evenement.</p>
 
       <form id="contact-form" action="https://api.staticforms.dev/submit" method="POST" class="bg-white border rounded-xl shadow-sm p-6 space-y-4">
         <input type="hidden" name="apiKey" value="sf_bb39449b4af9467da7b45f48">
@@ -83,26 +72,26 @@
         <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off">
 
         <div>
-          <label for="name" class="block text-sm font-medium mb-1">Name</label>
+          <label for="name" class="block text-sm font-medium mb-1">Naam</label>
           <input type="text" id="name" name="name" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
         </div>
 
         <div>
-          <label for="email" class="block text-sm font-medium mb-1">Email</label>
+          <label for="email" class="block text-sm font-medium mb-1">E-mail</label>
           <input type="email" id="email" name="email" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
         </div>
 
         <div>
-          <label for="eventDate" class="block text-sm font-medium mb-1">Event date</label>
+          <label for="eventDate" class="block text-sm font-medium mb-1">Datum evenement</label>
           <input type="date" id="eventDate" name="eventDate" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
         </div>
 
         <div>
-          <label for="message" class="block text-sm font-medium mb-1">Message</label>
+          <label for="message" class="block text-sm font-medium mb-1">Bericht</label>
           <textarea id="message" name="message" rows="5" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
         </div>
 
-        <button type="submit" class="w-full bg-pink-600 text-white font-semibold py-3 rounded-full hover:bg-pink-700 transition">Send Enquiry</button>
+        <button type="submit" class="w-full bg-pink-600 text-white font-semibold py-3 rounded-full hover:bg-pink-700 transition">Verstuur aanvraag</button>
         <p id="form-status" class="text-sm text-center"></p>
       </form>
     </div>
@@ -110,7 +99,7 @@
 
   <footer class="bg-gray-900 text-gray-300 text-center py-8 px-4 text-sm">
     <div class="max-w-5xl mx-auto">
-      <p>&copy; 2026 Pretty Colours Face Paint. Placeholder footer text.</p>
+      <p>&copy; 2026 Pretty Colours Facepaint. Placeholder footertekst.</p>
     </div>
   </footer>
 

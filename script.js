@@ -3,7 +3,7 @@ const status = document.getElementById('form-status');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  status.textContent = 'Sending...';
+  status.textContent = 'Versturen...';
   status.className = 'text-sm text-center text-gray-500';
 
   try {
@@ -15,15 +15,15 @@ form.addEventListener('submit', async (e) => {
     const data = await res.json();
 
     if (data.success) {
-      status.textContent = "Thanks! We'll be in touch soon.";
+      status.textContent = 'Bedankt! We nemen snel contact met je op.';
       status.className = 'text-sm text-center text-green-600';
       form.reset();
     } else {
-      status.textContent = data.message || 'Something went wrong, please try again.';
+      status.textContent = data.message || 'Er ging iets mis, probeer het opnieuw.';
       status.className = 'text-sm text-center text-red-600';
     }
   } catch (err) {
-    status.textContent = 'Something went wrong, please try again.';
+    status.textContent = 'Er ging iets mis, probeer het opnieuw.';
     status.className = 'text-sm text-center text-red-600';
   }
 });
