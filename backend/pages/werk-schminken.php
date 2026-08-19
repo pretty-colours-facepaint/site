@@ -18,7 +18,7 @@ custom_style(fontDisplay: true);
 </head>
 <body class="font-sans text-gray-800">
 <?php site_header(); ?>
-<?php werk_gallery_body('Schminken', fontDisplay: true); ?>
+<?php werk_gallery_body(content_config('werkPaginas.schminken'), 'assets/mijn-werk/schminken/foto', fontDisplay: true); ?>
 <?php footer_full(); ?>
 <?php script_js(); ?>
 

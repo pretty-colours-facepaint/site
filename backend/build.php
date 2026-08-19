@@ -13,6 +13,7 @@ $pages = [
     'index.php' => 'index.html',
     'prijzen.php' => 'prijzen.html',
     'aanvraag.php' => 'aanvraag.html',
+    'werk.php' => 'werk.html',
     'werk-schminken.php' => 'werk-schminken.html',
     'werk-glittertattoos.php' => 'werk-glittertattoos.html',
     'werk-feesten-events.php' => 'werk-feesten-events.html',

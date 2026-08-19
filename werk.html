@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aanvraag doen — Pretty Colours Facepaint</title>
-  <meta name="description" content="Vraag vrijblijvend schminken of glittertattoo's aan voor je kinderfeestje, evenement of bedrijf rond Hoofddorp.">
-  <link rel="canonical" href="https://prettycolours-facepaint.nl/aanvraag.html">
+  <title>Mijn werk — Pretty Colours Facepaint</title>
+  <meta name="description" content="Overzicht van schminken, glittertattoo's en feestjes & evenementen door Pretty Colours Facepaint, rond Hoofddorp.">
+  <link rel="canonical" href="https://prettycolours-facepaint.nl/werk.html">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Aanvraag doen — Pretty Colours Facepaint">
-  <meta property="og:description" content="Vraag vrijblijvend schminken of glittertattoo's aan voor je kinderfeestje, evenement of bedrijf rond Hoofddorp.">
-  <meta property="og:url" content="https://prettycolours-facepaint.nl/aanvraag.html">
+  <meta property="og:title" content="Mijn werk — Pretty Colours Facepaint">
+  <meta property="og:description" content="Overzicht van schminken, glittertattoo's en feestjes & evenementen door Pretty Colours Facepaint, rond Hoofddorp.">
+  <meta property="og:url" content="https://prettycolours-facepaint.nl/werk.html">
   <link rel="icon" href="assets/logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,12 +54,9 @@
       border-top: 2px solid transparent;
       border-image: linear-gradient(90deg, #f43f5e, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6, #ec4899) 1;
     }
-    .rainbow-fill-btn {
-      background: linear-gradient(90deg, #f43f5e, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6, #ec4899);
-    }
   </style>
 </head>
-<body class="font-sans text-gray-700 bg-white">
+<body class="font-sans text-gray-700 bg-white overflow-x-hidden">
 
   <!-- Header -->
   <header id="site-header" class="sticky top-0 bg-white/90 backdrop-blur border-b border-transparent z-50">
@@ -70,45 +67,41 @@
       </a>
       <nav class="flex items-center gap-6 text-sm">
         <a href="index.html" class="text-pink-600 hover:underline hover:underline-offset-4">Home</a>
-        <a href="werk.html" class="text-pink-600 hover:underline hover:underline-offset-4">Mijn werk</a>
+        <a href="werk.html" class="text-pink-600 font-bold underline underline-offset-4">Mijn werk</a>
         <a href="aanvraag.html" class="rainbow-border-btn text-black hover:bg-gray-50 rounded-full transition cursor-pointer px-7 py-3.5 font-medium"><span data-config="contact.ctaAanvraag"></span></a>
       </nav>
     </div>
   </header>
-  <!-- Contact form -->
-  <section id="contact" class="max-w-lg mx-auto px-4 py-16">
-    <a href="index.html" class="text-sm text-pink-600 font-normal">&larr; Terug</a>
-    <h1 class="font-display text-3xl text-center mt-6 mb-2 text-pink-600"><span data-config="aanvraag.titel"></span></h1>
-    <p class="text-gray-500 text-center text-sm mb-8"><span data-config="aanvraag.intro"></span></p>
+  <section class="max-w-5xl mx-auto px-4 pt-16 pb-20">
+    <h1 class="font-display text-4xl mb-2 text-pink-600"><span data-config="werkOverzicht.titel"></span></h1>
+    <p class="text-sm text-gray-500 mb-10 max-w-xl"><span data-config="werkOverzicht.intro"></span></p>
 
-    <form id="contact-form" action="https://api.staticforms.dev/submit" method="POST" class="bg-white border rounded-2xl shadow-sm p-6 space-y-4">
-      <input type="hidden" name="subject" value="pretty-colours-facepaint submission">
-      <!-- Honeypot field for spam protection -->
-      <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off">
+    <div class="grid gap-8">
 
-      <div>
-        <label for="name" class="block text-sm font-medium mb-1"><span data-config="aanvraag.labelNaam"></span></label>
-        <input type="text" id="name" name="name" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+    <div class="border border-gray-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display text-3xl mb-2 text-pink-600"><span data-config="werkOverzicht.schminken.titel"></span></h2>
+      <p class="text-sm text-gray-500 mb-6 max-w-md"><span data-config="werkOverzicht.schminken.tekst"></span></p>
+      <div data-numbered-gallery="assets/mijn-werk/schminken/foto" data-numbered-gallery-max="3" class="grid grid-cols-3 gap-4 mb-6">
+        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Foto's laden&hellip;</div>
       </div>
-
-      <div>
-        <label for="email" class="block text-sm font-medium mb-1"><span data-config="aanvraag.labelEmail"></span></label>
-        <input type="email" id="email" name="email" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      <a href="werk-schminken.html" class="text-sm font-medium text-pink-600 hover:underline hover:underline-offset-4">Bekijk alle foto's &rarr;</a>
+    </div>
+    <div class="border border-gray-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display text-3xl mb-2 text-purple-600"><span data-config="werkOverzicht.glittertattoos.titel"></span></h2>
+      <p class="text-sm text-gray-500 mb-6 max-w-md"><span data-config="werkOverzicht.glittertattoos.tekst"></span></p>
+      <div data-numbered-gallery="assets/mijn-werk/glittertattoos/foto" data-numbered-gallery-max="3" class="grid grid-cols-3 gap-4 mb-6">
+        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Foto's laden&hellip;</div>
       </div>
-
-      <div>
-        <label for="eventDate" class="block text-sm font-medium mb-1"><span data-config="aanvraag.labelDatum"></span></label>
-        <input type="date" id="eventDate" name="eventDate" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      <a href="werk-glittertattoos.html" class="text-sm font-medium text-purple-600 hover:underline hover:underline-offset-4">Bekijk alle foto's &rarr;</a>
+    </div>
+    <div class="border border-gray-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display text-3xl mb-2 text-green-600"><span data-config="werkOverzicht.feestenEvents.titel"></span></h2>
+      <p class="text-sm text-gray-500 mb-6 max-w-md"><span data-config="werkOverzicht.feestenEvents.tekst"></span></p>
+      <div data-numbered-gallery="assets/mijn-werk/feesten-events/foto" data-numbered-gallery-max="3" class="grid grid-cols-3 gap-4 mb-6">
+        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Foto's laden&hellip;</div>
       </div>
-
-      <div>
-        <label for="message" class="block text-sm font-medium mb-1"><span data-config="aanvraag.labelBericht"></span></label>
-        <textarea id="message" name="message" rows="5" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
-      </div>
-
-      <button type="submit" class="rainbow-fill-btn text-white shadow hover:opacity-90 rounded-full transition cursor-pointer w-full py-4 font-semibold"><span data-config="aanvraag.knop"></span></button>
-      <p id="form-status" class="text-sm text-center"></p>
-    </form>
+      <a href="werk-feesten-events.html" class="text-sm font-medium text-green-600 hover:underline hover:underline-offset-4">Bekijk alle foto's &rarr;</a>
+    </div>    </div>
   </section>
 
   <!-- Footer -->

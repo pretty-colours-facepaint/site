@@ -18,7 +18,7 @@ custom_style(fontDisplay: true);
 </head>
 <body class="font-sans text-gray-800">
 <?php site_header(); ?>
-<?php werk_gallery_body("Glittertattoo's", fontDisplay: true); ?>
+<?php werk_gallery_body(content_config('werkPaginas.glittertattoos'), 'assets/mijn-werk/glittertattoos/foto', fontDisplay: true); ?>
 <?php footer_simple(); ?>
 <?php script_js(); ?>
 

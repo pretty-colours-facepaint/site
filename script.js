@@ -1,8 +1,127 @@
+// ============================================================
+// SITE_CONFIG — alle teksten staan in config.js, niet hier. Deze code
+// zet ze op de pagina: elk [data-config="pad.naar.tekst"] krijgt de
+// bijbehorende tekst uit config.js. Ontbreekt config.js of een waarde
+// erin, dan verschijnt een duidelijke rode foutmelding op die plek in
+// plaats van niets.
+// ============================================================
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function configErrorHtml(message) {
+  return `<span style="color:#dc2626;font-weight:bold;">${escapeHtml(message)}</span>`;
+}
+
+function getConfigValue(path) {
+  return path.split('.').reduce((value, key) => {
+    return value && typeof value === 'object' ? value[key] : undefined;
+  }, typeof SITE_CONFIG === 'undefined' ? undefined : SITE_CONFIG);
+}
+
+if (typeof SITE_CONFIG === 'undefined') {
+  document.querySelectorAll('[data-config]').forEach((el) => {
+    el.innerHTML = configErrorHtml('config.js kon niet geladen worden (typefout?). Zie de browserconsole voor details.');
+  });
+} else {
+  document.querySelectorAll('[data-config]').forEach((el) => {
+    const path = el.dataset.config;
+    const value = getConfigValue(path);
+    if (typeof value !== 'string') {
+      el.innerHTML = configErrorHtml(`Ontbrekende tekst in config.js: ${path}`);
+      return;
+    }
+    el.innerHTML = escapeHtml(value).replace(/&lt;br\s*\/?&gt;/gi, '<br>');
+  });
+}
+
+// ============================================================
+// SOCIALE-MEDIA-BADGES — optioneel, uit SITE_CONFIG.socials (een lijst
+// van { titel, logo, link, kleur }). Ontbreekt de lijst, is hij leeg, of
+// mist een badge titel/logo/link, dan wordt die badge simpelweg niet
+// getoond — dit is geen foutmelding-waardige situatie, badges zijn optie.
+// kleur is ook optioneel (een hex-code zoals "#E1306C"); zonder geldige
+// kleur wordt het rondje standaard grijs.
+// ============================================================
+const HEX_COLOR = /^#[0-9a-f]{3,8}$/i;
+
+document.querySelectorAll('[data-social-badges]').forEach((container) => {
+  const socials = typeof SITE_CONFIG === 'undefined' ? undefined : SITE_CONFIG.socials;
+  if (!Array.isArray(socials)) {
+    return;
+  }
+
+  container.innerHTML = socials
+    .filter((social) => social && social.titel && social.logo && social.link)
+    .map((social) => {
+      const titel = escapeHtml(social.titel);
+      const logo = escapeHtml(social.logo);
+      const link = escapeHtml(social.link);
+      const heeftKleur = typeof social.kleur === 'string' && HEX_COLOR.test(social.kleur);
+      const klasse = heeftKleur
+        ? 'w-9 h-9 rounded-full text-white flex items-center justify-center text-xs hover:opacity-90 transition'
+        : 'w-9 h-9 rounded-full bg-gray-800 text-white flex items-center justify-center text-xs hover:opacity-90 transition';
+      const stijl = heeftKleur ? ` style="background-color:${escapeHtml(social.kleur)};"` : '';
+      return `<a href="${link}" target="_blank" rel="noopener" aria-label="${titel}" title="${titel}" class="${klasse}"${stijl}>${logo}</a>`;
+    })
+    .join('');
+});
+
+// ============================================================
+// GENUMMERDE FOTOGALERIJEN — voor elke [data-numbered-gallery="pad/naar/foto"]
+// wordt geprobeerd pad/naar/foto1.jpg t/m foto16.jpg te laden; wat bestaat,
+// wordt getoond. Een foto toevoegen is dus alleen het bestand met het
+// eerstvolgende nummer in de map zetten — geen configbestand nodig.
+// ============================================================
+const MAX_GALLERY_PHOTOS = 16;
+
+function photoExists(src) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(src);
+    img.onerror = () => resolve(null);
+    img.src = src;
+  });
+}
+
+document.querySelectorAll('[data-numbered-gallery]').forEach((gallery) => {
+  const prefix = gallery.dataset.numberedGallery;
+  const maxPreview = parseInt(gallery.dataset.numberedGalleryMax, 10) || null;
+  const checks = [];
+  for (let number = 1; number <= MAX_GALLERY_PHOTOS; number += 1) {
+    checks.push(photoExists(`${prefix}${number}.jpg`));
+  }
+
+  Promise.all(checks).then((results) => {
+    let photos = results.filter((src) => src !== null);
+    if (maxPreview) {
+      photos = photos.slice(0, maxPreview);
+    }
+
+    if (photos.length === 0) {
+      gallery.innerHTML = '<p class="col-span-full text-center text-gray-400 text-sm">Nog geen foto\'s toegevoegd.</p>';
+      return;
+    }
+
+    gallery.innerHTML = photos
+      .map((src) => `<img src="${escapeHtml(src)}" alt="" class="aspect-square w-full object-cover rounded-lg shadow-sm">`)
+      .join('');
+  });
+});
+
 // Under construction overlay, dismissed and remembered via localStorage.
+// Fully switched off via SITE_CONFIG.overlay.actief: false in config.js —
+// e.g. once the site goes live, without touching any other code.
 const constructionOverlay = document.getElementById('construction-overlay');
 const constructionDismiss = document.getElementById('construction-dismiss');
+const overlayConfig = typeof SITE_CONFIG === 'undefined' ? undefined : SITE_CONFIG.overlay;
 
-if (constructionDismiss) {
+if (constructionOverlay && overlayConfig && overlayConfig.actief === false) {
+  constructionOverlay.classList.add('hidden');
+  document.documentElement.classList.remove('overflow-hidden');
+} else if (constructionDismiss) {
   constructionDismiss.addEventListener('click', () => {
     localStorage.setItem('constructionAcknowledged', 'true');
     constructionOverlay.classList.add('hidden');

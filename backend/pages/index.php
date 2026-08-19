@@ -3,7 +3,7 @@ $title = "Pretty Colours Facepaint — Schminken &amp; Glittertattoo's in Hoofdd
 $description = "Sanne Lek schminkt en maakt glittertattoo's voor kinderfeestjes, evenementen en bedrijven in een straal van 30 km rond Hoofddorp. Vraag vrijblijvend een offerte aan.";
 $canonical = "https://prettycolours-facepaint.nl/";
 $ogDescription = "Schminken en glittertattoo's voor kinderfeestjes, evenementen en bedrijven, in een straal van 30 km rond Hoofddorp.";
-$ogImage = "https://prettycolours-facepaint.nl/assets/example-schminken.jpg";
+$ogImage = "https://prettycolours-facepaint.nl/assets/foto-voorpagina/foto1.jpg";
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -33,21 +33,18 @@ local_business_json_ld();
     <div class="grid sm:grid-cols-3 gap-6 text-center">
       <div >
         <img src="assets/icon-schminken.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-display text-3xl mb-1 text-pink-600">Schminken</h3>
-        <p class="pt-6 text-sm text-gray-500">Creatieve en kleurrijke</p>
-        <p class="text-sm text-gray-500"> schmink voor jong en oud.</p>
+        <h3 class="font-display text-3xl mb-1 text-pink-600"><?= content_config('homepage.hart.titel') ?></h3>
+        <p class="pt-6 text-sm text-gray-500"><?= content_config('homepage.hart.tekst') ?></p>
       </div>
       <div>
         <img src="assets/icon-glittertattoo.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-display text-3xl mb-1 text-purple-600">Glittertattoo's</h3>
-        <p class="pt-6 text-sm text-gray-500">Mooie, tijdelijke glittertattoo's</p>
-        <p class="text-sm text-gray-500">in allerlei designs.</p>
+        <h3 class="font-display text-3xl mb-1 text-purple-600"><?= content_config('homepage.bliksem.titel') ?></h3>
+        <p class="pt-6 text-sm text-gray-500"><?= content_config('homepage.bliksem.tekst') ?></p>
       </div>
       <div>
         <img src="assets/icon-feest.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-display text-3xl mb-1 text-green-600">Feestjes &amp; Evenementen</h3>
-        <p class="pt-6 text-sm text-gray-500">Voor kinderfeestjes, schoolfeesten,</p>
-        <p class="text-sm text-gray-500">markten en andere gelegenheden.</p>
+        <h3 class="font-display text-3xl mb-1 text-green-600"><?= content_config('homepage.ster.titel') ?></h3>
+        <p class="pt-6 text-sm text-gray-500"><?= content_config('homepage.ster.tekst') ?></p>
       </div>
     </div>
 
@@ -58,31 +55,31 @@ local_business_json_ld();
 
       <div class="relative z-10 grid sm:grid-cols-3 gap-6 mt-8">
         <a href="werk-schminken.html">
-          <img src="assets/example-schminken.jpg" alt="Voorbeeld schminken" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+          <img src="assets/foto-voorpagina/foto1.jpg" alt="Voorbeeld schminken" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
         <a href="werk-glittertattoos.html">
-          <img src="assets/example-glittertattoo.jpg" alt="Voorbeeld glittertattoo" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+          <img src="assets/foto-voorpagina/foto2.jpg" alt="Voorbeeld glittertattoo" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
         <a href="werk-feesten-events.html">
-          <img src="assets/example-feest.jpg" alt="Voorbeeld feest" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+          <img src="assets/foto-voorpagina/foto3.jpg" alt="Voorbeeld feest" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
       </div>
     </div>
 
     <!-- Two CTA buttons -->
     <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-      <a href="werk-schminken.html" class="inline-flex items-center justify-center gap-2 border-2 border-pink-500 text-pink-600 rounded-full px-8 py-4 text-sm text-center font-medium hover:bg-pink-500/10 transition">
+      <a href="werk.html" class="inline-flex items-center justify-center gap-2 border-2 border-pink-500 text-pink-600 rounded-full px-8 py-4 text-sm text-center font-medium hover:bg-pink-500/10 transition">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
         </svg>
-        BEKIJK MIJN WERK
+        <?= content_config('homepage.ctaWerk') ?>
       </a>
       <a href="prijzen.html" class="inline-flex items-center justify-center gap-2 border-2 border-purple-500 text-purple-600 rounded-full px-8 py-4 text-sm text-center font-medium hover:bg-purple-500/10 transition">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z" />
         </svg>
-        BEKIJK DE PRIJZEN
+        <?= content_config('homepage.ctaPrijzen') ?>
       </a>
     </div>
   </section>
@@ -92,9 +89,9 @@ local_business_json_ld();
     <div class="border border-orange-100 rounded-2xl p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-8 bg-orange-50" style="background-color: #fdf9f5;">
       <img src="assets/portrait.png" alt="Portret" class="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shrink-0 ">
       <div class="text-center sm:text-left">
-        <h2 class="font-display text-3xl mb-3 text-pink-600">Hoi, ik ben Sanne!</h2>
-        <p class="text-sm text-gray-500 mb-6 max-w-md">Mijn naam is Sanne Lek en ik schmink op kinderfeestjes, evenementen en voor bedrijven of winkels in een straal van 30 km rond Hoofddorp.</p>
-        <?php rainbow_button('AANVRAAG DOEN ' . mail_icon_svg('size-4 inline align-text-bottom ml-2', strokeWidth: 2.5), 'solid', href: 'aanvraag.html', extraClass: 'inline-block px-8 py-4 text-sm font-medium'); ?>
+        <h2 class="font-display text-3xl mb-3 text-pink-600"><?= content_config('homepage.over.titel') ?></h2>
+        <p class="text-sm text-gray-500 mb-6 max-w-md"><?= content_config('homepage.over.tekst') ?></p>
+        <?php rainbow_button(content_config('contact.ctaAanvraag') . ' ' . mail_icon_svg('size-4 inline align-text-bottom ml-2', strokeWidth: 2.5), 'solid', href: 'aanvraag.html', extraClass: 'inline-block px-8 py-4 text-sm font-medium'); ?>
       </div>
     </div>
   </section>

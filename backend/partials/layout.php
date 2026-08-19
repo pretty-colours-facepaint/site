@@ -4,6 +4,18 @@
  * Pages under backend/pages/ call these instead of repeating the HTML.
  */
 
+/**
+ * Renders a placeholder that the browser fills in at runtime from
+ * config.js (see script.js) — the text at SITE_CONFIG.<path>, dotted
+ * (e.g. content_config('prijzen.hart.prijs')). Editing config.js needs
+ * no PHP rebuild: the browser reads it directly on every page load.
+ */
+function content_config(string $path): string
+{
+    $escaped = htmlspecialchars($path, ENT_QUOTES);
+    return "<span data-config=\"{$escaped}\"></span>";
+}
+
 function head_open(string $title, string $description, string $canonical, ?string $ogTitle = null, ?string $ogDescription = null): void
 {
     $ogTitle = $ogTitle ?? $title;
@@ -234,15 +246,18 @@ HTML;
 
 function construction_overlay(): void
 {
+    $titel = content_config('overlay.titel');
+    $tekst = content_config('overlay.tekst');
+    $knop = content_config('overlay.knop');
     echo <<<HTML
 
   <!-- Under construction notice -->
   <div id="construction-overlay" class="fixed inset-0 z-[100] bg-white/95 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-white border rounded-2xl shadow-lg max-w-sm w-full p-6 text-center">
       <p class="text-3xl mb-3">🚧</p>
-      <h2 class="font-display text-2xl text-pink-600 mb-2">Website in aanbouw</h2>
-      <p class="text-sm text-gray-500 mb-6">Deze website is nog in ontwikkeling. Sommige teksten en foto's zijn nog placeholders.</p>
-      <button id="construction-dismiss" class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-8 py-4 text-sm font-medium shadow hover:opacity-90 transition cursor-pointer">Ik snap het, ga verder</button>
+      <h2 class="font-display text-2xl text-pink-600 mb-2">{$titel}</h2>
+      <p class="text-sm text-gray-500 mb-6">{$tekst}</p>
+      <button id="construction-dismiss" class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-8 py-4 text-sm font-medium shadow hover:opacity-90 transition cursor-pointer">{$knop}</button>
     </div>
   </div>
   <script>
@@ -262,11 +277,12 @@ HTML;
  *
  * @param bool $onHome  Underlines the "Home" link when it's the current page.
  */
-function site_header(bool $onHome = false): void
+function site_header(bool $onHome = false, bool $onWerk = false): void
 {
     $homeClass = 'text-pink-600' . ($onHome ? ' font-bold underline underline-offset-4' : ' hover:underline hover:underline-offset-4');
+    $werkClass = 'text-pink-600' . ($onWerk ? ' font-bold underline underline-offset-4' : ' hover:underline hover:underline-offset-4');
     ob_start();
-    rainbow_button('AANVRAAG DOEN', 'outline', href: 'aanvraag.html', extraClass: 'px-7 py-3.5 font-medium');
+    rainbow_button(content_config('contact.ctaAanvraag'), 'outline', href: 'aanvraag.html', extraClass: 'px-7 py-3.5 font-medium');
     $ctaButton = ob_get_clean();
     echo <<<HTML
 
@@ -279,6 +295,7 @@ function site_header(bool $onHome = false): void
       </a>
       <nav class="flex items-center gap-6 text-sm">
         <a href="index.html" class="{$homeClass}">Home</a>
+        <a href="werk.html" class="{$werkClass}">Mijn werk</a>
         {$ctaButton}
       </nav>
     </div>
@@ -289,8 +306,11 @@ HTML;
 /** Rich footer: logo, contact details, social badges. Used by most pages. */
 function footer_full(string $taglineClass = 'font-display text-base text-pink-500'): void
 {
-    $mailIcon = mail_icon_svg('size-4');
     $mailIconPink = mail_icon_svg('size-4 text-pink-500');
+    $tagline = content_config('contact.tagline');
+    $telefoon = content_config('contact.telefoon');
+    $email = content_config('contact.email');
+    $regio = content_config('contact.regio');
     echo <<<HTML
 
   <!-- Footer -->
@@ -298,31 +318,29 @@ function footer_full(string $taglineClass = 'font-display text-base text-pink-50
     <div class="max-w-5xl mx-auto px-4 py-10 flex flex-col sm:flex-row items-center justify-between gap-10 text-sm text-gray-500">
       <div class="flex items-center gap-3">
         <img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-12 w-12 rounded-full object-cover">
-        <p class="{$taglineClass}">Kleur maakt alles leuker!</p>
+        <p class="{$taglineClass}">{$tagline}</p>
       </div>
       <div class="space-y-3 text-center sm:text-left">
         <p class="flex items-center justify-center sm:justify-start gap-2.5">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 shrink-0 text-pink-500">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
           </svg>
-          06 – 12345678
+          {$telefoon}
         </p>
         <p class="flex items-center justify-center sm:justify-start gap-2.5">
           {$mailIconPink}
-          info@voorbeeld.nl
+          {$email}
         </p>
         <p class="flex items-center justify-center sm:justify-start gap-2.5">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 shrink-0 text-pink-500">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
           </svg>
-          30 km rond Hoofddorp
+          {$regio}
         </p>
       </div>
       <div class="flex gap-4">
-        <span class="w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center text-xs">IG</span>
-        <span class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">FB</span>
-        <a href="aanvraag.html" aria-label="Stuur een aanvraag" class="w-9 h-9 rounded-full bg-purple-500 text-white flex items-center justify-center cursor-pointer hover:bg-purple-600 transition">{$mailIcon}</a>
+        <div data-social-badges class="contents"></div>
       </div>
     </div>
   </footer>
@@ -332,11 +350,12 @@ HTML;
 /** Plain dark footer, used on the still-placeholder werk-* album pages. */
 function footer_simple(): void
 {
+    $tekst = content_config('footerSimple.tekst');
     echo <<<HTML
 
   <footer class="bg-gray-900 text-gray-300 text-center py-8 px-4 text-sm">
     <div class="max-w-5xl mx-auto">
-      <p>&copy; 2026 Pretty Colours Facepaint. Placeholder footertekst.</p>
+      <p>{$tekst}</p>
     </div>
   </footer>
 HTML;
@@ -346,25 +365,55 @@ function script_js(): void
 {
     echo <<<HTML
 
+  <script src="config.js"></script>
   <script src="script.js"></script>
 HTML;
 }
 
-/** Six-photo placeholder grid shared by the werk-* album pages. */
-function werk_gallery_body(string $heading, bool $fontDisplay = false): void
+/**
+ * Photo grid for the werk-* album pages. Renders an empty container that
+ * script.js fills at runtime by trying to load foto1.jpg, foto2.jpg, ...
+ * up to 16 from $folderPath, keeping whichever numbers actually exist.
+ * Adding a photo is just dropping the next-numbered file in that folder —
+ * no config file, no code, no PHP rebuild.
+ */
+function werk_gallery_body(string $heading, string $folderPath, bool $fontDisplay = false): void
 {
-    $placeholder = '<div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Foto placeholder</div>';
-    $grid = str_repeat("\n        {$placeholder}", 6);
     $headingClass = $fontDisplay ? 'font-display text-3xl mt-4 mb-10 text-pink-600' : 'text-3xl font-bold mt-4 mb-10';
+    $path = htmlspecialchars($folderPath, ENT_QUOTES);
     echo <<<HTML
 
   <section class="py-16 px-4">
     <div class="max-w-5xl mx-auto">
       <a href="index.html#werk" class="text-sm text-pink-600 font-normal">&larr; Terug</a>
       <h1 class="{$headingClass}">{$heading}</h1>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">{$grid}
+      <div data-numbered-gallery="{$path}" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Foto's laden&hellip;</div>
       </div>
     </div>
   </section>
+HTML;
+}
+
+/**
+ * One category block on the werk-overzicht hub page: heading, short text,
+ * a handful of preview photos (same self-serve foto1.jpg, foto2.jpg, ...
+ * mechanism as the full album pages, capped to $maxPreview), and a link
+ * through to that category's full album page.
+ */
+function werk_overzicht_kaart(string $heading, string $tekst, string $folderPath, string $albumHref, string $accentClass, int $maxPreview = 3): void
+{
+    $path = htmlspecialchars($folderPath, ENT_QUOTES);
+    $href = htmlspecialchars($albumHref, ENT_QUOTES);
+    echo <<<HTML
+
+    <div class="border border-gray-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display text-3xl mb-2 {$accentClass}">{$heading}</h2>
+      <p class="text-sm text-gray-500 mb-6 max-w-md">{$tekst}</p>
+      <div data-numbered-gallery="{$path}" data-numbered-gallery-max="{$maxPreview}" class="grid grid-cols-3 gap-4 mb-6">
+        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Foto's laden&hellip;</div>
+      </div>
+      <a href="{$href}" class="text-sm font-medium {$accentClass} hover:underline hover:underline-offset-4">Bekijk alle foto's &rarr;</a>
+    </div>
 HTML;
 }
