@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pretty Colours Face Paint</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-800">
+
+  <header class="sticky top-0 bg-white/90 backdrop-blur shadow-sm z-10">
+    <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-4">
+      <a href="#" class="text-xl font-bold text-pink-600">Pretty Colours <span class="text-purple-600">Face Paint</span></a>
+      <nav class="hidden sm:flex gap-6 text-sm font-medium">
+        <a href="#services" class="hover:text-pink-600">Services</a>
+        <a href="#gallery" class="hover:text-pink-600">Gallery</a>
+        <a href="#about" class="hover:text-pink-600">About</a>
+        <a href="#contact" class="hover:text-pink-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="bg-gradient-to-br from-pink-500 via-purple-500 to-yellow-400 text-white text-center py-24 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Bright faces. Big smiles.</h1>
+      <p class="text-lg sm:text-xl mb-8 opacity-90">Professional face painting for birthday parties, festivals, fetes and corporate events.</p>
+      <a href="#contact" class="inline-block bg-white text-pink-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-pink-50 transition">Book Now</a>
+    </div>
+  </section>
+
+  <section id="services" class="py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-10">Services</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="bg-white border rounded-xl p-6 shadow-sm">
+          <h3 class="font-semibold text-lg mb-2 text-pink-600">Birthday Parties</h3>
+          <p class="text-gray-600 text-sm">Placeholder text describing the birthday party face painting package, pricing and duration.</p>
+        </div>
+        <div class="bg-white border rounded-xl p-6 shadow-sm">
+          <h3 class="font-semibold text-lg mb-2 text-pink-600">Festivals &amp; Fetes</h3>
+          <p class="text-gray-600 text-sm">Placeholder text describing festival and fete bookings, walk-up rates and group discounts.</p>
+        </div>
+        <div class="bg-white border rounded-xl p-6 shadow-sm">
+          <h3 class="font-semibold text-lg mb-2 text-pink-600">Corporate Events</h3>
+          <p class="text-gray-600 text-sm">Placeholder text describing corporate event packages and branded face painting options.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="py-16 px-4 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-10">Gallery</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Photo placeholder</div>
+        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Photo placeholder</div>
+        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Photo placeholder</div>
+        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Photo placeholder</div>
+        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Photo placeholder</div>
+        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Photo placeholder</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">About</h2>
+      <p class="text-gray-600">Placeholder about text. Introduce the artist(s), years of experience, and what makes the business special. Replace this with your real bio and photo.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="py-16 px-4 bg-gray-50">
+    <div class="max-w-lg mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-4">Contact</h2>
+      <p class="text-gray-600 text-center mb-8">Fill in the form below and we'll get back to you about your event.</p>
+
+      <form id="contact-form" action="https://api.staticforms.dev/submit" method="POST" class="bg-white border rounded-xl shadow-sm p-6 space-y-4">
+        <!-- Replace with your real Static Forms API key: https://staticforms.dev -->
+        <input type="hidden" name="apiKey" value="YOUR_STATICFORMS_API_KEY">
+        <input type="hidden" name="subject" value="New enquiry from Pretty Colours Face Paint website">
+        <!-- Honeypot field for spam protection -->
+        <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off">
+
+        <div>
+          <label for="name" class="block text-sm font-medium mb-1">Name</label>
+          <input type="text" id="name" name="name" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium mb-1">Email</label>
+          <input type="email" id="email" name="email" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        </div>
+
+        <div>
+          <label for="eventDate" class="block text-sm font-medium mb-1">Event date</label>
+          <input type="date" id="eventDate" name="eventDate" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium mb-1">Message</label>
+          <textarea id="message" name="message" rows="5" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-pink-600 text-white font-semibold py-3 rounded-full hover:bg-pink-700 transition">Send Enquiry</button>
+        <p id="form-status" class="text-sm text-center"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-300 text-center py-8 px-4 text-sm">
+    <div class="max-w-5xl mx-auto">
+      <p>&copy; 2026 Pretty Colours Face Paint. Placeholder footer text.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
