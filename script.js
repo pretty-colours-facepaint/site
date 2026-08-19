@@ -1,6 +1,16 @@
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 
+// Under construction overlay, dismissed and remembered via localStorage.
+const constructionOverlay = document.getElementById('construction-overlay');
+const constructionDismiss = document.getElementById('construction-dismiss');
+
+constructionDismiss.addEventListener('click', () => {
+  localStorage.setItem('constructionAcknowledged', 'true');
+  constructionOverlay.classList.add('hidden');
+  document.documentElement.classList.remove('overflow-hidden');
+});
+
 // Shrink the header logo as the page scrolls, down to a minimum size.
 const logo = document.getElementById('logo-img');
 const LOGO_MAX = 112; // px, matches h-28
