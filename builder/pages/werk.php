@@ -21,28 +21,28 @@ custom_style(fontDisplay: true);
 <?php site_header(base: $base); ?>
 
   <section class="max-w-5xl mx-auto px-4 pt-16 pb-20">
-    <h1 class="font-display text-4xl mb-2 text-pink-600"><?= content_config('werkOverzicht.titel') ?></h1>
-    <p class="text-sm text-gray-500 mb-10 max-w-xl"><?= content_config('werkOverzicht.intro') ?></p>
+    <h1 class="font-display text-4xl mb-2 text-pink-600"><?= content_config('portfolio.titel') ?></h1>
+    <p class="text-sm text-gray-500 mb-10 max-w-xl"><?= content_config('portfolio.intro') ?></p>
 
     <div class="grid gap-8">
 <?php
 werk_overzicht_kaart(
-    content_config('werkOverzicht.schminken.titel'),
-    content_config('werkOverzicht.schminken.tekst'),
+    content_config('portfolio.kwast.titel'),
+    content_config('portfolio.kwast.tekst'),
     $base . 'MAAK_HIER_AANPASSINGEN/portfolio/kwast/',
     $base . 'pages/werk-schminken.html',
     'text-pink-600'
 );
 werk_overzicht_kaart(
-    content_config('werkOverzicht.glittertattoos.titel'),
-    content_config('werkOverzicht.glittertattoos.tekst'),
+    content_config('portfolio.ster.titel'),
+    content_config('portfolio.ster.tekst'),
     $base . 'MAAK_HIER_AANPASSINGEN/portfolio/ster/',
     $base . 'pages/werk-glittertattoos.html',
     'text-purple-600'
 );
 werk_overzicht_kaart(
-    content_config('werkOverzicht.feestenEvents.titel'),
-    content_config('werkOverzicht.feestenEvents.tekst'),
+    content_config('portfolio.ballon.titel'),
+    content_config('portfolio.ballon.tekst'),
     $base . 'MAAK_HIER_AANPASSINGEN/portfolio/ballon/',
     $base . 'pages/werk-feesten-events.html',
     'text-green-600'

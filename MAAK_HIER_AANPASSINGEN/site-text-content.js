@@ -62,45 +62,51 @@ const SITE_CONFIG = {
   },
 
   // ------------------------------------------------------------
-  // BOVENAAN elke pagina (logo-tekst, "AANVRAAG DOEN"-knop) en
-  // ONDERAAN elke pagina (contactgegevens naast het kleine logo).
+  // BOVENAAN elke pagina (logo-tekst, "AANVRAAG DOEN"-knop).
   // ------------------------------------------------------------
   contact: {
     // Tekst op de ronde knop rechtsboven op elke pagina, en op de knop
     // onder het "Over mij"-blok op de voorpagina.
     callToAction: 'AANVRAAG DOEN',
-    // De rest hieronder staat alleen in de footer (onderaan elke pagina).
-    tagline: 'Kleur maakt alles leuker!',
-    telefoon: '06 – 123456789',
-    email: 'info@voorbeeld.nl',
-    regio: '30 km rond Hoofddorp',
   },
 
-  // De rondjes met social-media-links in de footer (onderaan elke
-  // pagina). Elk badge heeft een titel (tooltip/toegankelijkheid), logo
-  // (de 1-3 letters in het rondje), link, en optioneel een kleur voor de
-  // achtergrond — zonder kleur wordt het rondje grijs. Een badge weglaten
-  // of de hele lijst leeg maken ([]) zorgt dat hij simpelweg niet getoond
-  // wordt.
-  //
-  // Kleur schrijf je als "rgb(rood, groen, blauw)", met 3 getallen van
-  // 0 t/m 255 (bijv. "rgb(225, 48, 108)"). Kies een kleur en lees de 3
-  // getallen af op https://www.w3schools.com/colors/colors_picker.asp
-  // (staat daar onder "RGB").
-  socials: [
-    {
-      titel: 'Instagram',
-      logo: 'IG',
-      link: 'https://instagram.com/',
-      kleur: 'rgb(225, 48, 108)',
+  // ------------------------------------------------------------
+  // ONDERAAN elke pagina (de footer): contactgegevens naast het kleine
+  // logo, en de rondjes met social-media-links.
+  // ------------------------------------------------------------
+  footer: {
+    contact: {
+      tagline: 'Kleur maakt alles leuker!',
+      telefoon: '06 – 123456789',
+      email: 'info@voorbeeld.nl',
+      regio: '30 km rond Hoofddorp',
     },
-    {
-      titel: 'Facebook',
-      logo: 'FB',
-      link: 'https://facebook.com/',
-      kleur: 'rgb(24, 119, 242)',
-    },
-  ],
+
+    // Elk badge heeft een titel (tooltip/toegankelijkheid), logo
+    // (de 1-3 letters in het rondje), link, en optioneel een kleur voor de
+    // achtergrond — zonder kleur wordt het rondje grijs. Een badge weglaten
+    // of de hele lijst leeg maken ([]) zorgt dat hij simpelweg niet getoond
+    // wordt.
+    //
+    // Kleur schrijf je als "rgb(rood, groen, blauw)", met 3 getallen van
+    // 0 t/m 255 (bijv. "rgb(225, 48, 108)"). Kies een kleur en lees de 3
+    // getallen af op https://www.w3schools.com/colors/colors_picker.asp
+    // (staat daar onder "RGB").
+    socials: [
+      {
+        titel: 'Instagram',
+        logo: 'IG',
+        link: 'https://instagram.com/',
+        kleur: 'rgb(225, 48, 108)',
+      },
+      {
+        titel: 'Facebook',
+        logo: 'FB',
+        link: 'https://facebook.com/',
+        kleur: 'rgb(24, 119, 242)',
+      },
+    ],
+  },
 
   // De 4 foto's die als "cover" gebruikt worden op de voorpagina en de
   // prijzenpagina — 3 daarvan zijn gewoon een foto uit een van de
@@ -151,19 +157,19 @@ const SITE_CONFIG = {
   // van de 3 categorieblokken (met een paar voorbeeldfoto's en een link
   // naar de volledige album-pagina van die categorie).
   // ------------------------------------------------------------
-  werkOverzicht: {
+  portfolio: {
     titel: 'Mijn werk',
     intro:
       "Een greep uit eerder werk: schminken, glittertattoo's en feestjes & evenementen.",
-    schminken: {
+    kwast: {
       titel: 'Schminken',
       tekst: 'Creatieve en kleurrijke schmink voor jong en oud.',
     },
-    glittertattoos: {
+    ster: {
       titel: "Glittertattoo's",
       tekst: "Mooie, tijdelijke glittertattoo's in allerlei designs.",
     },
-    feestenEvents: {
+    ballon: {
       titel: 'Feestjes & Evenementen',
       tekst:
         'Voor kinderfeestjes, schoolfeesten, markten en andere gelegenheden.',

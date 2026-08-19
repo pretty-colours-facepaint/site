@@ -346,10 +346,10 @@ HTML;
 function footer_full(string $taglineClass = 'font-display text-base text-pink-500', string $base = ''): void
 {
     $mailIconPink = mail_icon_svg('size-4 text-pink-500');
-    $tagline = content_config('contact.tagline');
-    $telefoon = content_config('contact.telefoon');
-    $email = content_config('contact.email');
-    $regio = content_config('contact.regio');
+    $tagline = content_config('footer.contact.tagline');
+    $telefoon = content_config('footer.contact.telefoon');
+    $email = content_config('footer.contact.email');
+    $regio = content_config('footer.contact.regio');
     echo <<<HTML
 
   <!-- Footer -->

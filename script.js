@@ -73,9 +73,9 @@ if (typeof SITE_CONFIG === 'undefined') {
 }
 
 // ============================================================
-// SOCIALE-MEDIA-BADGES — optioneel, uit SITE_CONFIG.socials (een lijst
-// van { titel, logo, link, kleur }). Ontbreekt de lijst, is hij leeg, of
-// mist een badge titel/logo/link, dan wordt die badge simpelweg niet
+// SOCIALE-MEDIA-BADGES — optioneel, uit SITE_CONFIG.footer.socials (een
+// lijst van { titel, logo, link, kleur }). Ontbreekt de lijst, is hij leeg,
+// of mist een badge titel/logo/link, dan wordt die badge simpelweg niet
 // getoond — dit is geen foutmelding-waardige situatie, badges zijn optie.
 // kleur is ook optioneel (een rgb-kleur zoals "rgb(225, 48, 108)"); zonder
 // geldige kleur wordt het rondje standaard grijs.
@@ -84,7 +84,7 @@ const RGB_COLOR = /^rgb\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*\)$/i;
 
 document.querySelectorAll('[data-social-badges]').forEach((container) => {
   const socials =
-    typeof SITE_CONFIG === 'undefined' ? undefined : SITE_CONFIG.socials;
+    typeof SITE_CONFIG === 'undefined' ? undefined : SITE_CONFIG.footer?.socials;
   if (!Array.isArray(socials)) {
     return;
   }
