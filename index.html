@@ -5,7 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pretty Colours Facepaint</title>
   <link rel="icon" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .font-display {
+      font-family: 'Pacifico', cursive;
+    }
+  </style>
 </head>
 <body class="font-sans text-gray-700 bg-white overflow-x-hidden">
 
@@ -29,35 +37,35 @@
     <div class="grid sm:grid-cols-3 gap-6 text-center">
       <div>
         <img src="assets/icon-schminken.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-semibold mb-1 text-pink-600">Schminken</h3>
+        <h3 class="font-display text-xl mb-1 text-pink-600">Schminken</h3>
         <p class="text-xs text-gray-500">Creatieve en kleurrijke schmink voor jong en oud.</p>
       </div>
       <div>
         <img src="assets/icon-glittertattoo.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-semibold mb-1 text-purple-600">Glittertattoo's</h3>
+        <h3 class="font-display text-xl mb-1 text-purple-600">Glittertattoo's</h3>
         <p class="text-xs text-gray-500">Mooie, tijdelijke glittertattoo's in allerlei designs.</p>
       </div>
       <div>
         <img src="assets/icon-feest.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-semibold mb-1 text-green-600">Feestjes &amp; evenementen</h3>
+        <h3 class="font-display text-xl mb-1 text-green-600">Feestjes &amp; Evenementen</h3>
         <p class="text-xs text-gray-500">Voor kinderfeestjes, schoolfeesten, markten en andere gelegenheden.</p>
       </div>
     </div>
 
     <!-- Three example photos, linking to their album -->
     <div class="relative">
-      <img src="assets/splash-left.png" alt="" class="hidden lg:block absolute -left-28 top-1/2 -translate-y-1/2 w-40 pointer-events-none select-none" aria-hidden="true">
-      <img src="assets/splash-right.png" alt="" class="hidden lg:block absolute -right-28 top-1/2 -translate-y-1/2 w-40 pointer-events-none select-none" aria-hidden="true">
+      <img src="assets/splash-left.jpg" alt="" class="hidden lg:block absolute z-0 -left-20 top-1/2 -translate-y-1/2 w-24 pointer-events-none select-none" aria-hidden="true">
+      <img src="assets/splash-right.jpg" alt="" class="hidden lg:block absolute z-0 -right-20 top-1/2 -translate-y-1/2 w-24 pointer-events-none select-none" aria-hidden="true">
 
-      <div class="grid sm:grid-cols-3 gap-6 mt-8">
+      <div class="relative z-10 grid sm:grid-cols-3 gap-6 mt-8">
         <a href="werk-schminken.html">
-          <img src="assets/example-schminken.jpg" alt="Voorbeeld schminken" class="aspect-[4/5] w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+          <img src="assets/example-schminken.jpg" alt="Voorbeeld schminken" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
         <a href="werk-glittertattoos.html">
-          <img src="assets/example-glittertattoo.jpg" alt="Voorbeeld glittertattoo" class="aspect-[4/5] w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+          <img src="assets/example-glittertattoo.jpg" alt="Voorbeeld glittertattoo" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
         <a href="werk-feesten-events.html">
-          <img src="assets/example-feest.jpg" alt="Voorbeeld feest" class="aspect-[4/5] w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+          <img src="assets/example-feest.jpg" alt="Voorbeeld feest" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
       </div>
     </div>
