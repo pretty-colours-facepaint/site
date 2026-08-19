@@ -7,98 +7,127 @@
   <link rel="icon" href="assets/logo.jpg">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="font-sans text-gray-800">
+<body class="font-sans text-gray-700 bg-white">
 
-  <header class="sticky top-0 bg-white/90 backdrop-blur shadow-sm z-10">
-    <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-2">
-      <a href="#"><img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-16 w-16 rounded-full object-cover"></a>
-      <nav class="hidden sm:flex gap-6 text-sm font-medium">
+  <!-- Header -->
+  <header class="sticky top-0 bg-white/90 backdrop-blur border-b z-10">
+    <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-6 flex-wrap gap-3">
+      <a href="#" class="flex items-center gap-3">
+        <img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-14 w-14 rounded-full object-cover">
+        <p class="text-[10px] tracking-widest text-gray-400">SCHMINK &amp; GLITTERTATTOO'S</p>
+      </a>
+      <nav class="flex items-center gap-6 text-sm">
         <a href="#werk" class="hover:text-pink-600">Bekijk mijn werk</a>
         <a href="#over" class="hover:text-pink-600">Over mij</a>
-        <a href="#contact" class="hover:text-pink-600">Contact</a>
+        <a href="#contact" class="border border-pink-300 text-pink-600 rounded-full px-4 py-2 font-medium hover:bg-pink-50">AANVRAAG DOEN</a>
       </nav>
     </div>
   </header>
 
-  <section class="bg-gradient-to-br from-pink-500 via-purple-500 to-yellow-400 text-white text-center py-24 px-4">
-    <div class="max-w-3xl mx-auto">
-      <img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-36 w-36 sm:h-44 sm:w-44 rounded-full object-cover mx-auto mb-6 shadow-lg">
-      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Vrolijke gezichtjes, grote glimlachen</h1>
-      <p class="text-lg sm:text-xl mb-8 opacity-90">Schminken en glittertattoo's voor verjaardagen, feesten en evenementen.</p>
-      <a href="#werk" class="inline-block bg-white text-pink-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-pink-50 transition">Bekijk mijn werk</a>
+  <!-- Three services: icon + heading + text -->
+  <section id="werk" class="max-w-5xl mx-auto px-4 pt-16 pb-14">
+    <div class="grid sm:grid-cols-3 gap-6 text-center">
+      <div>
+        <img src="assets/icon-schminken.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
+        <h3 class="font-semibold mb-1 text-pink-600">Schminken</h3>
+        <p class="text-xs text-gray-500">Creatieve en kleurrijke schmink voor jong en oud.</p>
+      </div>
+      <div>
+        <img src="assets/icon-glittertattoo.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
+        <h3 class="font-semibold mb-1 text-purple-600">Glittertattoo's</h3>
+        <p class="text-xs text-gray-500">Mooie, tijdelijke glittertattoo's in allerlei designs.</p>
+      </div>
+      <div>
+        <img src="assets/icon-feest.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
+        <h3 class="font-semibold mb-1 text-green-600">Feestjes &amp; evenementen</h3>
+        <p class="text-xs text-gray-500">Voor kinderfeestjes, schoolfeesten, markten en andere gelegenheden.</p>
+      </div>
+    </div>
+
+    <!-- Three example photos, linking to their album -->
+    <div class="grid sm:grid-cols-3 gap-6 mt-8">
+      <a href="werk-schminken.html">
+        <img src="assets/example-schminken.png" alt="Voorbeeld schminken" class="aspect-[4/5] w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+      </a>
+      <a href="werk-glittertattoos.html">
+        <img src="assets/example-glittertattoo.png" alt="Voorbeeld glittertattoo" class="aspect-[4/5] w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+      </a>
+      <a href="werk-feesten-events.html">
+        <img src="assets/example-feest.png" alt="Voorbeeld feest" class="aspect-[4/5] w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+      </a>
+    </div>
+
+    <!-- Two CTA buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+      <a href="werk-schminken.html" class="border-2 border-pink-500 text-pink-600 rounded-full px-6 py-3 text-sm text-center font-medium hover:bg-pink-50 transition">🖼 BEKIJK MIJN WERK</a>
+      <a href="prijzen.html" class="border-2 border-purple-500 text-purple-600 rounded-full px-6 py-3 text-sm text-center font-medium hover:bg-purple-50 transition">🏷 BEKIJK DE PRIJZEN</a>
     </div>
   </section>
 
-  <section id="werk" class="py-16 px-4">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-4">Bekijk mijn werk</h2>
-      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">Een paar voorbeelden van eerder werk, verdeeld in albums.</p>
-      <div class="grid sm:grid-cols-3 gap-6">
-        <a href="werk-schminken.html" class="block bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition text-center">
-          <h3 class="font-semibold text-lg mb-2 text-pink-600">Schminken</h3>
-          <p class="text-gray-600 text-sm mb-4">Placeholder tekst over schminken.</p>
-          <span class="inline-block text-pink-600 font-medium text-sm">Bekijk album &rarr;</span>
-        </a>
-        <a href="werk-glittertattoos.html" class="block bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition text-center">
-          <h3 class="font-semibold text-lg mb-2 text-pink-600">Glittertattoo's</h3>
-          <p class="text-gray-600 text-sm mb-4">Placeholder tekst over glittertattoo's.</p>
-          <span class="inline-block text-pink-600 font-medium text-sm">Bekijk album &rarr;</span>
-        </a>
-        <a href="werk-feesten-events.html" class="block bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition text-center">
-          <h3 class="font-semibold text-lg mb-2 text-pink-600">Elke feest of event</h3>
-          <p class="text-gray-600 text-sm mb-4">Placeholder tekst over feesten en evenementen.</p>
-          <span class="inline-block text-pink-600 font-medium text-sm">Bekijk album &rarr;</span>
-        </a>
+  <!-- About / bio card -->
+  <section id="over" class="max-w-5xl mx-auto px-4 pb-20">
+    <div class="border border-orange-100 rounded-2xl p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-8 bg-orange-50">
+      <img src="assets/portrait.png" alt="Portret" class="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shrink-0 shadow-sm">
+      <div class="text-center sm:text-left">
+        <h2 class="text-2xl font-semibold mb-3 text-pink-600">Hoi, ik ben Kim!</h2>
+        <p class="text-sm text-gray-500 mb-6 max-w-md">Met veel plezier maak ik van ieder gezicht een kleurrijk kunstwerk. Ik hou van vrolijke kleuren, mooie details en vooral van de grote glimlach die verschijnt wanneer iemand zichzelf in de spiegel ziet. Ik kijk ernaar uit om er samen iets moois van te maken!</p>
+        <a href="#contact" class="inline-block bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-6 py-3 text-sm font-medium shadow hover:opacity-90 transition">AANVRAAG DOEN ✉</a>
       </div>
     </div>
   </section>
 
-  <section id="over" class="py-16 px-4 bg-gray-50">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Over mij</h2>
-      <p class="text-gray-600">Placeholder tekst over mij. Vertel hier iets over jezelf, je ervaring en wat Pretty Colours Facepaint bijzonder maakt. Vervang dit door je eigen verhaal en foto.</p>
-    </div>
+  <!-- Contact form -->
+  <section id="contact" class="max-w-lg mx-auto px-4 pb-20">
+    <h2 class="text-2xl font-semibold text-center mb-2 text-pink-600">Aanvraag doen</h2>
+    <p class="text-gray-500 text-center text-sm mb-8">Vul het formulier in en ik neem contact met je op over je feest of evenement.</p>
+
+    <form id="contact-form" action="https://api.staticforms.dev/submit" method="POST" class="bg-white border rounded-2xl shadow-sm p-6 space-y-4">
+      <input type="hidden" name="subject" value="pretty-colours-facepaint submission">
+      <!-- Honeypot field for spam protection -->
+      <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off">
+
+      <div>
+        <label for="name" class="block text-sm font-medium mb-1">Naam</label>
+        <input type="text" id="name" name="name" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium mb-1">E-mail</label>
+        <input type="email" id="email" name="email" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      </div>
+
+      <div>
+        <label for="eventDate" class="block text-sm font-medium mb-1">Datum evenement</label>
+        <input type="date" id="eventDate" name="eventDate" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium mb-1">Bericht</label>
+        <textarea id="message" name="message" rows="5" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white font-semibold py-3 rounded-full hover:opacity-90 transition">Verstuur aanvraag</button>
+      <p id="form-status" class="text-sm text-center"></p>
+    </form>
   </section>
 
-  <section id="contact" class="py-16 px-4">
-    <div class="max-w-lg mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-4">Contact</h2>
-      <p class="text-gray-600 text-center mb-8">Vul het formulier in en ik neem contact met je op over je feest of evenement.</p>
-
-      <form id="contact-form" action="https://api.staticforms.dev/submit" method="POST" class="bg-white border rounded-xl shadow-sm p-6 space-y-4">
-        <input type="hidden" name="subject" value="pretty-colours-facepaint submission">
-        <!-- Honeypot field for spam protection -->
-        <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off">
-
-        <div>
-          <label for="name" class="block text-sm font-medium mb-1">Naam</label>
-          <input type="text" id="name" name="name" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
-        </div>
-
-        <div>
-          <label for="email" class="block text-sm font-medium mb-1">E-mail</label>
-          <input type="email" id="email" name="email" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
-        </div>
-
-        <div>
-          <label for="eventDate" class="block text-sm font-medium mb-1">Datum evenement</label>
-          <input type="date" id="eventDate" name="eventDate" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
-        </div>
-
-        <div>
-          <label for="message" class="block text-sm font-medium mb-1">Bericht</label>
-          <textarea id="message" name="message" rows="5" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
-        </div>
-
-        <button type="submit" class="w-full bg-pink-600 text-white font-semibold py-3 rounded-full hover:bg-pink-700 transition">Verstuur aanvraag</button>
-        <p id="form-status" class="text-sm text-center"></p>
-      </form>
-    </div>
-  </section>
-
-  <footer class="bg-gray-900 text-gray-300 text-center py-8 px-4 text-sm">
-    <div class="max-w-5xl mx-auto">
-      <p>&copy; 2026 Pretty Colours Facepaint. Placeholder footertekst.</p>
+  <!-- Footer -->
+  <footer class="border-t">
+    <div class="max-w-5xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-12 w-12 rounded-full object-cover">
+        <p class="text-xs">Kleur maakt alles leuker!</p>
+      </div>
+      <div class="space-y-1 text-center sm:text-left">
+        <p>📞 06 – 12345678</p>
+        <p>✉ info@voorbeeld.nl</p>
+        <p>📍 Regio (jouw regio)</p>
+      </div>
+      <div class="flex gap-3">
+        <span class="w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center text-xs">IG</span>
+        <span class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">FB</span>
+        <a href="#contact" class="w-9 h-9 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs">✉</a>
+      </div>
     </div>
   </footer>
 
