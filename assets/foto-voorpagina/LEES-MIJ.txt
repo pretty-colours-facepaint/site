@@ -1,0 +1,4 @@
+DE 3 FOTO'S OP DE VOORPAGINA — GEEN CODE NODIG
+================================================
+
+foto1.jpg staat bij "Schminken", foto2.jpg bij "Glittertattoo's" en foto3.jpg bij "Elke feest of event". Vervang een foto door de oude te verwijderen en een nieuw bestand toe te voegen met exact de oude bestandsnaam.

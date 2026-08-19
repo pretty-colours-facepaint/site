@@ -1,0 +1,4 @@
+FOTO'S TOEVOEGEN — GEEN CODE NODIG
+====================================
+
+Zet een foto in de submap van de bijbehorende pagina (schminken/, glittertattoos/ of feesten-events/) en noem hem foto1.jpg, foto2.jpg, enzovoort — tot maximaal foto16.jpg. Verwijderen kan door de foto uit de map te halen; de nummers hoeven niet aaneengesloten te zijn. De website leest deze map rechtstreeks, dus geen "build" nodig — gewoon opslaan en online zetten.
