@@ -15,14 +15,14 @@ $pages = [
     'index.php' => 'index.html',
     'prijzen.php' => 'pages/prijzen.html',
     'aanvraag.php' => 'pages/aanvraag.html',
-    'werk.php' => 'pages/werk.html',
-    'werk-schminken.php' => 'pages/werk-schminken.html',
-    'werk-glittertattoos.php' => 'pages/werk-glittertattoos.html',
-    'werk-feesten-events.php' => 'pages/werk-feesten-events.html',
+    'portfolio/index.php' => 'pages/portfolio/index.html',
+    'portfolio/sectionA.php' => 'pages/portfolio/sectionA.html',
+    'portfolio/sectionB.php' => 'pages/portfolio/sectionB.html',
+    'portfolio/sectionC.php' => 'pages/portfolio/sectionC.html',
 ];
 
-if (!is_dir($root . '/pages')) {
-    mkdir($root . '/pages');
+if (!is_dir($root . '/pages/portfolio')) {
+    mkdir($root . '/pages/portfolio', recursive: true);
 }
 
 foreach ($pages as $source => $output) {

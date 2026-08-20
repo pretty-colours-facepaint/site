@@ -3,8 +3,8 @@
 Simple static Dutch-language site for a face painting events business, styled with [Tailwind CSS](https://tailwindcss.com) (via CDN, no build step) and a contact form powered by [Static Forms](https://staticforms.dev).
 
 - `index.html` — homepage
-- `pages/werk.html` — "Mijn werk" overview, linking to the three album pages below
-- `pages/werk-schminken.html`, `pages/werk-glittertattoos.html`, `pages/werk-feesten-events.html` — photo albums
+- `pages/portfolio/index.html` — "Mijn werk" overview, linking to the three album pages below
+- `pages/portfolio/sectionA.html`, `pages/portfolio/sectionB.html`, `pages/portfolio/sectionC.html` — photo albums
 - `pages/prijzen.html` — pricing page
 - `pages/aanvraag.html` — contact/request form
 - `assets/` — logo, service icons, and portrait (not meant for client edits)
@@ -24,17 +24,17 @@ The contact form is already wired up with a live Static Forms API key. Just repl
 
 No config file, no PHP, no code, **no rebuild** — just drop image files into a folder and push. See `MAAK_HIER_AANPASSINGEN/portfolio/LEES-MIJ.txt` for the walkthrough in Dutch; short version:
 
-Each album page (`pages/werk-schminken.html`, `pages/werk-glittertattoos.html`, `pages/werk-feesten-events.html`) shows every photo it finds, numbered `1` through `16`, in its matching folder:
+Each album page (`pages/portfolio/sectionA.html`, `pages/portfolio/sectionB.html`, `pages/portfolio/sectionC.html`) shows every photo it finds, numbered `1` through `16`, in its matching folder:
 
-- `MAAK_HIER_AANPASSINGEN/portfolio/kwast/`
-- `MAAK_HIER_AANPASSINGEN/portfolio/ster/`
-- `MAAK_HIER_AANPASSINGEN/portfolio/ballon/`
+- `MAAK_HIER_AANPASSINGEN/portfolio/sectionA/`
+- `MAAK_HIER_AANPASSINGEN/portfolio/sectionB/`
+- `MAAK_HIER_AANPASSINGEN/portfolio/sectionC/`
 
 To add a photo: drop a `.jpg`, `.jpeg`, or `.png` file named with the next free number (`2.jpg`, `3.jpg`, ...) into the right folder. To remove one: delete it. The browser checks for the numbered files itself on page load, so this needs **no PHP rebuild at all** — the change is live as soon as it's pushed.
 
 The browser checks numbers one at a time (trying `.jpg`, `.jpeg`, then `.png` for each) and **stops after 2 numbers in a row are missing** — so a single gap in the numbering is fine, but not two consecutive ones. This is deliberate: an earlier version fired off up to 200 × 3 image requests per gallery in parallel on every page load, which was enough to trip rate limits on some hosting. Stopping early after 2 misses keeps the request count proportional to how many photos actually exist.
 
-The 4 cover photos shown on the homepage and prices page are set by path in `site-text-content.js` (`covers.hartIcon`, `covers.bliksemIcon`, `covers.sterIcon`, `covers.portret`) — 3 of them just point at a photo already sitting in one of the `portfolio/` folders above, and `portret` points at `MAAK_HIER_AANPASSINGEN/portret.png`. Change the path in `site-text-content.js` to swap which photo is used as a cover.
+The cover photos shown on the homepage and prices page are set by path in `site-text-content.js`, one per section per page (`homepage.sectionA/sectionB/sectionC.cover`, `prijzen.sectionA/sectionB/sectionC.cover`) so the two pages can each show a different photo — each just points at a photo already sitting in one of the `portfolio/` folders above. The homepage portrait is set separately at `homepage.over.foto`, pointing at `MAAK_HIER_AANPASSINGEN/portret.png`. Change the path in `site-text-content.js` to swap which photo is used.
 
 ## Editing page text
 

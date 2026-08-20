@@ -1,8 +1,8 @@
 <?php
 $title = "Mijn werk — Pretty Colours Facepaint";
 $description = "Overzicht van schminken, glittertattoo's en feestjes & evenementen door Pretty Colours Facepaint, rond Hoofddorp.";
-$canonical = "https://prettycolours-facepaint.nl/pages/werk.html";
-$base = '../';
+$canonical = "https://prettycolours-facepaint.nl/pages/portfolio/index.html";
+$base = '../../';
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -27,24 +27,24 @@ custom_style(fontDisplay: true);
     <div class="grid gap-8">
 <?php
 werk_overzicht_kaart(
-    content_config('portfolio.kwast.titel'),
-    content_config('portfolio.kwast.tekst'),
-    $base . 'MAAK_HIER_AANPASSINGEN/portfolio/kwast/',
-    $base . 'pages/werk-schminken.html',
+    content_config('portfolio.sectionA.titel'),
+    content_config('portfolio.sectionA.tekst'),
+    $base . 'MAAK_HIER_AANPASSINGEN/portfolio/sectionA/',
+    'sectionA.html',
     'text-pink-600'
 );
 werk_overzicht_kaart(
-    content_config('portfolio.ster.titel'),
-    content_config('portfolio.ster.tekst'),
-    $base . 'MAAK_HIER_AANPASSINGEN/portfolio/ster/',
-    $base . 'pages/werk-glittertattoos.html',
+    content_config('portfolio.sectionB.titel'),
+    content_config('portfolio.sectionB.tekst'),
+    $base . 'MAAK_HIER_AANPASSINGEN/portfolio/sectionB/',
+    'sectionB.html',
     'text-purple-600'
 );
 werk_overzicht_kaart(
-    content_config('portfolio.ballon.titel'),
-    content_config('portfolio.ballon.tekst'),
-    $base . 'MAAK_HIER_AANPASSINGEN/portfolio/ballon/',
-    $base . 'pages/werk-feesten-events.html',
+    content_config('portfolio.sectionC.titel'),
+    content_config('portfolio.sectionC.tekst'),
+    $base . 'MAAK_HIER_AANPASSINGEN/portfolio/sectionC/',
+    'sectionC.html',
     'text-green-600'
 );
 ?>

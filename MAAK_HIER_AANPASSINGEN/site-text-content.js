@@ -19,30 +19,37 @@ const SITE_CONFIG = {
   // eronder, en het "Over mij"-blok met foto helemaal onderaan.
   // ------------------------------------------------------------
   homepage: {
-    // 1e kolom: roze hartje-icoontje, linksboven.
-    hartIcon: {
+    // Sectie A (1e kolom, linksboven — schminken). "cover" is de
+    // voorbeeldfoto eronder — het pad is relatief aan deze map
+    // (MAAK_HIER_AANPASSINGEN/), meestal een foto uit een portfolio-mapje.
+    sectionA: {
       titel: 'Schminken',
       tekst: 'Creatieve en kleurrijke schmink<br> voor jong en oud.',
+      cover: 'portfolio/sectionA/cover.jpg',
     },
-    // 2e kolom: paarse bliksem-icoontje, in het midden.
-    bliksemIcon: {
+    // Sectie B (2e kolom, midden — glittertattoo's).
+    sectionB: {
       titel: "Glittertattoo's",
       tekst: "Mooie, tijdelijke glittertattoo's<br> in allerlei designs.",
+      cover: 'portfolio/sectionB/cover.jpg',
     },
-    // 3e kolom: groene ster-icoontje, rechts.
-    sterIcon: {
+    // Sectie C (3e kolom, rechts — feestjes & evenementen).
+    sectionC: {
       titel: 'Feestjes & Evenementen',
       tekst:
         'Voor kinderfeestjes, schoolfeesten,<br>markten en andere gelegenheden.',
+      cover: 'portfolio/sectionC/cover.jpg',
     },
     // De 2 ronde knoppen onder de 3 voorbeeldfoto's.
-    ctaWerk: 'BEKIJK MIJN WERK',
-    ctaPrijzen: 'BEKIJK DE PRIJZEN',
-    // Het "Over mij"-blok met portretfoto, helemaal onderaan de voorpagina.
+    callToActionPortfolio: 'BEKIJK MIJN WERK',
+    callToActionPrijzen: 'BEKIJK DE PRIJZEN',
+    // Het "Over mij"-blok, helemaal onderaan de voorpagina. "foto" is de
+    // ronde portretfoto, relatief aan deze map (MAAK_HIER_AANPASSINGEN/).
     over: {
       titel: 'Hoi, ik ben Sanne!',
       tekst:
         'Mijn naam is Sanne Lek en ik schmink op kinderfeestjes, evenementen en voor bedrijven of winkels in een straal van 30 km rond Hoofddorp.',
+      foto: 'portret.png',
     },
   },
 
@@ -108,44 +115,34 @@ const SITE_CONFIG = {
     ],
   },
 
-  // De 4 foto's die als "cover" gebruikt worden op de voorpagina en de
-  // prijzenpagina — 3 daarvan zijn gewoon een foto uit een van de
-  // portfolio-mapjes, de 4e is de portretfoto. Verander hieronder het pad
-  // (rechts van de dubbele punt) als je een andere foto wilt tonen; het
-  // pad is altijd relatief aan deze map (MAAK_HIER_AANPASSINGEN/).
-  covers: {
-    // 1e voorbeeldfoto op de voorpagina, en het roze hartje-kaartje op de prijzenpagina.
-    hartIcon: 'portfolio/kwast/cover.jpg',
-    // 2e voorbeeldfoto op de voorpagina, en het paarse bliksem-kaartje op de prijzenpagina.
-    bliksemIcon: 'portfolio/ster/cover.jpg',
-    // 3e voorbeeldfoto op de voorpagina, en het groene ster-kaartje op de prijzenpagina.
-    sterIcon: 'portfolio/ballon/cover.jpg',
-    // De ronde portretfoto bij "Over mij" onderaan de voorpagina.
-    portret: 'portret.png',
-  },
-
   // ------------------------------------------------------------
   // PRIJZEN-PAGINA (via het menu / de knop "BEKIJK DE PRIJZEN")
   // ------------------------------------------------------------
   prijzen: {
     titel: 'Prijzen',
-    // 1e kaartje: roze hartje-icoontje.
-    hartIcon: {
+    // Sectie A (1e kaartje — schminken). "cover" is de foto erin — het pad
+    // is relatief aan deze map (MAAK_HIER_AANPASSINGEN/), meestal een foto
+    // uit een portfolio-mapje. Los aan te passen van de voorbeeldfoto op
+    // de voorpagina (homepage.sectionA.cover hierboven).
+    sectionA: {
       titel: 'Schminken',
       prijs: '€ 4,-',
       tekst: 'Placeholder tekst over de schminkprijzen.',
+      cover: 'portfolio/sectionA/cover.jpg',
     },
-    // 2e kaartje: paarse bliksem-icoontje.
-    bliksemIcon: {
+    // Sectie B (2e kaartje — glittertattoo's).
+    sectionB: {
       titel: "Glittertattoo's",
       prijs: '€ 5,-',
       tekst: 'Placeholder tekst over de glittertattoo-prijzen.',
+      cover: 'portfolio/sectionB/cover.jpg',
     },
-    // 3e kaartje: groene ster-icoontje.
-    sterIcon: {
+    // Sectie C (3e kaartje — feestjes & evenementen).
+    sectionC: {
       titel: 'Feestjes & evenementen',
       prijs: '€ 6,-',
       tekst: 'Placeholder tekst over de prijzen voor feestjes etc.',
+      cover: 'portfolio/sectionC/cover.jpg',
     },
     // De tekst helemaal onderaan de prijzenpagina.
     footnote: 'Neem contact op voor een offerte op maat.',
@@ -161,27 +158,27 @@ const SITE_CONFIG = {
     titel: 'Mijn werk',
     intro:
       "Een greep uit eerder werk: schminken, glittertattoo's en feestjes & evenementen.",
-    kwast: {
+    sectionA: {
       titel: 'Schminken',
       tekst: 'Creatieve en kleurrijke schmink voor jong en oud.',
     },
-    ster: {
+    sectionB: {
       titel: "Glittertattoo's",
       tekst: "Mooie, tijdelijke glittertattoo's in allerlei designs.",
     },
-    ballon: {
+    sectionC: {
       titel: 'Feestjes & Evenementen',
       tekst:
         'Voor kinderfeestjes, schoolfeesten, markten en andere gelegenheden.',
     },
-  },
 
-  // De koppen bovenaan de 3 volledige foto-album-pagina's (met de
-  // "Terug"-link), die je bereikt via de blokken op de "Mijn werk"-pagina.
-  werkPaginas: {
-    schminken: 'Schminken',
-    glittertattoos: "Glittertattoo's",
-    feestenEvents: 'Elke feest of event',
+    // De koppen bovenaan de 3 volledige foto-album-pagina's (met de
+    // "Terug"-link), die je bereikt via de blokken hierboven.
+    paginas: {
+      sectionA: 'Schminken',
+      sectionB: "Glittertattoo's",
+      sectionC: 'Elke feest of event',
+    },
   },
 
   // ------------------------------------------------------------

@@ -23,7 +23,7 @@ function content_config(string $path): string
  * as content_config(), but for an image source instead of text, so the
  * cover photo's path is editable without a PHP rebuild.
  *
- * Usage: <img <?= content_config_image('covers.hartIcon', $base) ?> alt="...">
+ * Usage: <img <?= content_config_image('homepage.sectionA.cover', $base) ?> alt="...">
  */
 function content_config_image(string $path, string $base = ''): string
 {
@@ -397,7 +397,7 @@ HTML;
 }
 
 /**
- * Photo grid for the werk-* album pages. Renders an empty container that
+ * Photo grid for the portfolio/section* album pages. Renders an empty container that
  * script.js fills at runtime by trying to load foto1.jpg, foto2.jpg, ...
  * up to 16 from $folderPath, keeping whichever numbers actually exist.
  * Adding a photo is just dropping the next-numbered file in that folder —
@@ -411,7 +411,7 @@ function werk_gallery_body(string $heading, string $folderPath, bool $fontDispla
 
   <section class="py-16 px-4">
     <div class="max-w-5xl mx-auto">
-      <a href="{$base}index.html#werk" class="text-sm text-pink-600 font-normal">&larr; Terug</a>
+      <a href="{$base}index.html#portfolio" class="text-sm text-pink-600 font-normal">&larr; Terug</a>
       <h1 class="{$headingClass}">{$heading}</h1>
       <div data-numbered-gallery="{$path}" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-sm">Foto's laden&hellip;</div>
@@ -422,7 +422,7 @@ HTML;
 }
 
 /**
- * One category block on the werk-overzicht hub page: heading, short text,
+ * One category block on the portfolio overview hub page: heading, short text,
  * a handful of preview photos (same self-serve foto1.jpg, foto2.jpg, ...
  * mechanism as the full album pages, capped to $maxPreview), and a link
  * through to that category's full album page.

@@ -1,8 +1,8 @@
 <?php
 $title = "Elke feest of event — Pretty Colours Facepaint";
 $description = "Foto's van schmink en glittertattoo's op kinderfeestjes en evenementen door Pretty Colours Facepaint, rond Hoofddorp.";
-$canonical = "https://prettycolours-facepaint.nl/pages/werk-feesten-events.html";
-$base = '../';
+$canonical = "https://prettycolours-facepaint.nl/pages/portfolio/sectionC.html";
+$base = '../../';
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -19,7 +19,7 @@ custom_style(fontDisplay: true);
 </head>
 <body class="font-sans text-gray-800">
 <?php site_header(base: $base); ?>
-<?php werk_gallery_body(content_config('werkPaginas.feestenEvents'), $base . 'MAAK_HIER_AANPASSINGEN/portfolio/ballon/', fontDisplay: true, base: $base); ?>
+<?php werk_gallery_body(content_config('portfolio.paginas.sectionC'), $base . 'MAAK_HIER_AANPASSINGEN/portfolio/sectionC/', fontDisplay: true, base: $base); ?>
 <?php footer_full(base: $base); ?>
 <?php script_js($base); ?>
 
