@@ -23,15 +23,15 @@ const SITE_CONFIG = {
     // voorbeeldfoto eronder — het pad is relatief aan deze map
     // (MAAK_HIER_AANPASSINGEN/), zie posters/LEES-MIJ.txt.
     sectionA: {
-      titel: 'Schminken',
+      titel: 'Schminken!!!',
       tekst: 'Creatieve en kleurrijke schmink<br> voor jong en oud.',
-      cover: 'posters/1.jpg',
+      cover: 'posters/1.jpeg',
     },
     // Sectie B (2e kolom, midden — glittertattoo's).
     sectionB: {
       titel: "Glittertattoo's",
       tekst: "Mooie, tijdelijke glittertattoo's<br> in allerlei designs.",
-      cover: 'posters/2.jpg',
+      cover: 'posters/2.jpeg',
     },
     // Sectie C (3e kolom, rechts — feestjes & evenementen).
     sectionC: {
@@ -128,14 +128,14 @@ const SITE_CONFIG = {
       titel: 'Schminken',
       prijs: '€ 4,-',
       tekst: 'Placeholder tekst over de schminkprijzen.',
-      cover: 'posters/1.jpg',
+      cover: 'posters/1.jpeg',
     },
     // Sectie B (2e kaartje — glittertattoo's).
     sectionB: {
       titel: "Glittertattoo's",
       prijs: '€ 5,-',
       tekst: 'Placeholder tekst over de glittertattoo-prijzen.',
-      cover: 'posters/2.jpg',
+      cover: 'posters/2.jpeg',
     },
     // Sectie C (3e kaartje — feestjes & evenementen).
     sectionC: {
