@@ -1,8 +1,8 @@
 // ============================================================
 // ALLE TEKSTEN VAN DE WEBSITE — GEEN CODE NODIG
 // (Foto's beheer je niet hier, maar door ze in de juiste map te zetten —
-// zie portfolio/LEES-MIJ.txt in deze map. De "covers"-foto's hieronder zijn
-// gewoon een pad naar een bestaande foto.)
+// zie portfolio/LEES-MIJ.txt en posters/LEES-MIJ.txt in deze map. De
+// "cover"-foto's hieronder zijn gewoon een pad naar een bestaande foto.)
 //
 // Verander hieronder alleen wat er RECHTS van een dubbele punt (:) staat,
 // tussen de aanhalingstekens " ". Zet <br> in een tekst als je een regel
@@ -21,24 +21,24 @@ const SITE_CONFIG = {
   homepage: {
     // Sectie A (1e kolom, linksboven — schminken). "cover" is de
     // voorbeeldfoto eronder — het pad is relatief aan deze map
-    // (MAAK_HIER_AANPASSINGEN/), meestal een foto uit een portfolio-mapje.
+    // (MAAK_HIER_AANPASSINGEN/), zie posters/LEES-MIJ.txt.
     sectionA: {
       titel: 'Schminken',
       tekst: 'Creatieve en kleurrijke schmink<br> voor jong en oud.',
-      cover: 'portfolio/sectionA/cover.jpg',
+      cover: 'posters/1.jpg',
     },
     // Sectie B (2e kolom, midden — glittertattoo's).
     sectionB: {
       titel: "Glittertattoo's",
       tekst: "Mooie, tijdelijke glittertattoo's<br> in allerlei designs.",
-      cover: 'portfolio/sectionB/cover.jpg',
+      cover: 'posters/2.jpg',
     },
     // Sectie C (3e kolom, rechts — feestjes & evenementen).
     sectionC: {
       titel: 'Feestjes & Evenementen',
       tekst:
         'Voor kinderfeestjes, schoolfeesten,<br>markten en andere gelegenheden.',
-      cover: 'portfolio/sectionC/cover.jpg',
+      cover: 'posters/3.jpg',
     },
     // De 2 ronde knoppen onder de 3 voorbeeldfoto's.
     callToActionPortfolio: 'BEKIJK MIJN WERK',
@@ -121,28 +121,28 @@ const SITE_CONFIG = {
   prijzen: {
     titel: 'Prijzen',
     // Sectie A (1e kaartje — schminken). "cover" is de foto erin — het pad
-    // is relatief aan deze map (MAAK_HIER_AANPASSINGEN/), meestal een foto
-    // uit een portfolio-mapje. Los aan te passen van de voorbeeldfoto op
+    // is relatief aan deze map (MAAK_HIER_AANPASSINGEN/), zie
+    // posters/LEES-MIJ.txt. Los aan te passen van de voorbeeldfoto op
     // de voorpagina (homepage.sectionA.cover hierboven).
     sectionA: {
       titel: 'Schminken',
       prijs: '€ 4,-',
       tekst: 'Placeholder tekst over de schminkprijzen.',
-      cover: 'portfolio/sectionA/cover.jpg',
+      cover: 'posters/1.jpg',
     },
     // Sectie B (2e kaartje — glittertattoo's).
     sectionB: {
       titel: "Glittertattoo's",
       prijs: '€ 5,-',
       tekst: 'Placeholder tekst over de glittertattoo-prijzen.',
-      cover: 'portfolio/sectionB/cover.jpg',
+      cover: 'posters/2.jpg',
     },
     // Sectie C (3e kaartje — feestjes & evenementen).
     sectionC: {
       titel: 'Feestjes & evenementen',
       prijs: '€ 6,-',
       tekst: 'Placeholder tekst over de prijzen voor feestjes etc.',
-      cover: 'portfolio/sectionC/cover.jpg',
+      cover: 'posters/3.jpg',
     },
     // De tekst helemaal onderaan de prijzenpagina.
     footnote: 'Neem contact op voor een offerte op maat.',

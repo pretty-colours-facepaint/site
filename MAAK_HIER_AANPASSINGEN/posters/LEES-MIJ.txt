@@ -1,0 +1,12 @@
+VOORBEELDFOTO'S ("POSTERS") — GEEN CODE NODIG
+====================================
+
+Dit zijn de 3 voorbeeldfoto's die op de voorpagina en de prijzenpagina getoond worden, bovenaan de 3 kolommetjes/kaartjes:
+
+  1.jpg  = Schminken (sectie A)
+  2.jpg  = Glittertattoo's (sectie B)
+  3.jpg  = Feestjes & evenementen (sectie C)
+
+Vervang een foto door een andere met dezelfde naam. De bestandsnaam mag eindigen op .jpg, .jpeg of .png — die hoeft niet exact te matchen met wat er in site-text-content.js staat (de "cover" bij elke sectie), dus vervang je 1.jpg door een 1.png, dan wordt die automatisch gevonden.
+
+De voorpagina en de prijzenpagina gebruiken standaard dezelfde 3 foto's, maar kunnen ook losse foto's krijgen — pas dan het "cover"-pad aan bij de betreffende sectie in site-text-content.js.
