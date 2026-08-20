@@ -35,6 +35,54 @@ function getConfigValue(path) {
   );
 }
 
+// Extensions tried, in order, for any photo the site loads by filename —
+// both the numbered galleries below and the config-driven cover/portrait
+// images. Keeps .jpg/.jpeg/.png interchangeable everywhere: what's written
+// in site-text-content.js is tried first, then the other two as a fallback,
+// so the extension in the config never has to exactly match the file on disk.
+const PHOTO_EXTENSIONS = ['jpg', 'jpeg', 'png'];
+
+function photoExists(src) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(src);
+    img.onerror = () => resolve(null);
+    img.src = src;
+  });
+}
+
+function extensionCandidates(filename) {
+  const match = filename.match(/\.(jpe?g|png)$/i);
+  if (!match) {
+    return [filename];
+  }
+  const configuredExt = match[1].toLowerCase();
+  const base = filename.slice(0, -(configuredExt.length + 1));
+  const order = [configuredExt, ...PHOTO_EXTENSIONS.filter((ext) => ext !== configuredExt)];
+  return order.map((ext) => `${base}.${ext}`);
+}
+
+async function loadConfigImage(el) {
+  const path = el.dataset.configImage;
+  const prefix = el.dataset.configImagePrefix || '';
+  const value = getConfigValue(path);
+  if (typeof value !== 'string') {
+    el.alt = `Ontbrekende foto in site-text-content.js: ${path}`;
+    return;
+  }
+  for (const candidate of extensionCandidates(value)) {
+    const found = await photoExists(prefix + candidate);
+    if (found) {
+      el.src = found;
+      return;
+    }
+  }
+  // None of the extension variants exist; fall back to the configured path
+  // so the browser's own broken-image icon (and a console 404) surfaces the
+  // problem instead of failing silently.
+  el.src = prefix + value;
+}
+
 if (typeof SITE_CONFIG === 'undefined') {
   document.querySelectorAll('[data-config]').forEach((el) => {
     el.innerHTML = configErrorHtml(
@@ -60,16 +108,7 @@ if (typeof SITE_CONFIG === 'undefined') {
     el.innerHTML = escapeHtml(value).replace(/&lt;br\s*\/?&gt;/gi, '<br>');
   });
 
-  document.querySelectorAll('[data-config-image]').forEach((el) => {
-    const path = el.dataset.configImage;
-    const prefix = el.dataset.configImagePrefix || '';
-    const value = getConfigValue(path);
-    if (typeof value !== 'string') {
-      el.alt = `Ontbrekende foto in site-text-content.js: ${path}`;
-      return;
-    }
-    el.src = prefix + value;
-  });
+  document.querySelectorAll('[data-config-image]').forEach(loadConfigImage);
 }
 
 // ============================================================
@@ -122,19 +161,9 @@ document.querySelectorAll('[data-social-badges]').forEach((container) => {
 // ============================================================
 const MAX_GALLERY_PHOTOS = 200;
 const MAX_CONSECUTIVE_MISSES = 2;
-const GALLERY_EXTENSIONS = ['jpg', 'jpeg', 'png'];
-
-function photoExists(src) {
-  return new Promise((resolve) => {
-    const img = new Image();
-    img.onload = () => resolve(src);
-    img.onerror = () => resolve(null);
-    img.src = src;
-  });
-}
 
 async function findNumberedPhoto(prefix, number) {
-  for (const ext of GALLERY_EXTENSIONS) {
+  for (const ext of PHOTO_EXTENSIONS) {
     const found = await photoExists(`${prefix}${number}.${ext}`);
     if (found) {
       return found;

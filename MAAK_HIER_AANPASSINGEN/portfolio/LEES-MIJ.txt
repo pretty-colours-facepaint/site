@@ -5,4 +5,4 @@ Zet een foto in de submap van de bijbehorende pagina (sectionA/ voor schminken, 
 
 Let op: de website stopt met zoeken zodra 2 nummers na elkaar ontbreken (bijv. je hebt 1, 2 en 4, maar geen 3 — dan wordt 4 niet meer gevonden). Eén los gaatje in de nummering mag dus, maar niet meer — anders zou de browser te veel foto's tegelijk proberen te laden, wat bij sommige hosting rate limits kan raken.
 
-In elke submap staat ook een cover.jpg — dat is de foto die op de voorpagina en de prijzenpagina wordt getoond (zie "cover" bij de bijbehorende sectie in site-text-content.js). Die telt niet mee als gallerijfoto, dus laat de naam "cover" met rust en gebruik alleen nummers voor de gallerij zelf.
+In elke submap staat ook een cover.jpg — dat is de foto die op de voorpagina en de prijzenpagina wordt getoond (zie "cover" bij de bijbehorende sectie in site-text-content.js). Die telt niet mee als gallerijfoto, dus laat de naam "cover" met rust en gebruik alleen nummers voor de gallerij zelf. De extensie (.jpg, .jpeg of .png) hoeft niet exact te matchen met wat er in site-text-content.js staat — vervang je cover.jpg door een cover.jpeg, dan wordt die automatisch gevonden.
