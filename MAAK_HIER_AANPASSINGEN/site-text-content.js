@@ -23,7 +23,7 @@ const SITE_CONFIG = {
     // voorbeeldfoto eronder — het pad is relatief aan deze map
     // (MAAK_HIER_AANPASSINGEN/), meestal een foto uit een portfolio-mapje.
     sectionA: {
-      titel: 'Schminken',
+      titel: 'Schminken!!!',
       tekst: 'Creatieve en kleurrijke schmink<br> voor jong en oud.',
       cover: 'portfolio/sectionA/cover.jpg',
     },
