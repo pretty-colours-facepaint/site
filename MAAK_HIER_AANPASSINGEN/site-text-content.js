@@ -21,7 +21,7 @@ const SITE_CONFIG = {
   homepage: {
     // 1e kolom: roze hartje-icoontje, linksboven.
     hartIcon: {
-      titel: 'Schminken!',
+      titel: 'Schminken',
       tekst: 'Creatieve en kleurrijke schmink<br> voor jong en oud.',
     },
     // 2e kolom: paarse bliksem-icoontje, in het midden.
