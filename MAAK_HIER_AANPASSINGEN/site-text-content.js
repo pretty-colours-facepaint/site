@@ -23,7 +23,7 @@ const SITE_CONFIG = {
     // voorbeeldfoto eronder — het pad is relatief aan deze map
     // (MAAK_HIER_AANPASSINGEN/), zie posters/LEES-MIJ.txt.
     sectionA: {
-      titel: 'Schminken!!!',
+      titel: 'Schminken',
       tekst: 'Creatieve en kleurrijke schmink<br> voor jong en oud.',
       cover: 'posters/1.jpeg',
     },
@@ -48,7 +48,7 @@ const SITE_CONFIG = {
     over: {
       titel: 'Hoi, ik ben Sanne!',
       tekst:
-        'Mijn naam is Sanne Lek en ik schmink op kinderfeestjes, evenementen en voor bedrijven of winkels in een straal van 30 km rond Hoofddorp.',
+        'Mijn naam is Sanne Lek en ik schmink op (kinder)feestjes en evenementen. Voor particulieren, bedrijven of winkels. Ook kan ik uw feest nog stralender maken door middel van het zetten van glittertattoo's. Ik heb inmiddels 5 jaar ervaring als schminker en glittertattoo-artiest en weet van elk event een kleurrijk feestje te maken! Ik woon in Hoofddorp maar kan naar elke locatie in Nederland komen.',
       foto: 'portret.png',
     },
   },
