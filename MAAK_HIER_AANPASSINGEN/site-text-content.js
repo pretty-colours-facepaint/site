@@ -48,7 +48,7 @@ const SITE_CONFIG = {
     over: {
       titel: 'Hoi, ik ben Sanne!',
       tekst:
-        'Mijn naam is Sanne Lek en ik schmink op (kinder)feestjes en evenementen. Voor particulieren, bedrijven of winkels. Ook kan ik uw feest nog stralender maken door middel van het zetten van glittertattoo's. Ik heb inmiddels 5 jaar ervaring als schminker en glittertattoo-artiest en weet van elk event een kleurrijk feestje te maken! Ik woon in Hoofddorp maar kan naar elke locatie in Nederland komen.',
+        'Mijn naam is Sanne Lek en ik schmink op (kinder)feestjes en evenementen. Voor particulieren, bedrijven of winkels. Ook kan ik uw feest nog stralender maken door middel van het zetten van glittertattoo\'s. Ik heb inmiddels 5 jaar ervaring als schminker en glittertattoo-artiest en weet van elk event een kleurrijk feestje te maken! Ik woon in Hoofddorp maar kan naar elke locatie in Nederland komen.',
       foto: 'portret.png',
     },
   },
@@ -140,7 +140,7 @@ const SITE_CONFIG = {
     // Sectie C (3e kaartje — feestjes & evenementen).
     sectionC: {
       titel: 'Feestjes & evenementen',
-      prijs: 'Informeert u naar de mogelijkheden'
+      prijs: 'Informeert u naar de mogelijkheden',
       tekst: 'Placeholder tekst over de prijzen voor feestjes etc.',
       cover: 'posters/3.jpg',
     },
