@@ -83,10 +83,10 @@ const SITE_CONFIG = {
   // ------------------------------------------------------------
   footer: {
     contact: {
-      tagline: 'Kleur maakt alles leuker!',
-      telefoon: '06 – 123456789',
-      email: 'info@voorbeeld.nl',
-      regio: '30 km rond Hoofddorp',
+      tagline: 'Een kleurrijk feest!',
+      telefoon: '06-52616671',
+      email: 'prettycolours_facepaint@outlook.com',
+      regio: 'Vanuit Hoofddorp, binnen geheel Nederland',
     },
 
     // Elk badge heeft een titel (tooltip/toegankelijkheid), logo
@@ -126,26 +126,26 @@ const SITE_CONFIG = {
     // de voorpagina (homepage.sectionA.cover hierboven).
     sectionA: {
       titel: 'Schminken',
-      prijs: '€ 4,-',
+      prijs: '€55,- excl BTW, per uur (minimale afname 1,5 uur), excl reis/parkeerkosten',
       tekst: 'Placeholder tekst over de schminkprijzen.',
       cover: 'posters/1.jpeg',
     },
     // Sectie B (2e kaartje — glittertattoo's).
     sectionB: {
       titel: "Glittertattoo's",
-      prijs: '€ 5,-',
+      prijs: '€60,- excl BTW, per uur (minimale afname 1,5 uur), excl reis/parkeerkosten',
       tekst: 'Placeholder tekst over de glittertattoo-prijzen.',
       cover: 'posters/2.jpeg',
     },
     // Sectie C (3e kaartje — feestjes & evenementen).
     sectionC: {
       titel: 'Feestjes & evenementen',
-      prijs: '€ 6,-',
+      prijs: 'Informeert u naar de mogelijkheden'
       tekst: 'Placeholder tekst over de prijzen voor feestjes etc.',
       cover: 'posters/3.jpg',
     },
     // De tekst helemaal onderaan de prijzenpagina.
-    footnote: 'Neem contact op voor een offerte op maat.',
+    footnote: 'Neem aub contact op voor een offerte op maat.',
   },
 
   // ------------------------------------------------------------
@@ -177,7 +177,7 @@ const SITE_CONFIG = {
     paginas: {
       sectionA: 'Schminken',
       sectionB: "Glittertattoo's",
-      sectionC: 'Elke feest of event',
+      sectionC: 'Elk feest of event',
     },
   },
 
@@ -190,7 +190,7 @@ const SITE_CONFIG = {
       'Vul het formulier in en ik neem contact met je op over je feest of evenement.',
     labelNaam: 'Naam',
     labelEmail: 'E-mail',
-    labelDatum: 'Datum evenement',
+    labelDatum: 'Datum en gewenste tijd evenement',
     labelBericht: 'Bericht',
     knop: 'Verstuur Aanvraag',
   },
