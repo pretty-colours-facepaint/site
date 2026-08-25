@@ -61,7 +61,7 @@ const SITE_CONFIG = {
   // niet meer terug (dat onthoudt de browser zelf).
   // ------------------------------------------------------------
   overlay: {
-    actief: true,
+    actief: false,
     titel: 'Website in aanbouw',
     tekst:
       "Deze website is nog in ontwikkeling. Sommige teksten en foto's zijn nog placeholders.",
