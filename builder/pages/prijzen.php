@@ -1,8 +1,8 @@
 <?php
 $title = "Prijzen — Pretty Colours Facepaint";
-$description = "Bekijk de prijzen voor schminken en glittertattoo's bij Pretty Colours Facepaint, actief voor kinderfeestjes en evenementen rond Hoofddorp.";
+$description = "Bekijk de prijzen voor schminken en glittertattoo's bij Pretty Colours Facepaint, voor (kinder)feestjes en evenementen. Vanuit Hoofddorp, binnen geheel Nederland.";
 $canonical = "https://prettycolours-facepaint.nl/pages/prijzen.html";
-$ogDescription = "Bekijk de prijzen voor schminken en glittertattoo's bij Pretty Colours Facepaint, actief rond Hoofddorp.";
+$ogDescription = "Prijzen voor schminken en glittertattoo's bij Pretty Colours Facepaint. Vanuit Hoofddorp, binnen geheel Nederland.";
 $base = '../';
 ?>
 <!DOCTYPE html>

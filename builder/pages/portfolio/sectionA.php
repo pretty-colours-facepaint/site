@@ -1,6 +1,6 @@
 <?php
 $title = "Schminken — Pretty Colours Facepaint";
-$description = "Voorbeelden van schminkwerk door Pretty Colours Facepaint, voor kinderfeestjes en evenementen rond Hoofddorp.";
+$description = "Voorbeelden van schminkwerk door Pretty Colours Facepaint, voor (kinder)feestjes en evenementen. Vanuit Hoofddorp, binnen geheel Nederland.";
 $canonical = "https://prettycolours-facepaint.nl/pages/portfolio/sectionA.html";
 $base = '../../';
 ?>

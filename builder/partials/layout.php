@@ -241,14 +241,10 @@ function local_business_json_ld(): void
     "founder": "Sanne Lek",
     "image": "https://prettycolours-facepaint.nl/assets/logo.jpg",
     "url": "https://prettycolours-facepaint.nl/",
-    "description": "Schminken en glittertattoo's voor kinderfeestjes, evenementen en bedrijven, in een straal van 30 km rond Hoofddorp.",
+    "description": "Schminken en glittertattoo's op (kinder)feestjes en evenementen, voor particulieren, bedrijven en winkels. Vanuit Hoofddorp, binnen geheel Nederland. 5 jaar ervaring als schminker en glittertattoo-artiest.",
     "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "addressLocality": "Hoofddorp"
-      },
-      "geoRadius": "30000"
+      "@type": "Country",
+      "name": "Nederland"
     },
     "address": {
       "@type": "PostalAddress",
