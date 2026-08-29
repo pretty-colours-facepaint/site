@@ -11,6 +11,38 @@ require __DIR__ . '/partials/layout.php';
 $root = dirname(__DIR__);
 $pagesDir = __DIR__ . '/pages';
 
+/**
+ * Reads a plain JS file that declares `const <varName> = { ... }` and returns
+ * that object as a PHP array, by letting node evaluate it. Used to pull the
+ * client-editable copy (site-text-content.js / error-content.js) into the
+ * build so it can be baked into the static HTML for crawlers — script.js still
+ * re-applies the same values at runtime, so client edits keep working without
+ * a rebuild. Returns [] if node is unavailable or the file can't be parsed.
+ */
+function ssr_load_js_object(string $file, string $varName): array
+{
+    if (!is_file($file)) {
+        return [];
+    }
+    // Append the stringify call inside the eval'd source so it shares scope
+    // with the `const <varName>` declaration (a const in direct eval doesn't
+    // leak to the surrounding scope).
+    $script = 'const fs=require("fs");'
+        . 'const src=fs.readFileSync(process.argv[1],"utf8");'
+        . 'eval(src + "\n;process.stdout.write(JSON.stringify(' . $varName . '));");';
+    $cmd = 'node -e ' . escapeshellarg($script) . ' ' . escapeshellarg($file) . ' 2>/dev/null';
+    $out = shell_exec($cmd);
+    $data = json_decode((string) $out, true);
+    if (!is_array($data)) {
+        fwrite(STDERR, "warning: could not load {$varName} from {$file} for server-side rendering\n");
+        return [];
+    }
+    return $data;
+}
+
+$GLOBALS['SSR_CONTENT'] = ssr_load_js_object($root . '/MAAK_HIER_AANPASSINGEN/site-text-content.js', 'SITE_CONFIG');
+$GLOBALS['SSR_ERROR_CONTENT'] = ssr_load_js_object($root . '/assets/error-content.js', 'ERROR_CONTENT');
+
 $pages = [
     'index.php' => 'index.html',
     'prijzen.php' => 'pages/prijzen.html',

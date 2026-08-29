@@ -6,21 +6,20 @@ crawlers see an almost empty page (Seobility counted 3 words, no H1).
 
 ## P1 — Errors (do first)
 
-- [ ] **Server-render the page copy at build time.**
-      `builder/build.php` should read `MAAK_HIER_AANPASSINGEN/site-text-content.js`
-      and pre-fill every `data-config` / `data-config-image` element in the static
-      HTML, so the shipped page contains the real text, headings and image sources.
-      `script.js` keeps overriding at runtime (client edits still work with no
-      rebuild) — but a rebuild is needed for crawlers to see copy changes.
-      Fixes: "only 3 words", "no paragraphs", "headings have no content",
-      "title words not in content".
-- [ ] **Add one `<h1>` per page.**
-      Homepage: a real `<h1>` (e.g. "Schminken & glittertattoo's in Hoofddorp,
-      voor heel Nederland"). Every other page also needs exactly one `<h1>`.
-      Currently every heading is `<h2>`.
-- [ ] **Fix heading hierarchy.** After adding `<h1>`, make section headings
-      follow `<h1>` → `<h2>` → `<h3>` with no skipped levels, and make sure no
-      heading renders empty (falls out of the SSR fix above).
+- [x] **Server-render the page copy at build time.**
+      `build.php` now loads `site-text-content.js` + `error-content.js` (via
+      node) and `content_config()` / `content_config_image()` bake the real
+      text and image `src` into the static HTML. `script.js` still re-applies
+      everything at runtime, so client edits need no rebuild — but a rebuild is
+      needed for crawlers to see copy changes (`make watch` now also watches
+      those two files). Rendered word count went from ~3 to ~440.
+      Fixed: "only 3 words", "no paragraphs", "headings have no content".
+- [x] **Add one `<h1>` per page.** Every page except the homepage already had
+      one; added a real `<h1>` (`homepage.introKop`, editable in
+      site-text-content.js) + intro line to the homepage.
+- [x] **Fix heading hierarchy.** Homepage service headings bumped `<h3>` →
+      `<h2>` so it's `<h1>` → `<h2>` with no skipped level. Error-overlay
+      `<h2>` is no longer empty (SSR'd from error-content.js).
 - [ ] **Fix the HTTPS redirect (hosting config, not code).**
       Seobility: "redirect to HTTPS is not configured correctly". Check the host
       (GitHub Pages / DNS / CNAME) forces `http://` → `https://` and

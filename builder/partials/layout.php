@@ -5,15 +5,50 @@
  */
 
 /**
+ * Looks up a dotted path (e.g. 'prijzen.sectionA.prijs') in an SSR content
+ * tree loaded by build.php. Returns the string value, or null if the path is
+ * missing or doesn't resolve to a string.
+ */
+function ssr_lookup(string $path, string $treeKey = 'SSR_CONTENT'): ?string
+{
+    $val = $GLOBALS[$treeKey] ?? null;
+    foreach (explode('.', $path) as $key) {
+        if (is_array($val) && array_key_exists($key, $val)) {
+            $val = $val[$key];
+        } else {
+            return null;
+        }
+    }
+    return is_string($val) ? $val : null;
+}
+
+/**
+ * Escapes SSR text the same way script.js does before injecting it: HTML-escape
+ * everything, then turn the literal `<br>` marker back into a real line break.
+ */
+function ssr_text(?string $raw): string
+{
+    if ($raw === null || $raw === '') {
+        return '';
+    }
+    return preg_replace('/&lt;br\s*\/?&gt;/i', '<br>', htmlspecialchars($raw, ENT_NOQUOTES, 'UTF-8'));
+}
+
+/**
  * Renders a placeholder that the browser fills in at runtime from
  * site-text-content.js (see script.js) — the text at SITE_CONFIG.<path>, dotted
- * (e.g. content_config('prijzen.schminken.prijs')). Editing site-text-content.js
+ * (e.g. content_config('prijzen.sectionA.prijs')). Editing site-text-content.js
  * needs no PHP rebuild: the browser reads it directly on every page load.
+ *
+ * build.php also bakes the current value straight into the span so crawlers
+ * (and a first paint before script.js runs) see real text; script.js then
+ * re-applies whatever is in site-text-content.js on top.
  */
 function content_config(string $path): string
 {
     $escaped = htmlspecialchars($path, ENT_QUOTES);
-    return "<span data-config=\"{$escaped}\"></span>";
+    $text = ssr_text(ssr_lookup($path));
+    return "<span data-config=\"{$escaped}\">{$text}</span>";
 }
 
 /**
@@ -29,7 +64,33 @@ function content_config_image(string $path, string $base = ''): string
 {
     $escapedPath = htmlspecialchars($path, ENT_QUOTES);
     $escapedPrefix = htmlspecialchars($base . 'MAAK_HIER_AANPASSINGEN/', ENT_QUOTES);
-    return "data-config-image=\"{$escapedPath}\" data-config-image-prefix=\"{$escapedPrefix}\"";
+    $attrs = "data-config-image=\"{$escapedPath}\" data-config-image-prefix=\"{$escapedPrefix}\"";
+
+    // Bake a resolved src into the build so the image isn't blank before
+    // script.js runs (and so crawlers see it). Mirrors loadConfigImage() in
+    // script.js: try the configured extension first, then .jpg/.jpeg/.png.
+    $value = ssr_lookup($path);
+    if ($value !== null) {
+        $root = dirname(__DIR__, 2);
+        $exts = ['jpg', 'jpeg', 'png'];
+        if (preg_match('/\.(jpe?g|png)$/i', $value, $m)) {
+            $configured = strtolower($m[1]);
+            $bare = substr($value, 0, -(strlen($m[1]) + 1));
+            $candidates = array_merge([$configured], array_values(array_diff($exts, [$configured])));
+            $candidates = array_map(fn($ext) => "{$bare}.{$ext}", $candidates);
+        } else {
+            $candidates = [$value];
+        }
+        foreach ($candidates as $rel) {
+            if (is_file("{$root}/MAAK_HIER_AANPASSINGEN/{$rel}")) {
+                $src = htmlspecialchars($base . 'MAAK_HIER_AANPASSINGEN/' . $rel, ENT_QUOTES);
+                $attrs .= " src=\"{$src}\"";
+                break;
+            }
+        }
+    }
+
+    return $attrs;
 }
 
 function head_open(string $title, string $description, string $canonical, ?string $ogTitle = null, ?string $ogDescription = null): void
@@ -278,14 +339,18 @@ HTML;
  */
 function content_error_overlay(): void
 {
+    // SSR'd from assets/error-content.js so the heading isn't empty in the
+    // static HTML; script.js re-applies the same text from ERROR_CONTENT.
+    $titel = ssr_text(ssr_lookup('titel', 'SSR_ERROR_CONTENT'));
+    $tekst = ssr_text(ssr_lookup('tekst', 'SSR_ERROR_CONTENT'));
     echo <<<HTML
 
   <!-- Content-load error notice (shown only if site-text-content.js fails to load) -->
   <div id="content-error-overlay" class="hidden fixed inset-0 z-[110] bg-white/95 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-white border rounded-2xl shadow-lg max-w-sm w-full p-6 text-center">
       <p class="text-3xl mb-3">🎨</p>
-      <h2 class="font-display text-2xl text-pink-600 mb-2" data-error-config="titel"></h2>
-      <p class="text-sm text-gray-500" data-error-config="tekst"></p>
+      <h2 class="font-display text-2xl text-pink-600 mb-2" data-error-config="titel">{$titel}</h2>
+      <p class="text-sm text-gray-500" data-error-config="tekst">{$tekst}</p>
     </div>
   </div>
 HTML;

@@ -19,6 +19,10 @@ const SITE_CONFIG = {
   // eronder, en het "Over mij"-blok met foto helemaal onderaan.
   // ------------------------------------------------------------
   homepage: {
+    // De grote kop en het zinnetje daaronder, bovenaan de voorpagina.
+    introKop: "Schminken & glittertattoo's voor elk feest",
+    introTekst:
+      'Van kinderfeestjes tot bedrijfsevenementen. Vanuit Hoofddorp, in heel Nederland.',
     // Sectie A (1e kolom, linksboven — schminken). "cover" is de
     // voorbeeldfoto eronder — het pad is relatief aan deze map
     // (MAAK_HIER_AANPASSINGEN/), zie posters/LEES-MIJ.txt.

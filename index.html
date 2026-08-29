@@ -103,9 +103,9 @@
   <div id="construction-overlay" class="fixed inset-0 z-[100] bg-white/95 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-white border rounded-2xl shadow-lg max-w-sm w-full p-6 text-center">
       <p class="text-3xl mb-3">🚧</p>
-      <h2 class="font-display text-2xl text-pink-600 mb-2"><span data-config="overlay.titel"></span></h2>
-      <p class="text-sm text-gray-500 mb-6"><span data-config="overlay.tekst"></span></p>
-      <button id="construction-dismiss" class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-8 py-4 text-sm font-medium shadow hover:opacity-90 transition cursor-pointer"><span data-config="overlay.knop"></span></button>
+      <h2 class="font-display text-2xl text-pink-600 mb-2"><span data-config="overlay.titel">Website in aanbouw</span></h2>
+      <p class="text-sm text-gray-500 mb-6"><span data-config="overlay.tekst">Deze website is nog in ontwikkeling. Sommige teksten en foto's zijn nog placeholders.</span></p>
+      <button id="construction-dismiss" class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-full px-8 py-4 text-sm font-medium shadow hover:opacity-90 transition cursor-pointer"><span data-config="overlay.knop">Ik snap het, ga verder</span></button>
     </div>
   </div>
   <script>
@@ -123,8 +123,8 @@
   <div id="content-error-overlay" class="hidden fixed inset-0 z-[110] bg-white/95 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-white border rounded-2xl shadow-lg max-w-sm w-full p-6 text-center">
       <p class="text-3xl mb-3">🎨</p>
-      <h2 class="font-display text-2xl text-pink-600 mb-2" data-error-config="titel"></h2>
-      <p class="text-sm text-gray-500" data-error-config="tekst"></p>
+      <h2 class="font-display text-2xl text-pink-600 mb-2" data-error-config="titel">Er is wat verf in het systeem terechtgekomen</h2>
+      <p class="text-sm text-gray-500" data-error-config="tekst">We zijn druk bezig om alles weer schoon te maken. Kom later nog eens terug.</p>
     </div>
   </div>
   <!-- Header -->
@@ -136,27 +136,33 @@
       </a>
       <nav class="flex items-center gap-6 text-sm">
         <a href="index.html" class="text-pink-600 font-bold underline underline-offset-4">Home</a>
-        <a href="pages/aanvraag.html" class="rainbow-border-btn text-black hover:bg-gray-50 rounded-full transition cursor-pointer px-7 py-3.5 font-medium"><span data-config="contact.callToAction"></span></a>
+        <a href="pages/aanvraag.html" class="rainbow-border-btn text-black hover:bg-gray-50 rounded-full transition cursor-pointer px-7 py-3.5 font-medium"><span data-config="contact.callToAction">AANVRAAG DOEN</span></a>
       </nav>
     </div>
   </header>
+  <!-- Page heading -->
+  <section class="max-w-3xl mx-auto px-4 pt-14 pb-2 text-center">
+    <h1 class="font-display text-4xl sm:text-5xl text-pink-600"><span data-config="homepage.introKop">Schminken &amp; glittertattoo's voor elk feest</span></h1>
+    <p class="text-sm text-gray-500 mt-4 max-w-xl mx-auto"><span data-config="homepage.introTekst">Van kinderfeestjes tot bedrijfsevenementen. Vanuit Hoofddorp, in heel Nederland.</span></p>
+  </section>
+
   <!-- Three services: icon + heading + text -->
-  <section id="portfolio" class="max-w-5xl mx-auto px-4 pt-16 pb-14">
+  <section id="portfolio" class="max-w-5xl mx-auto px-4 pt-10 pb-14">
     <div class="grid sm:grid-cols-3 gap-6 text-center">
       <div >
         <img src="assets/icon-schminken.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-display text-3xl mb-1 text-pink-600"><span data-config="homepage.sectionA.titel"></span></h3>
-        <p class="pt-6 text-sm text-gray-500"><span data-config="homepage.sectionA.tekst"></span></p>
+        <h2 class="font-display text-3xl mb-1 text-pink-600"><span data-config="homepage.sectionA.titel">Schminken</span></h2>
+        <p class="pt-6 text-sm text-gray-500"><span data-config="homepage.sectionA.tekst">Creatieve en kleurrijke schmink<br> voor jong en oud.</span></p>
       </div>
       <div>
         <img src="assets/icon-glittertattoo.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-display text-3xl mb-1 text-purple-600"><span data-config="homepage.sectionB.titel"></span></h3>
-        <p class="pt-6 text-sm text-gray-500"><span data-config="homepage.sectionB.tekst"></span></p>
+        <h2 class="font-display text-3xl mb-1 text-purple-600"><span data-config="homepage.sectionB.titel">Glittertattoo's</span></h2>
+        <p class="pt-6 text-sm text-gray-500"><span data-config="homepage.sectionB.tekst">Mooie, tijdelijke glittertattoo's<br> in allerlei designs.</span></p>
       </div>
       <div>
         <img src="assets/icon-feest.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-display text-3xl mb-1 text-green-600"><span data-config="homepage.sectionC.titel"></span></h3>
-        <p class="pt-6 text-sm text-gray-500"><span data-config="homepage.sectionC.tekst"></span></p>
+        <h2 class="font-display text-3xl mb-1 text-green-600"><span data-config="homepage.sectionC.titel">Feestjes &amp; Evenementen</span></h2>
+        <p class="pt-6 text-sm text-gray-500"><span data-config="homepage.sectionC.tekst">Voor kinderfeestjes, schoolfeesten,<br>markten en andere gelegenheden.</span></p>
       </div>
     </div>
 
@@ -167,13 +173,13 @@
 
       <div class="relative z-10 grid sm:grid-cols-3 gap-6 mt-8">
         <a href="pages/portfolio/sectionA.html">
-          <img data-config-image="homepage.sectionA.cover" data-config-image-prefix="MAAK_HIER_AANPASSINGEN/" alt="Voorbeeld schminken" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+          <img data-config-image="homepage.sectionA.cover" data-config-image-prefix="MAAK_HIER_AANPASSINGEN/" src="MAAK_HIER_AANPASSINGEN/posters/1.jpeg" alt="Voorbeeld schminken" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
         <a href="pages/portfolio/sectionB.html">
-          <img data-config-image="homepage.sectionB.cover" data-config-image-prefix="MAAK_HIER_AANPASSINGEN/" alt="Voorbeeld glittertattoo" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+          <img data-config-image="homepage.sectionB.cover" data-config-image-prefix="MAAK_HIER_AANPASSINGEN/" src="MAAK_HIER_AANPASSINGEN/posters/2.jpeg" alt="Voorbeeld glittertattoo" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
         <a href="pages/portfolio/sectionC.html">
-          <img data-config-image="homepage.sectionC.cover" data-config-image-prefix="MAAK_HIER_AANPASSINGEN/" alt="Voorbeeld feest" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+          <img data-config-image="homepage.sectionC.cover" data-config-image-prefix="MAAK_HIER_AANPASSINGEN/" src="MAAK_HIER_AANPASSINGEN/posters/3.jpg" alt="Voorbeeld feest" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
       </div>
     </div>
@@ -184,24 +190,24 @@
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
         </svg>
-        <span data-config="homepage.callToActionPortfolio"></span>      </a>
+        <span data-config="homepage.callToActionPortfolio">BEKIJK MIJN WERK</span>      </a>
       <a href="pages/prijzen.html" class="inline-flex items-center justify-center gap-2 border-2 border-purple-500 text-purple-600 rounded-full px-8 py-4 text-sm text-center font-medium hover:bg-purple-500/10 transition">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z" />
         </svg>
-        <span data-config="homepage.callToActionPrijzen"></span>      </a>
+        <span data-config="homepage.callToActionPrijzen">BEKIJK DE PRIJZEN</span>      </a>
     </div>
   </section>
 
   <!-- About / bio card -->
   <section id="over" class="max-w-5xl mx-auto px-4 pb-20">
     <div class="border border-orange-100 rounded-2xl p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-8 bg-orange-50" style="background-color: #fdf9f5;">
-      <img data-config-image="homepage.over.foto" data-config-image-prefix="MAAK_HIER_AANPASSINGEN/" alt="Portret" class="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shrink-0 ">
+      <img data-config-image="homepage.over.foto" data-config-image-prefix="MAAK_HIER_AANPASSINGEN/" src="MAAK_HIER_AANPASSINGEN/1.png" alt="Portret" class="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shrink-0 ">
       <div class="text-center sm:text-left">
-        <h2 class="font-display text-3xl mb-3 text-pink-600"><span data-config="homepage.over.titel"></span></h2>
-        <p class="text-sm text-gray-500 mb-6 max-w-md"><span data-config="homepage.over.tekst"></span></p>
-        <a href="pages/aanvraag.html" class="rainbow-fill-btn text-white shadow hover:opacity-90 rounded-full transition cursor-pointer inline-block px-8 py-4 text-sm font-medium"><span data-config="contact.callToAction"></span> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="shrink-0 size-4 inline align-text-bottom ml-2">
+        <h2 class="font-display text-3xl mb-3 text-pink-600"><span data-config="homepage.over.titel">Hoi, ik ben Sanne!</span></h2>
+        <p class="text-sm text-gray-500 mb-6 max-w-md"><span data-config="homepage.over.tekst">Mijn naam is Sanne Lek en ik schmink op (kinder)feestjes en evenementen. Voor particulieren, bedrijven of winkels. Ook kan ik uw feest nog stralender maken door middel van het zetten van glittertattoo's. Ik heb inmiddels 5 jaar ervaring als schminker en glittertattoo-artiest en weet van elk event een kleurrijk feestje te maken! Ik woon in Hoofddorp maar kan naar elke locatie in Nederland komen.</span></p>
+        <a href="pages/aanvraag.html" class="rainbow-fill-btn text-white shadow hover:opacity-90 rounded-full transition cursor-pointer inline-block px-8 py-4 text-sm font-medium"><span data-config="contact.callToAction">AANVRAAG DOEN</span> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="shrink-0 size-4 inline align-text-bottom ml-2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
           </svg></a>      </div>
     </div>
@@ -212,27 +218,27 @@
     <div class="max-w-5xl mx-auto px-4 py-10 flex flex-col sm:flex-row items-center justify-between gap-10 text-sm text-gray-500">
       <div class="flex items-center gap-3">
         <img src="assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-12 w-12 rounded-full object-cover">
-        <p class="font-display text-base text-pink-500"><span data-config="footer.contact.tagline"></span></p>
+        <p class="font-display text-base text-pink-500"><span data-config="footer.contact.tagline">Een kleurrijk feest!</span></p>
       </div>
       <div class="space-y-3 text-center sm:text-left">
         <p class="flex items-center justify-center sm:justify-start gap-2.5">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 shrink-0 text-pink-500">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
           </svg>
-          <span data-config="footer.contact.telefoon"></span>
+          <span data-config="footer.contact.telefoon">06-52616671</span>
         </p>
         <p class="flex items-center justify-center sm:justify-start gap-2.5">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="shrink-0 size-4 text-pink-500">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
           </svg>
-          <span data-config="footer.contact.email"></span>
+          <span data-config="footer.contact.email">prettycolours_facepaint@outlook.com</span>
         </p>
         <p class="flex items-center justify-center sm:justify-start gap-2.5">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 shrink-0 text-pink-500">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
           </svg>
-          <span data-config="footer.contact.regio"></span>
+          <span data-config="footer.contact.regio">Vanuit Hoofddorp, binnen geheel Nederland</span>
         </p>
       </div>
       <div class="flex gap-4">

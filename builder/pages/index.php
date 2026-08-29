@@ -28,22 +28,28 @@ local_business_json_ld();
   <!-- Header -->
 <?php site_header(onHome: true); ?>
 
+  <!-- Page heading -->
+  <section class="max-w-3xl mx-auto px-4 pt-14 pb-2 text-center">
+    <h1 class="font-display text-4xl sm:text-5xl text-pink-600"><?= content_config('homepage.introKop') ?></h1>
+    <p class="text-sm text-gray-500 mt-4 max-w-xl mx-auto"><?= content_config('homepage.introTekst') ?></p>
+  </section>
+
   <!-- Three services: icon + heading + text -->
-  <section id="portfolio" class="max-w-5xl mx-auto px-4 pt-16 pb-14">
+  <section id="portfolio" class="max-w-5xl mx-auto px-4 pt-10 pb-14">
     <div class="grid sm:grid-cols-3 gap-6 text-center">
       <div >
         <img src="assets/icon-schminken.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-display text-3xl mb-1 text-pink-600"><?= content_config('homepage.sectionA.titel') ?></h3>
+        <h2 class="font-display text-3xl mb-1 text-pink-600"><?= content_config('homepage.sectionA.titel') ?></h2>
         <p class="pt-6 text-sm text-gray-500"><?= content_config('homepage.sectionA.tekst') ?></p>
       </div>
       <div>
         <img src="assets/icon-glittertattoo.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-display text-3xl mb-1 text-purple-600"><?= content_config('homepage.sectionB.titel') ?></h3>
+        <h2 class="font-display text-3xl mb-1 text-purple-600"><?= content_config('homepage.sectionB.titel') ?></h2>
         <p class="pt-6 text-sm text-gray-500"><?= content_config('homepage.sectionB.tekst') ?></p>
       </div>
       <div>
         <img src="assets/icon-feest.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
-        <h3 class="font-display text-3xl mb-1 text-green-600"><?= content_config('homepage.sectionC.titel') ?></h3>
+        <h2 class="font-display text-3xl mb-1 text-green-600"><?= content_config('homepage.sectionC.titel') ?></h2>
         <p class="pt-6 text-sm text-gray-500"><?= content_config('homepage.sectionC.tekst') ?></p>
       </div>
     </div>
