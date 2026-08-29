@@ -109,7 +109,7 @@ const SITE_CONFIG = {
       {
         titel: 'Facebook',
         logo: 'FB',
-        link: 'https://facebook.com/',
+        link: 'https://www.facebook.com/p/Pretty-colours-facepaint-100083367245728/',
         kleur: 'rgb(24, 119, 242)',
       },
     ],

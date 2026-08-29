@@ -249,6 +249,9 @@ function local_business_json_ld(): void
     "url": "https://prettycolours-facepaint.nl/",
     "telephone": "+31652616671",
     "email": "prettycolours_facepaint@outlook.com",
+    "sameAs": [
+      "https://www.facebook.com/p/Pretty-colours-facepaint-100083367245728/"
+    ],
     "description": "Schminken en glittertattoo's op (kinder)feestjes en evenementen, voor particulieren, bedrijven en winkels. Vanuit Hoofddorp, binnen geheel Nederland. 5 jaar ervaring als schminker en glittertattoo-artiest.",
     "areaServed": {
       "@type": "Country",
