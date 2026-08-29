@@ -28,12 +28,10 @@ crawlers see an almost empty page (Seobility counted 3 words, no H1).
 
 ## P2 — Warnings
 
-- [ ] **Shorten the homepage `<title>`** to < 580px (~60 chars).
-      Now: "Pretty Colours Facepaint - Schminken & Glittertattoo's in Hoofddorp"
-      (603px). Try: "Pretty Colours Facepaint | Schminken & glittertattoo's".
-- [ ] **Shorten the homepage meta description** to ~150 chars / one sentence.
-      Now ~210 chars, flagged as far over the limit. Keep Hoofddorp + Nederland +
-      one call to action.
+- [x] **Shorten the homepage `<title>`** to < 580px. Now:
+      "Schminken & glittertattoo's in Hoofddorp | Pretty Colours" (~510px).
+- [x] **Shorten the homepage meta description** to ~150 chars (was ~210).
+      Also trimmed the `aanvraag` and `prijzen` descriptions.
 - [ ] **Make the title reflect the page content** (depends on the SSR fix — once
       the body has real text about schminken/glittertattoo's/feestjes the title
       will already match much better).
@@ -76,11 +74,7 @@ crawlers see an almost empty page (Seobility counted 3 words, no H1).
       before the last deploy. Re-test once `2f06ed0`+ is live; the `<link
       rel="icon">` set and `/favicon.ico` are in place.
 
-## P2 — Analytics
-
-- [ ] **Add Google Analytics 4** (or a lighter privacy-friendly analytics like
-      Plausible). Needs a cookie/consent notice for AVG/GDPR if GA4. Helps
-      diagnose traffic sources and which pages need work.
+## Analytics — SKIPPED (user: "no analytics for now")
 
 ## P3 — DNS & security headers (hosting/registrar, not code)
 

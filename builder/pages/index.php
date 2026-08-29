@@ -1,6 +1,6 @@
 <?php
-$title = "Pretty Colours Facepaint - Schminken &amp; Glittertattoo's in Hoofddorp";
-$description = "Sanne Lek schminkt en zet glittertattoo's op (kinder)feestjes en evenementen - voor particulieren, bedrijven en winkels. Vanuit Hoofddorp, binnen geheel Nederland. 5 jaar ervaring. Vraag vrijblijvend een offerte aan.";
+$title = "Schminken &amp; glittertattoo's in Hoofddorp | Pretty Colours";
+$description = "Sanne Lek schminkt en zet glittertattoo's op (kinder)feestjes en evenementen. Vanuit Hoofddorp, in heel Nederland. Vraag vrijblijvend een offerte aan.";
 $canonical = "https://prettycolours-facepaint.nl/";
 $ogDescription = "Schminken en glittertattoo's op (kinder)feestjes en evenementen, voor particulieren, bedrijven en winkels. Vanuit Hoofddorp, binnen geheel Nederland.";
 $ogImage = "https://prettycolours-facepaint.nl/MAAK_HIER_AANPASSINGEN/posters/1.jpeg";
