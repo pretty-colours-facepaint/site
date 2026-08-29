@@ -90,7 +90,12 @@ function favicon_and_tailwind(string $base = ''): void
 {
     echo <<<HTML
 
-  <link rel="icon" href="{$base}assets/logo.jpg">
+  <link rel="icon" href="{$base}favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="{$base}assets/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="{$base}assets/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{$base}assets/apple-touch-icon.png">
+  <link rel="manifest" href="{$base}site.webmanifest">
+  <meta name="theme-color" content="#ec1e79">
 HTML;
 }
 
@@ -236,11 +241,14 @@ function local_business_json_ld(): void
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "HealthAndBeautyBusiness"],
     "name": "Pretty Colours Facepaint",
     "founder": "Sanne Lek",
     "image": "https://prettycolours-facepaint.nl/assets/logo.jpg",
+    "logo": "https://prettycolours-facepaint.nl/assets/icon-512.png",
     "url": "https://prettycolours-facepaint.nl/",
+    "telephone": "+31652616671",
+    "email": "prettycolours_facepaint@outlook.com",
     "description": "Schminken en glittertattoo's op (kinder)feestjes en evenementen, voor particulieren, bedrijven en winkels. Vanuit Hoofddorp, binnen geheel Nederland. 5 jaar ervaring als schminker en glittertattoo-artiest.",
     "areaServed": {
       "@type": "Country",

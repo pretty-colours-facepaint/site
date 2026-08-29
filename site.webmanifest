@@ -1,0 +1,14 @@
+{
+  "name": "Pretty Colours Facepaint",
+  "short_name": "Pretty Colours",
+  "description": "Schminken en glittertattoo's op (kinder)feestjes en evenementen. Vanuit Hoofddorp, binnen geheel Nederland.",
+  "icons": [
+    { "src": "/assets/favicon-96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#ec1e79",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
