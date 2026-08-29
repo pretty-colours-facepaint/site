@@ -1,5 +1,5 @@
 <?php
-$title = "Aanvraag doen — Pretty Colours Facepaint";
+$title = "Aanvraag doen - Pretty Colours Facepaint";
 $description = "Vraag vrijblijvend schminken of glittertattoo's aan voor je (kinder)feestje of evenement. Voor particulieren, bedrijven en winkels. Vanuit Hoofddorp, binnen geheel Nederland.";
 $canonical = "https://prettycolours-facepaint.nl/pages/aanvraag.html";
 $base = '../';

@@ -1,5 +1,5 @@
 <?php
-$title = "Mijn werk — Pretty Colours Facepaint";
+$title = "Mijn werk - Pretty Colours Facepaint";
 $description = "Overzicht van schminken, glittertattoo's en feestjes & evenementen door Pretty Colours Facepaint. Vanuit Hoofddorp, binnen geheel Nederland.";
 $canonical = "https://prettycolours-facepaint.nl/pages/portfolio/index.html";
 $base = '../../';
