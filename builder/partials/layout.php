@@ -151,48 +151,13 @@ function favicon_and_tailwind(string $base = ''): void
 {
     echo <<<HTML
 
+  <link rel="stylesheet" href="{$base}assets/tailwind.css">
   <link rel="icon" href="{$base}favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" type="image/png" sizes="96x96" href="{$base}assets/favicon-96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="{$base}assets/icon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="{$base}assets/apple-touch-icon.png">
   <link rel="manifest" href="{$base}site.webmanifest">
   <meta name="theme-color" content="#ec1e79">
-HTML;
-}
-
-function google_font_pacifico(): void
-{
-    echo <<<HTML
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-HTML;
-}
-
-/**
- * Loads the Tailwind CDN, then pins every shade of the purple/pink/green
- * palettes to the brand's exact hex values, so e.g. bg-purple-500 and
- * bg-purple-700 render identically — no other purple, pink, or green.
- */
-function tailwind_cdn(): void
-{
-    echo <<<HTML
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            purple: { 50: '#7642a6', 100: '#7642a6', 200: '#7642a6', 300: '#7642a6', 400: '#7642a6', 500: '#7642a6', 600: '#7642a6', 700: '#7642a6', 800: '#7642a6', 900: '#7642a6', 950: '#7642a6', DEFAULT: '#7642a6' },
-            pink: { 50: '#ec2b8a', 100: '#ec2b8a', 200: '#ec2b8a', 300: '#ec2b8a', 400: '#ec2b8a', 500: '#ec2b8a', 600: '#ec2b8a', 700: '#ec2b8a', 800: '#ec2b8a', 900: '#ec2b8a', 950: '#ec2b8a', DEFAULT: '#ec2b8a' },
-            green: { 50: '#84b525', 100: '#84b525', 200: '#84b525', 300: '#84b525', 400: '#84b525', 500: '#84b525', 600: '#84b525', 700: '#84b525', 800: '#84b525', 900: '#84b525', 950: '#84b525', DEFAULT: '#84b525' },
-          }
-        }
-      }
-    };
-  </script>
 HTML;
 }
 
@@ -401,8 +366,8 @@ function site_header(bool $onHome = false, string $base = ''): void
   <!-- Header -->
   <header id="site-header" class="sticky top-0 bg-white/90 backdrop-blur border-b border-transparent z-50">
     <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-6 flex-wrap gap-3">
-      <a href="{$base}index.html" class="flex flex-col items-center gap-1">
-        <img id="logo-img" src="{$base}assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-28 w-28 rounded-full object-cover transition-all duration-500 ease-in-out">
+      <a href="{$base}index.html" class="flex flex-col items-center gap-1" aria-label="Pretty Colours Facepaint - naar de homepage">
+        <img id="logo-img" src="{$base}assets/logo.webp" width="112" height="112" alt="Logo Pretty Colours Facepaint" class="h-28 w-28 rounded-full object-cover transition-all duration-500 ease-in-out">
         <p id="logo-tagline" class="text-[10px] tracking-widest mt-1 overflow-hidden">SCHMINK &amp; GLITTERTATTOO'S</p>
       </a>
       <nav class="flex items-center gap-6 text-sm">
@@ -427,9 +392,17 @@ function footer_full(string $taglineClass = 'font-display text-base text-pink-50
   <!-- Footer -->
   <footer class="rainbow-top-border">
     <div class="max-w-5xl mx-auto px-4 py-10 flex flex-col sm:flex-row items-center justify-between gap-10 text-sm text-gray-500">
-      <div class="flex items-center gap-3">
-        <img src="{$base}assets/logo.jpg" alt="Pretty Colours Facepaint" class="h-12 w-12 rounded-full object-cover">
-        <p class="{$taglineClass}">{$tagline}</p>
+      <div class="flex flex-col items-center sm:items-start gap-3">
+        <div class="flex items-center gap-3">
+          <img src="{$base}assets/logo.webp" width="48" height="48" alt="Logo Pretty Colours Facepaint" class="h-12 w-12 rounded-full object-cover">
+          <p class="{$taglineClass}">{$tagline}</p>
+        </div>
+        <nav class="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs text-gray-500">
+          <a href="{$base}index.html" class="hover:text-pink-600 hover:underline">Home</a>
+          <a href="{$base}pages/portfolio/index.html" class="hover:text-pink-600 hover:underline">Mijn werk</a>
+          <a href="{$base}pages/prijzen.html" class="hover:text-pink-600 hover:underline">Prijzen</a>
+          <a href="{$base}pages/aanvraag.html" class="hover:text-pink-600 hover:underline">Aanvraag doen</a>
+        </nav>
       </div>
       <div class="space-y-3 text-center sm:text-left">
         <p class="flex items-center justify-center sm:justify-start gap-2.5">

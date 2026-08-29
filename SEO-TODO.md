@@ -50,24 +50,26 @@ crawlers see an almost empty page (Seobility counted 3 words, no H1).
 
 ## P2 — Performance (second SEO checker, mostly HIGH)
 
-- [ ] **Eliminate render-blocking resources / cut Largest Contentful Paint to
-      < 2.5s.** Check what blocks first paint: the Tailwind CDN script, the
-      Google Fonts stylesheet, `script.js`. Options: self-host a built Tailwind
-      CSS file instead of the CDN, `preload` + `display=swap` the font (partly
-      done), defer non-critical JS, inline critical CSS.
-- [ ] **Serve images in a modern format (WebP/AVIF).** Convert `assets/*.jpg`,
-      `MAAK_HIER_AANPASSINGEN/posters/*` and portfolio photos to WebP (keep a
-      JP/PNG fallback via `<picture>` or let the host negotiate). Biggest single
-      speed win.
-- [ ] **Serve properly sized images.** `assets/logo.jpg` is 1254×1254 but shown
-      at ~112px in the header and ~48px in the footer. Ship a small version
-      (e.g. `logo-128.webp`) and/or use `srcset`/`sizes`. Same for poster and
-      portfolio thumbnails.
-- [ ] **Fix distorted images.** The checker flagged at least one image whose
-      displayed aspect ratio ≠ its real ratio. Audit every `<img>`: the
-      rendered box (CSS `w-*`/`h-*`/`aspect-*`) must match the file's aspect, or
-      use `object-cover`. Re-check the generated favicon PNGs (`icon-512.png`
-      etc.) — they were padded to square, confirm they don't look stretched.
+- [x] **Self-host Tailwind** (was the main render-blocker: `cdn.tailwindcss.com`
+      compiled CSS in the browser on every load). Now a 15 KB static
+      `assets/tailwind.css` built by `builder/rebuild.sh` / `make build`.
+- [x] **Self-host Pacifico** (was `fonts.googleapis.com` + `fonts.gstatic.com`,
+      render-blocking and an AVG/GDPR liability). Now two woff2 subsets in
+      `assets/fonts/`, `@font-face` baked into `assets/tailwind.css`,
+      `font-display: swap`. The site now makes **zero external requests**.
+- [ ] Re-measure LCP on the live site after deploy. `script.js` + the two
+      content `.js` files already load at the end of `<body>`.
+- [x] **Modern format + properly sized for the `assets/` images** (dev-owned):
+      `logo` 138 KB→10 KB (224px webp), `icon-*` 55 KB→6 KB each (112px webp),
+      `splash-*` 492 KB→~1 KB (192px webp). All now have explicit `width`/
+      `height` (no layout shift). Homepage image weight ~1.3 MB → ~30 KB.
+      Originals kept on disk; `logo.jpg` still used by the JSON-LD `logo`/`image`.
+- [ ] **Client photos** (`MAAK_HIER_AANPASSINGEN/posters/*`, portfolio galleries)
+      left as-is on purpose — the client drops in jpg/png with no tooling.
+      Optional later: teach `loadConfigImage()` / the gallery loader to prefer a
+      `.webp` sibling if a dev has optimised one, else fall back.
+- [x] **Distorted images:** icons regenerated as exact squares to match their
+      `object-cover` box; every `<img>` now carries matching `width`/`height`.
 - [ ] **Verify the favicon is picked up after deploy.** Second checker still
       reports "lacks a favicon or not referenced properly" — likely it crawled
       before the last deploy. Re-test once `2f06ed0`+ is live; the `<link

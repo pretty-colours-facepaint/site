@@ -15,8 +15,6 @@ og_title_description_url($title, $ogDescription, $canonical);
 og_and_twitter_image($ogImage);
 twitter_title_description($title, $ogDescription, $ogImage);
 favicon_and_tailwind();
-google_font_pacifico();
-tailwind_cdn();
 custom_style(fontDisplay: true, rainbowFill: true);
 local_business_json_ld();
 ?>
@@ -38,17 +36,17 @@ local_business_json_ld();
   <section id="portfolio" class="max-w-5xl mx-auto px-4 pt-10 pb-14">
     <div class="grid sm:grid-cols-3 gap-6 text-center">
       <div >
-        <img src="assets/icon-schminken.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
+        <img src="assets/icon-schminken.webp" width="56" height="56" alt="Penseel" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
         <h2 class="font-display text-3xl mb-1 text-pink-600"><?= content_config('homepage.sectionA.titel') ?></h2>
         <p class="pt-6 text-sm text-gray-500"><?= content_config('homepage.sectionA.tekst') ?></p>
       </div>
       <div>
-        <img src="assets/icon-glittertattoo.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
+        <img src="assets/icon-glittertattoo.webp" width="56" height="56" alt="Ster" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
         <h2 class="font-display text-3xl mb-1 text-purple-600"><?= content_config('homepage.sectionB.titel') ?></h2>
         <p class="pt-6 text-sm text-gray-500"><?= content_config('homepage.sectionB.tekst') ?></p>
       </div>
       <div>
-        <img src="assets/icon-feest.png" alt="" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
+        <img src="assets/icon-feest.webp" width="56" height="56" alt="Ballon" class="w-14 h-14 rounded-full mx-auto mb-3 shadow-sm">
         <h2 class="font-display text-3xl mb-1 text-green-600"><?= content_config('homepage.sectionC.titel') ?></h2>
         <p class="pt-6 text-sm text-gray-500"><?= content_config('homepage.sectionC.tekst') ?></p>
       </div>
@@ -56,18 +54,18 @@ local_business_json_ld();
 
     <!-- Three example photos, linking to their album -->
     <div class="relative">
-      <img src="assets/splash-left.jpg" alt="" class="hidden lg:block absolute z-0 -left-20 top-1/2 -translate-y-1/2 w-24 pointer-events-none select-none" aria-hidden="true">
-      <img src="assets/splash-right.jpg" alt="" class="hidden lg:block absolute z-0 -right-20 top-1/2 -translate-y-1/2 w-24 pointer-events-none select-none" aria-hidden="true">
+      <img src="assets/splash-left.webp" alt="" width="43" height="192" class="hidden lg:block absolute z-0 -left-20 top-1/2 -translate-y-1/2 w-24 pointer-events-none select-none" aria-hidden="true">
+      <img src="assets/splash-right.webp" alt="" width="43" height="192" class="hidden lg:block absolute z-0 -right-20 top-1/2 -translate-y-1/2 w-24 pointer-events-none select-none" aria-hidden="true">
 
       <div class="relative z-10 grid sm:grid-cols-3 gap-6 mt-8">
-        <a href="pages/portfolio/sectionA.html">
-          <img <?= content_config_image('homepage.sectionA.cover') ?> alt="Voorbeeld schminken" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+        <a href="pages/portfolio/sectionA.html" aria-label="Bekijk voorbeelden van schminkwerk">
+          <img <?= content_config_image('homepage.sectionA.cover') ?> alt="Voorbeeld van schminkwerk" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
-        <a href="pages/portfolio/sectionB.html">
-          <img <?= content_config_image('homepage.sectionB.cover') ?> alt="Voorbeeld glittertattoo" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+        <a href="pages/portfolio/sectionB.html" aria-label="Bekijk voorbeelden van glittertattoo's">
+          <img <?= content_config_image('homepage.sectionB.cover') ?> alt="Voorbeeld van een glittertattoo" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
-        <a href="pages/portfolio/sectionC.html">
-          <img <?= content_config_image('homepage.sectionC.cover') ?> alt="Voorbeeld feest" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+        <a href="pages/portfolio/sectionC.html" aria-label="Bekijk foto's van feesten en evenementen">
+          <img <?= content_config_image('homepage.sectionC.cover') ?> alt="Schminken op een feest" class="aspect-square w-full object-cover rounded-xl shadow-sm hover:opacity-90 transition">
         </a>
       </div>
     </div>
@@ -93,7 +91,7 @@ local_business_json_ld();
   <!-- About / bio card -->
   <section id="over" class="max-w-5xl mx-auto px-4 pb-20">
     <div class="border border-orange-100 rounded-2xl p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-8 bg-orange-50" style="background-color: #fdf9f5;">
-      <img <?= content_config_image('homepage.over.foto') ?> alt="Portret" class="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shrink-0 ">
+      <img <?= content_config_image('homepage.over.foto') ?> alt="Sanne Lek van Pretty Colours Facepaint" class="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shrink-0 ">
       <div class="text-center sm:text-left">
         <h2 class="font-display text-3xl mb-3 text-pink-600"><?= content_config('homepage.over.titel') ?></h2>
         <p class="text-sm text-gray-500 mb-6 max-w-md"><?= content_config('homepage.over.tekst') ?></p>

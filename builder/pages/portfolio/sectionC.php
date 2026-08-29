@@ -11,8 +11,6 @@ $base = '../../';
 head_open($title, $description, $canonical);
 og_title_description_url($title, $description, $canonical);
 favicon_and_tailwind($base);
-google_font_pacifico();
-tailwind_cdn();
 custom_style(fontDisplay: true);
 ?>
 

@@ -105,12 +105,6 @@ const SITE_CONFIG = {
     // (staat daar onder "RGB").
     socials: [
       {
-        titel: 'Instagram',
-        logo: 'IG',
-        link: 'https://instagram.com/',
-        kleur: 'rgb(225, 48, 108)',
-      },
-      {
         titel: 'Facebook',
         logo: 'FB',
         link: 'https://www.facebook.com/p/Pretty-colours-facepaint-100083367245728/',

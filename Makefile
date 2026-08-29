@@ -1,8 +1,8 @@
 .PHONY: build watch
 
 build:
-	php builder/build.php
+	sh builder/rebuild.sh
 
 watch:
-	php builder/build.php
-	fswatch -o builder MAAK_HIER_AANPASSINGEN/site-text-content.js assets/error-content.js | xargs -n1 -I{} php builder/build.php
+	sh builder/rebuild.sh
+	fswatch -o builder MAAK_HIER_AANPASSINGEN/site-text-content.js assets/error-content.js | xargs -n1 -I{} sh builder/rebuild.sh
