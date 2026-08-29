@@ -241,7 +241,7 @@ function local_business_json_ld(): void
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "HealthAndBeautyBusiness"],
+    "@type": ["LocalBusiness", "EntertainmentBusiness"],
     "name": "Pretty Colours Facepaint",
     "founder": "Sanne Lek",
     "image": "https://prettycolours-facepaint.nl/assets/logo.jpg",
